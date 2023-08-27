@@ -3,7 +3,6 @@
 require 'connect.php';
 
 
-
 $fname=$_POST['fname'];
 // echo "$fname<br>";
 $lname=$_POST['lname'];
@@ -24,7 +23,7 @@ $password=$_POST['password'];
 // echo "$password<br>";
 
 
-$sql="INSERT INTO 'register'('fname','lname','state','district','dob','gender','email','phonenumber','password') VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber','$password');";
+$sql="INSERT INTO register(fname,lname,state,district,dob,gender,email,phonenumber,password) VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber','$password');";
 echo $sql;
 
 $res=insert_data($sql);
