@@ -21,9 +21,12 @@ $phonenumber=$_POST['phonenumber'];
 // echo "$number<br>";
 $password=$_POST['password'];
 // echo "$password<br>";
+$cpassword=$_POST['cpassword'];
+//echo "$cpassword<br>";
 
 
-$sql="INSERT INTO register(fname,lname,state,district,dob,gender,email,phonenumber,password) VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber','$password');";
+
+$sql="INSERT INTO register(fname,lname,state,district,dob,gender,email,phonenumber) VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber');";
 echo $sql;
 
 $res=insert_data($sql);
