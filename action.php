@@ -1,18 +1,43 @@
 <?php
+
+require 'connect.php';
+
+
+
 $fname=$_POST['fname'];
-echo "$fname<br>";
+// echo "$fname<br>";
 $lname=$_POST['lname'];
-echo "$lname<br>";
+// echo "$lname<br>";
+$state=$_POST['state'];
+//echo="$state<br>";
 $district=$_POST['district'];
-echo "$district<br>";
+// echo "$district<br>";
 $dob=$_POST['dob'];
-echo "$dob<br>";
+// echo "$dob<br>";
 $gender=$_POST['gender'];
-echo "$gender<br>";
+// echo "$gender<br>";
 $email=$_POST['email'];
-echo "$email<br>";
-$number=$_POST['number'];
-echo "$number<br>";
+// echo "$email<br>";
+$phonenumber=$_POST['phonenumber'];
+// echo "$number<br>";
 $password=$_POST['password'];
-echo "$password<br>";
+// echo "$password<br>";
+
+
+$sql="INSERT INTO 'register'('fname','lname','state','district','dob','gender','email','phonenumber','password') VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber','$password');";
+echo $sql;
+
+$res=insert_data($sql);
+
+
+if ($res)
+{
+    echo "Success";
+}
+else
+{
+    echo "failed";
+}
+
+
 ?>

@@ -108,17 +108,52 @@
             
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="text" name="fname" class="form-control" id="fname" placeholder="Firstname" required>
+                <input type="text" name="fname" class="form-control" id="fname"  pattern="[A-Z][a-z]*"   placeholder="Firstname" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="lname" id="lname" placeholder="Lastname" required>
+                <input type="text" class="form-control" name="lname" id="lname"  pattern="[A-Z][a-z]*"  placeholder="Lastname" required>
               </div>
             </div>
 
 
-            <div class="form-group mt-3">
-              <input type="text" class="form-control" name="district" id="district" placeholder="District" required>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <div class="form-group mt-3">
+                  <select name="state" id="" class="form-control" required>
+                    <option value="" disabled selected>State</option>
+                    <option value="kerala">Kerala</option>
+               
+    
+                  </select>
+                  </div>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <div class="form-group mt-3">
+                  <select name="district" id="" class="form-control" required>
+                    <option value="" disabled selected>District</option>
+                    <option value="kasaragod">Kasaragod</option>
+                    <option value="kannur">Kannur</option>
+                    <option value="kozhikode">Kozhikode</option>
+                    <option value="wayanad">Wayanad</option>
+                    <option value="malappuram">Malappuram</option>
+                    <option value="palakkad">Palakkad</option>
+                    <option value="thrissur">Thrissur</option>
+                    <option value="ernakulam">Ernakulam</option>
+                    <option value="idukki">Idukki</option>
+                    <option value="kottayam">Kottayam</option>
+                    <option value="alapuzha">Alappuzha</option>
+                    <option value="pathanamthitta">Pathanamthitta</option>
+                    <option value="kollam">Kollam</option>
+                    <option value="thiruvanathupuram">Thiruvananthupuram</option>
+    
+                  </select>
+                  </div>
+              </div>
             </div>
+
+
+           
+  
 
 
             <div class="form-group mt-3">
@@ -140,7 +175,7 @@
             </div>
 
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number"required>
+              <input type="text" class="form-control" name="phonenumber" id="phonenumber" pattern="[1-9][0-9]{9}" placeholder="Phone Number"required>
             </div>
             <div class="form-group mt-3">
               <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
