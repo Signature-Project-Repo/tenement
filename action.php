@@ -25,11 +25,25 @@ $cpassword=$_POST['cpassword'];
 //echo "$cpassword<br>";
 
 
+// check email existance
 
-$sql="INSERT INTO register(fname,lname,state,district,dob,gender,email,phonenumber) VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber');";
+$email_count="SELECT * FROM  register WHERE email='$email'";
+
+$count_res=count_data($email_count);
+// check count of row
+
+if ($count_res==0) 
+{
+
+
+
+
+
+$sql="INSERT INTO register(`fname`,`lname`,`state`,`district`,`dob`,`gender`,`email`,`phonenumber`) VALUES ('$fname','$lname','$state','$district','$dob','$gender','$email','$phonenumber');";
 echo $sql;
 
 $res=insert_data($sql);
+
 
 
 if ($res)
@@ -40,6 +54,10 @@ else
 {
     echo "failed";
 }
+}
+else{
 
+    echo "Email already in use";
+}
 
 ?>
