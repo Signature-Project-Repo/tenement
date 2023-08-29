@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2023 at 01:00 PM
+-- Generation Time: Aug 29, 2023 at 12:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,17 +35,19 @@ CREATE TABLE `register` (
   `dob` date NOT NULL,
   `gender` varchar(10) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `phonenumber` int(15) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `phonenumber` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
-('Abhishek', 'Biby', 'kerala', 'ernakulam', '2000-10-03', 'male', 'biby@gmail.com', 2147483647, '123123123'),
-('Abhishek', 'Vishnu', 'kerala', 'palakkad', '2023-08-10', 'male', 'joelshibu914@gmail.c', 2147483647, '456789');
+INSERT INTO `register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`) VALUES
+('Abhishek', 'Vishnu', 'kerala', 'malappuram', '4555-05-05', 'other', 'abhishek@gmail.com', 2147483647),
+('Abhishek', 'Vishnu', 'kerala', 'malappuram', '5421-05-04', 'other', 'abhishek@gmail.comm', 1234567890),
+('Sivaji', 'Mohan', 'kerala', 'malappuram', '2003-03-31', 'male', 'abhishek@gmail.commm', 1234567890),
+('Abhishek', 'Vishnu', 'kerala', 'kozhikode', '5200-04-20', 'male', 'joelshibu100@gmail.c', 2147483647),
+('Joel', 'Shibu', 'kerala', 'ernakulam', '2003-07-20', 'male', 'joelshibu914@gmail.c', 2147483647);
 
 --
 -- Indexes for dumped tables

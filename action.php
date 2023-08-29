@@ -34,6 +34,10 @@ $count_res=count_data($email_count);
 
 if ($count_res==0) 
 {
+    if($password==$cpassword)
+    {
+
+    
 
 
 
@@ -43,6 +47,10 @@ $sql="INSERT INTO register(`fname`,`lname`,`state`,`district`,`dob`,`gender`,`em
 echo $sql;
 
 $res=insert_data($sql);
+    }
+    else{
+        echo "Password Mismatch";
+    }
 
 
 
@@ -57,7 +65,7 @@ else
 }
 else{
 
-    echo "Email already in use";
+    echo "Email Already In Use";
 }
 
 ?>
