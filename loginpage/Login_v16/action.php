@@ -1,6 +1,6 @@
 <?php
 
-
+require 'connect.php';
 
 
 $username=$_POST['username'];
@@ -12,7 +12,7 @@ echo "$password<br>";
 //$status=$_POST['status'];
 //echo="$status<br>";
 
-$sql="INSERT INTO login1(`username`,`pass`) VALUES ('$username','$password');";
+$sql="INSERT INTO login1(username,pass) VALUES ('$username','$password');";
 echo $sql;
 
 
