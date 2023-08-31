@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2023 at 12:01 PM
+-- Generation Time: Aug 31, 2023 at 07:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `tenement`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login1`
+--
+
+CREATE TABLE `login1` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `usertype` varchar(20) NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
