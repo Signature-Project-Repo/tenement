@@ -27,7 +27,7 @@ $cpassword = $_POST['cpassword'];
 
 // check email existance
 
-$email_count = "SELECT * FROM  user_register WHERE email='$email'";
+$email_count = "SELECT * FROM loginpage WHERE email='$email'";
 
 $count_res = count_data($email_count);
 
