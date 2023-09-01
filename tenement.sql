@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2023 at 07:38 PM
+-- Generation Time: Sep 01, 2023 at 12:00 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,23 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login1`
+-- Table structure for table `loginpage`
 --
 
-CREATE TABLE `login1` (
-  `username` varchar(20) NOT NULL,
+CREATE TABLE `loginpage` (
+  `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `usertype` varchar(20) NOT NULL,
-  `status` int(10) NOT NULL
+  `usertype` int(30) NOT NULL,
+  `status` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `loginpage`
+--
+
+INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
+('joelshibu100@gmail.com', '1234', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Table structure for table `user_register`
 --
 
-CREATE TABLE `register` (
+CREATE TABLE `user_register` (
   `fname` text NOT NULL,
   `lname` text NOT NULL,
   `state` text NOT NULL,
@@ -48,28 +55,31 @@ CREATE TABLE `register` (
   `dob` date NOT NULL,
   `gender` varchar(10) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `phonenumber` int(15) NOT NULL
+  `phonenumber` varchar(10) NOT NULL,
+  `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `register`
+-- Dumping data for table `user_register`
 --
 
-INSERT INTO `register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`) VALUES
-('Abhishek', 'Vishnu', 'kerala', 'malappuram', '4555-05-05', 'other', 'abhishek@gmail.com', 2147483647),
-('Abhishek', 'Vishnu', 'kerala', 'malappuram', '5421-05-04', 'other', 'abhishek@gmail.comm', 1234567890),
-('Sivaji', 'Mohan', 'kerala', 'malappuram', '2003-03-31', 'male', 'abhishek@gmail.commm', 1234567890),
-('Abhishek', 'Vishnu', 'kerala', 'kozhikode', '5200-04-20', 'male', 'joelshibu100@gmail.c', 2147483647),
-('Joel', 'Shibu', 'kerala', 'ernakulam', '2003-07-20', 'male', 'joelshibu914@gmail.c', 2147483647);
+INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
+('Abhishek', 'Vishnu', 'kerala', 'kozhikode', '2010-09-02', 'male', 'joelshibu100@gmail.c', '1234567890', '1234');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `register`
+-- Indexes for table `loginpage`
 --
-ALTER TABLE `register`
+ALTER TABLE `loginpage`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `user_register`
+--
+ALTER TABLE `user_register`
   ADD PRIMARY KEY (`email`);
 COMMIT;
 

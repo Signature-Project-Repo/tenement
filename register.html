@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -35,9 +37,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
+  
+  
+
+
+
 </head>
 
 <body>
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
@@ -100,106 +109,147 @@
 
     <section class="inner-page">
       <div class="container">
-       <div class="row">
-        <div class="col-md-6 offset-3">
+        <div class="row">
+          <div class="col-md-6 offset-3">
 
-          <form action="action.php" method="POST">
-            <center class="pb-3"><h3>User Registraion</h3></center>
-            
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input type="text" name="fname" class="form-control" id="fname"  pattern="[A-Z][a-z]*"   placeholder="Firstname" required>
+            <form action="action.php" method="POST">
+              <center class="pb-3">
+                <h3>User Registraion</h3>
+              </center>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="fname" class="form-control" id="fname" pattern="[A-Z][a-z]*"
+                    placeholder="Firstname" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="lname" id="lname" pattern="[A-Z][a-z]*"
+                    placeholder="Lastname" required>
+                </div>
               </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="lname" id="lname"  pattern="[A-Z][a-z]*"  placeholder="Lastname" required>
-              </div>
-            </div>
 
 
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <div class="form-group mt-3">
-                  <select name="state" id="state" class="form-control" required>
-                    <option value="" disabled selected>State</option>
-                    <option value="kerala">Kerala</option>
-               
-    
-                  </select>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <select name="state" id="state" class="form-select" required>
+                      <option value="" disabled selected>State</option>
+                      <option value="kerala">Kerala</option>
+
+
+                    </select>
                   </div>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <div class="form-group mt-3">
-                  <select name="district" id="district" class="form-control" required>
-                    <option value="" disabled selected>District</option>
-                    <option value="kasaragod">Kasaragod</option>
-                    <option value="kannur">Kannur</option>
-                    <option value="kozhikode">Kozhikode</option>
-                    <option value="wayanad">Wayanad</option>
-                    <option value="malappuram">Malappuram</option>
-                    <option value="palakkad">Palakkad</option>
-                    <option value="thrissur">Thrissur</option>
-                    <option value="ernakulam">Ernakulam</option>
-                    <option value="idukki">Idukki</option>
-                    <option value="kottayam">Kottayam</option>
-                    <option value="alapuzha">Alappuzha</option>
-                    <option value="pathanamthitta">Pathanamthitta</option>
-                    <option value="kollam">Kollam</option>
-                    <option value="thiruvanathupuram">Thiruvananthupuram</option>
-    
-                  </select>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <div class="form-group mt-3">
+                    <select name="district" id="district" class="form-select" required>
+                      <option value="" disabled selected>District</option>
+                      <option value="kasaragod">Kasaragod</option>
+                      <option value="kannur">Kannur</option>
+                      <option value="kozhikode">Kozhikode</option>
+                      <option value="wayanad">Wayanad</option>
+                      <option value="malappuram">Malappuram</option>
+                      <option value="palakkad">Palakkad</option>
+                      <option value="thrissur">Thrissur</option>
+                      <option value="ernakulam">Ernakulam</option>
+                      <option value="idukki">Idukki</option>
+                      <option value="kottayam">Kottayam</option>
+                      <option value="alapuzha">Alappuzha</option>
+                      <option value="pathanamthitta">Pathanamthitta</option>
+                      <option value="kollam">Kollam</option>
+                      <option value="thiruvanathupuram">Thiruvananthupuram</option>
+
+                    </select>
                   </div>
+                </div>
               </div>
-            </div>
 
 
-           
-  
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" max="2010-09-28" required>
+                  </div>
+                </div>
 
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <select name="gender" id="" class="form-select">
+                      <option value="" disabled selected>Gender</option>
+                      <option value="male">Male</option>
+                      <option value="femal">Female</option>
+                      <option value="other">Others</option>
+                    </select>
+                  </div>
 
-            <div class="form-group mt-3">
-              <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" required>
-            </div>
-
-              <div class="form-group mt-3">
-            <select name="gender" id="" class="form-control">
-							<option value="" disabled selected>Gender</option>
-							<option value="male">Male</option>
-							<option value="femal">Female</option>
-							<option value="other">Others</option>
-						</select>
-            </div>
-
-
-            <div class="form-group mt-3">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-            </div>
-
-            <div class="form-group mt-3">
-              <input type="text" class="form-control" name="phonenumber" id="phonenumber" pattern="[1-9][0-9]{9}" placeholder="Phone Number"required>
-            </div>
-            <div class="form-group mt-3">
-              <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-            </div>
-            <div class="form-group mt-3">
-              <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
-            </div>
+                </div>
+              </div>
 
 
 
 
-            
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="phonenumber" id="phonenumber" pattern="[1-9][0-9]{9}"
+                      placeholder="Phone Number" required>
+                  </div>
+                </div>
+              </div>
 
-            
-
-            
-           
-           
-            <div class="text-center pt-3"><button type="submit" class="btn btn-primary">Submit</button></div>
-          </form>
 
 
+
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+                      required>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div class="form-group mt-3">
+                    <input type="password" class="form-control" name="cpassword" id="cpassword"
+                      placeholder="Confirm Password" required>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="text-center pt-3"><button type="submit" class="btn btn-primary">Register</button></div>
+            </form>
+
+
+          </div>
         </div>
-       </div>
       </div>
     </section>
 
@@ -207,63 +257,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>TENEMENT<span>.</span></h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
+   
 
     <div class="container">
       <div class="copyright">
@@ -280,7 +274,8 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
