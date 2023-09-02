@@ -1,3 +1,18 @@
+<html>
+<head>
+    <script type="text/javascript" src="swal/jquery.min.js"></script>
+    <script type="text/javascript" src="swal/bootstrap.min.js"></script>
+    <script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+</head>
+  
+</html>
+<body>
+
+
+
+
+
+
 <?php
 
 require 'connect.php';
@@ -55,30 +70,83 @@ if ($count_res == 0)
             $sql1 = "INSERT INTO loginpage(email,password,usertype,status) VALUES ('$email','$password','$usertype','$status');";
             if (insert_data($sql1)) 
             {
-                echo "<script>alert('Registration Successfull');</script>";
+                ?>
+                <script>
+                      Swal.fire({
+                          icon: 'success',
+                          text: 'Registration Sucessfull',
+                          didClose: () => {
+                              window.location.replace('index.html');
+                          }
+                      });
+                  </script>
+              <?php
             } 
             else 
             {
-                echo "<script>alert('Login Error');</script>";
+                ?>
+                <script>
+                      Swal.fire({
+                          icon: 'error',
+                          text: 'Login Error',
+                          didClose: () => {
+                              window.location.replace('index.html');
+                          }
+                      });
+                  </script>
+              <?php
             }
         } 
         else 
         {
-            echo"<script>alert('Registration Failed');</script>";
+            ?>
+            <script>
+                  Swal.fire({
+                      icon: 'error',
+                      text: 'Registration Failed',
+                      didClose: () => {
+                          window.location.replace('index.html');
+                      }
+                  });
+              </script>
+          <?php
         }
     }
     else 
     {
-        echo "<script>alert('Password mismatch');</script>";
+        ?>
+        <script>
+              Swal.fire({
+                  icon: 'warning',
+                  text: 'Password Mismatch',
+                  didClose: () => {
+                      window.location.replace('employeeregister.html');
+                  }
+              });
+          </script>
+      <?php
     }
 }
 else
 {
-     echo "<script>alert('Invalid User Details');</script>";
+    ?>
+    <script>
+          Swal.fire({
+              icon: 'warning',
+              text: 'Invalid User Details',
+              didClose: () => {
+                  window.location.replace('index.html');
+              }
+          });
+      </script>
+  <?php
 }
 
 ?>
 
 
+
+</body>
+<html>
 
 
