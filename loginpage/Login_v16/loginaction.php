@@ -126,10 +126,10 @@ if ($res > 0) {
       ?>
       <script>
             Swal.fire({
-                icon: 'error',
+                icon: 'success',
                 text: 'Employee Login Success',
                 didClose: () => {
-                    window.location.replace('../employee/index.php');
+                    window.location.replace('../../employee/index.php');
                 }
             });
         </script>
@@ -167,7 +167,17 @@ if ($res > 0) {
     }
   }
 } else {
-  echo "Invalid User";
+    ?>
+    <script>
+          Swal.fire({
+              icon: 'error',
+              text: 'Invalid User',
+              didClose: () => {
+                  window.location.replace('loginpage.html');
+              }
+          });
+      </script>
+  <?php
 }
 
 ?>

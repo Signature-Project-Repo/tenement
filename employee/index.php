@@ -1,7 +1,7 @@
 
 <?php 
 
-include 'header.html';
+include 'header.php';
 
 ?>
 
@@ -18,6 +18,16 @@ include 'header.html';
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <section>
+      <div class="container">
+        
+      <?php
+      echo $email;
+      ?>
+      
+      </div>
+    </section>
+   
 
    
   </main><!-- End #main -->
