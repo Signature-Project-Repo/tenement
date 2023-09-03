@@ -23,6 +23,10 @@ include 'header.php';
     <section>
       <div class="container">
         
+      <?php
+      echo $email;
+      ?>
+      
       </div>
     </section>
    

@@ -1,3 +1,17 @@
+<?php
+session_start();
+require '../connect.php';
+$email=$_SESSION['email'];
+$sql="SELECT * from user_register where email='$email'";
+
+
+$data=select_data($sql);
+$user=mysqli_fetch_assoc($data);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

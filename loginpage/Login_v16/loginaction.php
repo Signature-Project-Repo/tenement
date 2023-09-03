@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 <head>
     <script type="text/javascript" src="swal/jquery.min.js"></script>
@@ -15,6 +19,7 @@ $password = $_POST['password'];
 //echo "$P<br>";
 $sql1 = "SELECT * FROM loginpage WHERE email='$email' and password='$password'";
 $res = count_data($sql1);
+$_SESSION['email']=$email;
 if ($res > 0) {
 
   $sql2 = "SELECT* FROM loginpage WHERE email='$email'";
