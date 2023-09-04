@@ -65,7 +65,7 @@ if ($count_res == 0)
         if ($res) 
         {
             $usertype = 2;
-            $status = 1;
+            $status = 0;
 
             $sql1 = "INSERT INTO loginpage(email,password,usertype,status) VALUES ('$email','$password','$usertype','$status');";
             if (insert_data($sql1)) 
