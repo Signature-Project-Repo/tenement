@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2023 at 08:27 AM
+-- Generation Time: Sep 08, 2023 at 06:34 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,16 +40,19 @@ CREATE TABLE `employee_register` (
   `phonenumber` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `aadhar` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `employeeid` int(20) NOT NULL
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employee_register`
 --
 
-INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`, `employeeid`) VALUES
-('Abhishek', 'Vishnu', 'Df', 'As', 'kottayam', 'kerala', 2020, '2010-09-23', 'male', '7306759463', 'joelshibu914@gmail.c', '123456', '12', 0);
+INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`) VALUES
+('Abhishek', 'Vishnu', 'Df', 'As', 'ernakulam', 'kerala', 2020, '2010-09-15', 'male', '7894561230', 'joelshibu100@gmail.c', '123456', '12'),
+('Abhishek', 'Vishnu', 'Df', 'As', 'palakkad', 'kerala', 2020, '2010-09-01', 'male', '7894561230', 'rahul@gmail.com', '123456', '12'),
+('Rahul', 'Vishnu', 'Df', 'As', 'thrissur', 'kerala', 2020, '2010-09-17', 'male', '7894561230', 'abhishek@gmail.comm', '123456', '123'),
+('Abhishek', 'Vishnu', 'Df', 'As', 'kottayam', 'kerala', 2020, '2010-09-10', 'male', '7894561230', 'abhishek@gmail.com4', '123456', '123'),
+('Quinlan', 'Teegan', 'Petra', 'Fugit', 'alapuzha', 'kerala', 98486, '1995-04-02', 'femal', '1234567890', 'fovyqiram@mailinator', 'Quia voluptatibus nu', 'Pa$$w0rd!');
 
 -- --------------------------------------------------------
 
@@ -69,10 +72,18 @@ CREATE TABLE `loginpage` (
 --
 
 INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
-('joelshibu100@gmail.com', '1234', 1, 0),
-('joelshibu914@gmail.com', '12', 2, 0),
-('rahul@gmail.com', '12', 1, 0),
-('rahul@gmail.comm', '12', 1, 1);
+('abhishek@gmail.com4', '123', 2, 0),
+('abhishek@gmail.comm', '123', 2, 0),
+('admin@gmail.com', 'admin123', 0, 1),
+('bycynus@mailinator.com', 'Pa$$w0rd!', 1, 1),
+('dyzokiky@mailinator.com', 'Pa$$w0rd!', 1, 0),
+('fovyqiram@mailinator.com', 'Pa$$w0rd!', 2, 1),
+('gujivih@mailinator.com', 'Pa$$w0rd!', 1, 0),
+('joelshibu100@gmail.com', '12', 2, 0),
+('latonika@mailinator.com', 'Pa$$w0rd!', 1, 1),
+('novevyji@mailinator.com', 'Pa$$w0rd!', 1, 0),
+('qyba@mailinator.com', 'Pa$$w0rd!', 1, 0),
+('rahul@gmail.com', '12', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -97,19 +108,16 @@ CREATE TABLE `user_register` (
 --
 
 INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
-('Abhishek', 'Vishnu', 'kerala', 'kozhikode', '2010-09-02', 'male', 'joelshibu100@gmail.c', '1234567890', '1234'),
-('Abhishek', 'Vishnu', 'kerala', 'kannur', '2010-09-08', 'male', 'rahul@gmail.com', '1234567890', '12'),
-('Rahul', 'Vishnu', 'kerala', 'kasaragod', '2010-09-09', 'male', 'rahul@gmail.comm', '7306759463', '12');
+('Shelly', 'Chester', 'kerala', 'kasaragod', '2009-01-07', 'male', 'bycynus@mailinator.c', '9544131746', 'Pa$$w0rd!'),
+('Cody', 'Rudyard', 'kerala', 'kollam', '1974-08-09', 'femal', 'dyzokiky@mailinator.', '9544131746', 'Pa$$w0rd!'),
+('Sybill', 'Lyle', 'kerala', 'palakkad', '2000-02-07', 'other', 'gujivih@mailinator.c', '9544131746', 'Pa$$w0rd!'),
+('Libby', 'Claudia', 'kerala', 'wayanad', '1971-07-28', 'femal', 'latonika@mailinator.', '9544131746', 'Pa$$w0rd!'),
+('Glenna', 'Chava', 'kerala', 'kasaragod', '1982-08-27', 'male', 'novevyji@mailinator.', '9544131746', 'Pa$$w0rd!'),
+('Breanna', 'Aphrodite', 'kerala', 'palakkad', '1999-07-22', 'male', 'qyba@mailinator.com', '1234567890', 'Pa$$w0rd!');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `employee_register`
---
-ALTER TABLE `employee_register`
-  ADD PRIMARY KEY (`employeeid`);
 
 --
 -- Indexes for table `loginpage`
