@@ -237,12 +237,12 @@ $user=mysqli_fetch_assoc($data);
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Employee_Name</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $user['fname'];?> <?php echo $user['lname'];?></</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Employee_Name</h6>
+              <h6><?php echo $user['fname'];?> <?php echo $user['lname'];?></h6>
               <span>Employee</span>
             </li>
             <li>
@@ -384,7 +384,7 @@ $user=mysqli_fetch_assoc($data);
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>

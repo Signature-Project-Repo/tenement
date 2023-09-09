@@ -27,8 +27,8 @@ include 'header.php';
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>Kevin Anderson</h2>
-              <h3>Web Designer</h3>
+              <h2><?php echo $user['fname'];?> <?php echo $user['lname'];?></h2>
+              <h3>User</h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -55,9 +55,9 @@ include 'header.php';
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-                <li class="nav-item">
+               <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                </li>
+                </li>-->
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
@@ -67,44 +67,48 @@ include 'header.php';
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <h5 class="card-title">About</h5>
+                  <!--<h5 class="card-title">About</h5>
                   <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
-
+-->
                   <h5 class="card-title">Profile Details</h5>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    <div class="col-lg-3 col-md-4 label ">First Name</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['fname'];?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                    <div class="col-lg-3 col-md-4 label">Last Name</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['lname'];?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
+                    <div class="col-lg-3 col-md-4 label">State</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['state'];?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
+                    <div class="col-lg-3 col-md-4 label">District</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['district'];?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                    <div class="col-lg-3 col-md-4 label">DOB</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['dob'];?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    <div class="col-lg-3 col-md-4 label">Gender</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['gender'];?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['email'];?></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone Number</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $user['phonenumber'];?></div>
                   </div>
 
                 </div>
@@ -125,61 +129,67 @@ include 'header.php';
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                        <input name="fname" type="text" class="form-control" id="fname" value="<?php echo $user['fname'];?>">
                       </div>
                     </div>
-
+<!--
                     <div class="row mb-3">
                       <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
                       <div class="col-md-8 col-lg-9">
                         <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                       </div>
                     </div>
-
+-->
                     <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                      <label for="lname" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+                        <input name="lname" type="text" class="form-control" id="lname" value="<?php echo $user['lname'];?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                      <label for="state" class="col-md-4 col-lg-3 col-form-label">State</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
+                        <input name="state" type="text" class="form-control" id="state" value="<?php echo $user['state'];?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                      <label for="district" class="col-md-4 col-lg-3 col-form-label">District</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="USA">
+                        <input name="district" type="text" class="form-control" id="district" value="<?php echo $user['district'];?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                      <label for="dob" class="col-md-4 col-lg-3 col-form-label">DOB</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
+                        <input name="dob" type="text" class="form-control" id="dob" value="<?php echo $user['dob'];?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <label for="gender" class="col-md-4 col-lg-3 col-form-label">Gender</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                        <input name="gender" type="text" class="form-control" id="gender" value="<?php echo $user['gender'];?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                        <input name="email" type="email" class="form-control" id="email" value="<?php echo $user['email'];?>">
                       </div>
                     </div>
-
+                    <div class="row mb-3">
+                      <label for="phonenumber" class="col-md-4 col-lg-3 col-form-label">Phone Number</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="phonenumber" type="text" class="form-control" id="phonenumber" value="<?php echo $user['phonenumber'];?>">
+                      </div>
+                    </div>
+<!--
                     <div class="row mb-3">
                       <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
                       <div class="col-md-8 col-lg-9">
@@ -207,7 +217,7 @@ include 'header.php';
                         <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
                       </div>
                     </div>
-
+                        -->
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
