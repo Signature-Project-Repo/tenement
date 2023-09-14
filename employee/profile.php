@@ -132,7 +132,7 @@ include 'header.php';
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="php/profileaction.php" method="POST">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
@@ -182,14 +182,36 @@ include 'header.php';
                     <div class="row mb-3">
                       <label for="district" class="col-md-4 col-lg-3 col-form-label">District</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="district" type="text" class="form-control" id="district" value="<?php echo $user['district'];?>">
+                        <select name="district"  class="form-select" id="district">
+                        <option selected disabled>Select District</option>
+                        <option value="kasaragod">Kasaragod</option>
+                      <option value="kannur">Kannur</option>
+                      <option value="kozhikode">Kozhikode</option>
+                      <option value="wayanad">Wayanad</option>
+                      <option value="malappuram">Malappuram</option>
+                      <option value="palakkad">Palakkad</option>
+                      <option value="thrissur">Thrissur</option>
+                      <option value="ernakulam">Ernakulam</option>
+                      <option value="idukki">Idukki</option>
+                      <option value="kottayam">Kottayam</option>
+                      <option value="alapuzha">Alappuzha</option>
+                      <option value="pathanamthitta">Pathanamthitta</option>
+                      <option value="kollam">Kollam</option>
+                      <option value="thiruvanathupuram">Thiruvananthupuram</option>
+
+
+                                            </select>
                       </div>
                     </div>
+
 
                     <div class="row mb-3">
                       <label for="state" class="col-md-4 col-lg-3 col-form-label">State</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="state" type="text" class="form-control" id="state" value="<?php echo $user['state'];?>">
+                        <select name="state"  class="form-select" id="state" required>
+                        <option value="" disabled selected>Select State</option>
+                      <option value="kerala">Kerala</option>
+                    </select>
                       </div>
                     </div>
 
@@ -205,24 +227,33 @@ include 'header.php';
                         <input name="dob" type="text" class="form-control" id="dob" value="<?php echo $user['dob'];?>">
                       </div>
                     </div>
+  
                     <div class="row mb-3">
-                      <label for="gender" class="col-md-4 col-lg-3 col-form-label">Gender</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="gender" type="text" class="form-control" id="gender" value="<?php echo $user['gender'];?>">
-                      </div>
-                    </div>
+                                        <label for="gender" class="col-md-4 col-lg-3 col-form-label">Gender</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <select name="gender" id="gender" class="form-select" required>
+                                                <option selected disabled>Select Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="others">Others</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
                     <div class="row mb-3">
                       <label for="phonenumber" class="col-md-4 col-lg-3 col-form-label">Phone Number</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="phonenumber" type="text" class="form-control" id="phonenumber" value="<?php echo $user['phonenumber'];?>">
                       </div>
                     </div>
+<!--
                     <div class="row mb-3">
                       <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="email" type="email" class="form-control" id="email" value="<?php echo $user['email'];?>">
                       </div>
                     </div>
+-->
                     <div class="row mb-3">
                       <label for="aadhar" class="col-md-4 col-lg-3 col-form-label">Aadhar</label>
                       <div class="col-md-8 col-lg-9">

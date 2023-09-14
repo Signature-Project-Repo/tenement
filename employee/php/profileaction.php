@@ -18,14 +18,18 @@ $email=$_SESSION['email'];
 
 $fname=$_POST['fname'];
 $lname=$_POST['lname'];
-$state=$_POST['state'];
+$housename=$_POST['housename'];
+$street=$_POST['street'];
 $district=$_POST['district'];
+$state=$_POST['state'];
+$zip=$_POST['zip'];
 $dob=$_POST['dob'];
 $gender=$_POST['gender'];
 $phonenumber=$_POST['phonenumber'];
+$aadhar=$_POST['aadhar'];
 
 
-$sql="UPDATE `user_register` SET `fname`='$fname',`lname`='$lname',`state`='$state',`district`='$district',`dob`='$dob',`gender`='$gender',`phonenumber`='$phonenumber' WHERE  email='$email'";
+$sql="UPDATE `employee_register` SET `fname`='$fname',`lname`='$lname',`housename`='$housename',`street`='$street',`district`='$district',`state`='$state',`zip`='$zip',`dob`='$dob',`gender`='$gender',`phonenumber`='$phonenumber',`aadhar`='$aadhar' WHERE  email='$email'";
 //echo $sql;
 
 
