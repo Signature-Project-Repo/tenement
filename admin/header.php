@@ -1,3 +1,27 @@
+<?php
+require '../connect.php';
+
+
+session_start();
+
+
+
+$email=$_SESSION['email'];
+
+$sql="SELECT * FROM `loginpage` WHERE email='$email'";
+
+$data=select_data($sql);
+
+$user=mysqli_fetch_assoc($data);
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -227,7 +251,7 @@
 
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="php/logoutaction.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -257,27 +281,27 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-journal-text"></i><span>User</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
+            <a href="userlist.php">
+              <i class="bi bi-circle"></i><span>User List</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="pendinguser.php">
+              <i class="bi bi-circle"></i><span>Pending User</span>
             </a>
           </li>
           <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
+            <a href="suspendeduser.php">
+              <i class="bi bi-circle"></i><span>Suspended User</span>
             </a>
           </li>
           <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
+            <a href="rejecteduser.php">
+              <i class="bi bi-circle"></i><span>Rejected User</span>
             </a>
           </li>
         </ul>
@@ -285,22 +309,32 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Employee</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+            <a href="employeelist.php">
+              <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+            <a href="pendingemployee.php">
+              <i class="bi bi-circle"></i><span>Pending Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="suspendedemployee.php">
+              <i class="bi bi-circle"></i><span>Suspended Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="rejectedemployee.php">
+              <i class="bi bi-circle"></i><span>Rejected Employee</span>
             </a>
           </li>
         </ul>
       </li><!-- End Tables Nav -->
-
+<!--
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -322,8 +356,9 @@
             </a>
           </li>
         </ul>
+-->
       </li><!-- End Charts Nav -->
-
+<!--
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -345,6 +380,7 @@
             </a>
           </li>
         </ul>
+-->
       </li><!-- End Icons Nav -->
 
       <li class="nav-heading">Pages</li>

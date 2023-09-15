@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 06:59 PM
+-- Generation Time: Sep 15, 2023 at 08:21 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,7 +48,11 @@ CREATE TABLE `employee_register` (
 --
 
 INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`) VALUES
-('Dantem', 'Uriel', 'Maia', 'Exercitationem', 'kottayam', 'kerala', 78445, '2004-01-21', 'female', '9544131746', 'jewo@mailinator.com', '9544797545', 'Pa$$w0rd!');
+('Dantem', 'Uriel', 'Maia', 'Exercitationem', 'kottayam', 'kerala', 78445, '2004-01-21', 'female', '9544131746', 'jewo@mailinator.com', '9544797545', '147'),
+('Jenett', 'Clio', 'Naomi', 'Irure', 'malappuram', 'kerala', 91155, '2000-01-14', 'male', '8583365478', 'fujyv@mailinator.com', '1245543456', 'Pa$$w0rd!'),
+('Ryder', 'Ishmael', 'Hile', 'Accusamus', 'idukki', 'kerala', 21403, '1010-09-01', 'male', '9544131746', 'xyqoguxy@mailinator.com', '9544797545', 'Pa$$w0rd!'),
+('Aiko', 'Isadora', 'Roary', 'Consequat', 'thrissur', 'kerala', 96528, '2010-09-28', 'male', '9544131746', 'higijeka@mailinator.com', '9544797545', 'Pa$$w0rd!'),
+('Jamalia Bowen', 'Lewis Holt', 'Jack Sheppard', 'Quae', 'thiruvanathupuram', 'kerala', 59579, '1977-05-25', 'male', '9544131746', 'nizozucasy@mailinator.com', '9544797545', 'Pa$$w0rd!');
 
 -- --------------------------------------------------------
 
@@ -69,9 +73,15 @@ CREATE TABLE `loginpage` (
 
 INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('admin@gmail.com', 'admin123', 0, 1),
-('jewo@mailinator.com', 'Pa$$w0rd!', 2, 1),
-('synuje@mailinator.com', 'Pa$$w0rd!', 1, 1),
-('wizinib@mailinator.com', 'Pa$$w0rd!', 1, 0);
+('fujyv@mailinator.com', 'Pa$$w0rd!', 2, 1),
+('higijeka@mailinator.com', 'Pa$$w0rd!', 2, -1),
+('jewo@mailinator.com', '147', 2, 1),
+('kafakagyn@mailinator.com', 'Pa$$w0rd!', 1, -1),
+('nizozucasy@mailinator.com', 'Pa$$w0rd!', 2, -1),
+('qysisere@mailinator.com', 'Pa$$w0rd!', 1, 1),
+('synuje@mailinator.com', '123456', 1, 1),
+('wizinib@mailinator.com', 'Pa$$w0rd!', 1, 1),
+('xyqoguxy@mailinator.com', 'Pa$$w0rd!', 2, -1);
 
 -- --------------------------------------------------------
 
@@ -96,7 +106,9 @@ CREATE TABLE `user_register` (
 --
 
 INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
-('Ivory', 'Georgia', 'kerala', 'thrissur', '2010-09-03', 'female', 'synuje@mailinator.com', '9544131746', 'Pa$$w0rd!'),
+('Nomlanga Sharpe', 'Cameran Sykes', 'kerala', 'kasaragod', '2002-10-03', 'other', 'kafakagyn@mailinator.com', '9544131746', 'Pa$$w0rd!'),
+('Jarrod', 'Whoopi', 'kerala', 'kottayam', '1999-11-17', 'female', 'qysisere@mailinator.com', '8583365478', 'Pa$$w0rd!'),
+('Ivory', 'Georgia', 'kerala', 'thrissur', '2010-09-03', 'female', 'synuje@mailinator.com', '9544131746', '123456'),
 ('Brandon', 'Abraham', 'kerala', 'kasaragod', '1985-01-09', 'female', 'wizinib@mailinator.com', '9544131746', 'Pa$$w0rd!');
 
 --
