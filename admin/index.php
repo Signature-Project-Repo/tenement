@@ -1,6 +1,9 @@
 <?php
+session_start();
 
 include 'header.php';
+$email=$_SESSION['email'];
+
 
 ?>
 
@@ -31,17 +34,17 @@ include 'header.php';
             <h5 class="card-title">Labels Form</h5>
 
 
-            <form class="row g-3">
+            <form class="row g-3" action="php/add.php" method="POST">
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                  <label for="floatingName">Services</label>
+                  <input type="text" class="form-control" name="services" placeholder="Your Name">
+                  <label for="services">Services</label>
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
+                  <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;"></textarea>
                   <label for="floatingTextarea">Description</label>
                 </div>
               </div>
@@ -69,6 +72,7 @@ include 'header.php';
               <thead>
                 <tr>
                   <th scope="col">Sl No.</th>
+                  
               
                   <th scope="col">Service</th>
                   <th scope="col">Description</th>
@@ -78,13 +82,21 @@ include 'header.php';
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
+                <?php
+                $sql="SELECT * FROM items ";
+                $data=select_data($sql);
+                $n=1;
+                while($row=mysqli_fetch_assoc($data)){
+                  ?>
+
+                  <th scope="row"><?php echo $n++?></th>
+                  <td><?php echo $row['services']?></td>
+                  <td><?php echo $row['description']?></td>
+                
                 </tr>
-          
+          <?php
+                }
+                ?>
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
