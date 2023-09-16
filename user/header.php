@@ -283,13 +283,13 @@ $user=mysqli_fetch_assoc($data);
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>New Complaints</span>
+            <a href="newcomplaint.php">
+              <i class="bi bi-circle"></i><span>New Complaint</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="mycomplaints.php">
+              <i class="bi bi-circle"></i><span>My Complaints</span>
             </a>
           </li>
     

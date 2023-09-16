@@ -86,12 +86,12 @@ $email=$_SESSION['email'];
                 $sql="SELECT * FROM items ";
                 $data=select_data($sql);
                 $n=1;
-                while($row=mysqli_fetch_assoc($data)){
+                while($user=mysqli_fetch_assoc($data)){
                   ?>
 
                   <th scope="row"><?php echo $n++?></th>
-                  <td><?php echo $row['services']?></td>
-                  <td><?php echo $row['description']?></td>
+                  <td><?php echo $user['services']?></td>
+                  <td><?php echo $user['description']?></td>
                 
                 </tr>
           <?php
