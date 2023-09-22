@@ -334,29 +334,30 @@ $user=mysqli_fetch_assoc($data);
           </li>
         </ul>
       </li><!-- End Tables Nav -->
-<!--
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bar-chart"></i><span>Complaint Management</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
+            <a href="mycomplaints.php">
+              <i class="bi bi-circle"></i><span>User Complaints</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
+            <a href="resolvedcomplaints.php">
+              <i class="bi bi-circle"></i><span>Resolved Complaints</span>
             </a>
           </li>
-          <li>
+          <!--<li>
             <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
+              <i class="bi bi-circle"></i><span>#</span>
             </a>
           </li>
         </ul>
 -->
+
       </li><!-- End Charts Nav -->
 <!--
       <li class="nav-item">
