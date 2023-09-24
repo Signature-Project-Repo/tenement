@@ -9,10 +9,10 @@ $email=$_SESSION ['email'];
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>My Complaints</h1>
+      <h1>Resolved Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">User</a></li>
+          <li class="breadcrumb-item"><a href="index.php">Complaint Management</a></li>
           <li class="breadcrumb-item active">Complaints</li>
         </ol>
       </nav>
@@ -40,12 +40,13 @@ $email=$_SESSION ['email'];
                     <th scope="col">Description</th>
                     <th scope="col">Priority</th>
                     <th scope="col">Date</th>
+                    <th scope="col">Email</th>
                   </tr>
                 </thead>
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM `complaints` WHERE reply='0'";
+               $sql = "SELECT * FROM `complaints` WHERE  reply NOT IN ('0','1') ";
              // echo $sql;
 
                 $data=select_data($sql);
@@ -61,6 +62,8 @@ $email=$_SESSION ['email'];
                  <td> <?php echo $row['description'] ?></td>
                  <td><?php echo $row['priority'] ?></td>
                  <td><?php echo $row['date']?></td>
+                 <td><?php echo $row['email']?></td>
+    
                      
 
                  </tr>
@@ -95,6 +98,8 @@ $email=$_SESSION ['email'];
 
       </div>
     </section>
+
+
 
   </main><!-- End #main -->
 

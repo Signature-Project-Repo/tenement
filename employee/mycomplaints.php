@@ -12,7 +12,7 @@ $email=$_SESSION ['email'];
       <h1>My Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">User</a></li>
+          <li class="breadcrumb-item"><a href="index.php">Employee</a></li>
           <li class="breadcrumb-item active">Complaints</li>
         </ol>
       </nav>
@@ -45,7 +45,7 @@ $email=$_SESSION ['email'];
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM `complaints` WHERE reply='0'";
+               $sql = "SELECT * FROM `complaints` WHERE reply='1'";
              // echo $sql;
 
                 $data=select_data($sql);

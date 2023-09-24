@@ -17,7 +17,7 @@ $title=$_POST['title'];
 $description=$_POST['description'];
 $priority=$_POST['priority'];
 $date=$_POST['date'];
-$reply=0;
+$reply=1;
 
 
 $sql="INSERT INTO `complaints` (`email`,`title`,`description`,`priority`,`date`,`reply`)VALUES('$email','$title','$description','$priority','$date','$reply')";

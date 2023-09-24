@@ -40,6 +40,7 @@ $email=$_SESSION ['email'];
                     <th scope="col">Description</th>
                     <th scope="col">Priority</th>
                     <th scope="col">Date</th>
+                    <th scope="col">Email</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -61,6 +62,7 @@ $email=$_SESSION ['email'];
                  <td> <?php echo $row['description'] ?></td>
                  <td><?php echo $row['priority'] ?></td>
                  <td><?php echo $row['date']?></td>
+                 <td><?php echo $row['email']?></td>
     
                      
 

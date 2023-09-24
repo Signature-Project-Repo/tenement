@@ -350,6 +350,16 @@ $user=mysqli_fetch_assoc($data);
               <i class="bi bi-circle"></i><span>Resolved Complaints</span>
             </a>
           </li>
+          <li>
+            <a href="employeecomplaints.php">
+              <i class="bi bi-circle"></i><span>Employee Complaints</span>
+            </a>
+          </li>
+          <li>
+            <a href="resolvedemployeecomplaints.php">
+              <i class="bi bi-circle"></i><span>Resolved Complaints</span>
+            </a>
+          </li>
           <!--<li>
             <a href="charts-echarts.html">
               <i class="bi bi-circle"></i><span>#</span>
