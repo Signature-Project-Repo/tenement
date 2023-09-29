@@ -17,10 +17,11 @@ $title=$_POST['title'];
 $description=$_POST['description'];
 $priority=$_POST['priority'];
 $date=$_POST['date'];
-$reply=1;
+$reply=0;
+$status=1;
 
 
-$sql="INSERT INTO `complaints` (`email`,`title`,`description`,`priority`,`date`,`reply`)VALUES('$email','$title','$description','$priority','$date','$reply')";
+$sql="INSERT INTO `complaints` (`email`,`title`,`description`,`priority`,`date`,`reply`,`status`)VALUES('$email','$title','$description','$priority','$date','$reply',$status)";
 //echo $sql;
 insert_data($sql);
 ?>

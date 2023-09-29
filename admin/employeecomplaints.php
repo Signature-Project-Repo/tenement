@@ -46,7 +46,7 @@ $email=$_SESSION ['email'];
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM complaints WHERE reply='1'";
+               $sql = "SELECT * FROM complaints WHERE reply='0' AND status='1';";
              // echo $sql;
 
                 $data=select_data($sql);

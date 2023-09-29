@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2023 at 08:21 PM
+-- Generation Time: Sep 29, 2023 at 08:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `tenement`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `complaints`
+--
+
+CREATE TABLE `complaints` (
+  `id` int(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `priority` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `reply` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `complaints`
+--
+
+INSERT INTO `complaints` (`id`, `title`, `description`, `priority`, `date`, `email`, `reply`) VALUES
+(1, 'Velit non dolorem mi', 'Aut fuga Cillum rer', 'medium', '2023-09-24', 'qysisere@mailinator.com', 'ok'),
+(2, 'Iure enim commodi qu', 'Doloribus in delenit', 'low', '2023-09-24', 'qysisere@mailinator.com', '0'),
+(3, 'Aut amet adipisicin', 'Quo aute qui dolore ', 'medium', '2023-09-24', 'qysisere@mailinator.com', '0'),
+(4, 'Vel eos enim consequ', 'Quis ullamco libero ', 'high', '2023-09-24', 'fujyv@mailinator.com', 'ougiug'),
+(5, 'Id quis do voluptate', 'Sit totam minus aut ', 'low', '2023-09-24', 'fujyv@mailinator.com', '1');
 
 -- --------------------------------------------------------
 
@@ -57,6 +84,32 @@ INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `distr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(50) NOT NULL,
+  `services` varchar(100) NOT NULL,
+  `description` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`id`, `services`, `description`) VALUES
+(1, 'Corporis explicabo ', 'Dolorem earum omnis '),
+(2, 'Corporis explicabo ', 'Dolorem earum omnis '),
+(3, 'Cum necessitatibus q', 'Dolorum dolorem pari'),
+(4, 'Exercitationem eu ma', 'Natus rerum magni au'),
+(5, 'Consequatur velit do', 'Ducimus fugit face'),
+(6, 'Quibusdam id quia es', 'Sed in quo nihil in '),
+(7, 'Corrupti tenetur es', 'Ea exercitation volu'),
+(8, 'Veniam ullamco illu', 'Assumenda omnis nihi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `loginpage`
 --
 
@@ -80,6 +133,7 @@ INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('nizozucasy@mailinator.com', 'Pa$$w0rd!', 2, -1),
 ('qysisere@mailinator.com', 'Pa$$w0rd!', 1, 1),
 ('synuje@mailinator.com', '123456', 1, 1),
+('vyqovoqe@mailinator.com', 'Pa$$w0rd!', 1, 1),
 ('wizinib@mailinator.com', 'Pa$$w0rd!', 1, 1),
 ('xyqoguxy@mailinator.com', 'Pa$$w0rd!', 2, -1);
 
@@ -109,11 +163,24 @@ INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gend
 ('Nomlanga Sharpe', 'Cameran Sykes', 'kerala', 'kasaragod', '2002-10-03', 'other', 'kafakagyn@mailinator.com', '9544131746', 'Pa$$w0rd!'),
 ('Jarrod', 'Whoopi', 'kerala', 'kottayam', '1999-11-17', 'female', 'qysisere@mailinator.com', '8583365478', 'Pa$$w0rd!'),
 ('Ivory', 'Georgia', 'kerala', 'thrissur', '2010-09-03', 'female', 'synuje@mailinator.com', '9544131746', '123456'),
+('Shelby Sandoval', 'Raja Jennings', 'kerala', 'kollam', '1989-12-27', 'other', 'vyqovoqe@mailinator.com', '1234567890', 'Pa$$w0rd!'),
 ('Brandon', 'Abraham', 'kerala', 'kasaragod', '1985-01-09', 'female', 'wizinib@mailinator.com', '9544131746', 'Pa$$w0rd!');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `complaints`
+--
+ALTER TABLE `complaints`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `loginpage`
@@ -126,6 +193,22 @@ ALTER TABLE `loginpage`
 --
 ALTER TABLE `user_register`
   ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `complaints`
+--
+ALTER TABLE `complaints`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
