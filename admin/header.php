@@ -309,7 +309,7 @@ $user=mysqli_fetch_assoc($data);
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="ri-anticlockwise-2-line"></i><span>Employee</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
