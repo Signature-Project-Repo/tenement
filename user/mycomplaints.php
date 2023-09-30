@@ -12,7 +12,7 @@ $email=$_SESSION ['email'];
       <h1>My Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">User</a></li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
           <li class="breadcrumb-item active">Complaints</li>
         </ol>
       </nav>

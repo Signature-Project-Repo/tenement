@@ -12,11 +12,11 @@ $email=$_SESSION['email'];
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Form</h1>
+    <h1>New Service</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">Form</li>
+        <li class="breadcrumb-item active">New Service</li>
       </ol>
     </nav>
 
@@ -28,7 +28,7 @@ $email=$_SESSION['email'];
    
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">New Form</h5>
+              <h5 class="card-title">New Service</h5>
 
               <!-- Floating Labels Form -->
             
@@ -62,14 +62,14 @@ $email=$_SESSION['email'];
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" name="experience" placeholder="Experience">
+                    <input type="number" class="form-control" name="experience" placeholder="Experience" $pattern ='/^\d+$/';>
                     <label for="experience">Year Of Experience</label>
                   </div>
                 </div>
  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="rate" placeholder="Rate">
+                  <input type="number" class="form-control" name="rate" placeholder="Rate">
                     <label for="rate">Rate</label>
                   </div>
                 </div>

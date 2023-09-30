@@ -12,8 +12,8 @@ $email=$_SESSION ['email'];
       <h1>Resolved Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Complaint Management</a></li>
-          <li class="breadcrumb-item active">Complaints</li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+          <li class="breadcrumb-item active">Resolved Complaints</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

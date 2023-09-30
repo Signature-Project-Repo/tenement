@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2023 at 08:31 AM
+-- Generation Time: Sep 29, 2023 at 09:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `addservice`
+--
+
+CREATE TABLE `addservice` (
+  `serviceid` int(100) NOT NULL,
+  `services` varchar(100) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `experience` varchar(100) NOT NULL,
+  `rate` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `complaints`
 --
 
@@ -34,19 +48,19 @@ CREATE TABLE `complaints` (
   `priority` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `reply` varchar(100) NOT NULL
+  `reply` varchar(100) NOT NULL,
+  `status` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `complaints`
 --
 
-INSERT INTO `complaints` (`id`, `title`, `description`, `priority`, `date`, `email`, `reply`) VALUES
-(1, 'Velit non dolorem mi', 'Aut fuga Cillum rer', 'medium', '2023-09-24', 'qysisere@mailinator.com', 'ok'),
-(2, 'Iure enim commodi qu', 'Doloribus in delenit', 'low', '2023-09-24', 'qysisere@mailinator.com', '0'),
-(3, 'Aut amet adipisicin', 'Quo aute qui dolore ', 'medium', '2023-09-24', 'qysisere@mailinator.com', '0'),
-(4, 'Vel eos enim consequ', 'Quis ullamco libero ', 'high', '2023-09-24', 'fujyv@mailinator.com', 'ougiug'),
-(5, 'Id quis do voluptate', 'Sit totam minus aut ', 'low', '2023-09-24', 'fujyv@mailinator.com', '1');
+INSERT INTO `complaints` (`id`, `title`, `description`, `priority`, `date`, `email`, `reply`, `status`) VALUES
+(1, 'Non magna eum eum so', 'Non excepturi accusa', 'medium', '2023-09-29', 'joelshibu100@gmail.com', 'ok', 0),
+(2, 'Molestiae facere nis', 'Voluptas excepturi a', 'low', '2023-09-29', 'joelshibu100@gmail.com', '0', 0),
+(3, 'Adipisicing cupidata', 'Non illum est dele', 'high', '2023-09-29', 'sivaji123@gmail.com', 'mm', 1),
+(4, 'Culpa quia animi n', 'Numquam id corporis ', 'low', '2023-09-29', 'sivaji123@gmail.com', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -79,7 +93,8 @@ INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `distr
 ('Jenett', 'Clio', 'Naomi', 'Irure', 'malappuram', 'kerala', 91155, '2000-01-14', 'male', '8583365478', 'fujyv@mailinator.com', '1245543456', 'Pa$$w0rd!'),
 ('Ryder', 'Ishmael', 'Hile', 'Accusamus', 'idukki', 'kerala', 21403, '1010-09-01', 'male', '9544131746', 'xyqoguxy@mailinator.com', '9544797545', 'Pa$$w0rd!'),
 ('Aiko', 'Isadora', 'Roary', 'Consequat', 'thrissur', 'kerala', 96528, '2010-09-28', 'male', '9544131746', 'higijeka@mailinator.com', '9544797545', 'Pa$$w0rd!'),
-('Jamalia Bowen', 'Lewis Holt', 'Jack Sheppard', 'Quae', 'thiruvanathupuram', 'kerala', 59579, '1977-05-25', 'male', '9544131746', 'nizozucasy@mailinator.com', '9544797545', 'Pa$$w0rd!');
+('Jamalia Bowen', 'Lewis Holt', 'Jack Sheppard', 'Quae', 'thiruvanathupuram', 'kerala', 59579, '1977-05-25', 'male', '9544131746', 'nizozucasy@mailinator.com', '9544797545', 'Pa$$w0rd!'),
+('Sopoline Jackson', 'Desiree Byers', 'Raven Bradley', 'Consequatur', 'thrissur', 'kerala', 27289, '1990-02-09', 'male', '9544131746', 'sivaji123@gmail.com', '9544797545', '123');
 
 -- --------------------------------------------------------
 
@@ -98,14 +113,9 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `services`, `description`) VALUES
-(1, 'Corporis explicabo ', 'Dolorem earum omnis '),
-(2, 'Corporis explicabo ', 'Dolorem earum omnis '),
-(3, 'Cum necessitatibus q', 'Dolorum dolorem pari'),
-(4, 'Exercitationem eu ma', 'Natus rerum magni au'),
-(5, 'Consequatur velit do', 'Ducimus fugit face'),
-(6, 'Quibusdam id quia es', 'Sed in quo nihil in '),
-(7, 'Corrupti tenetur es', 'Ea exercitation volu'),
-(8, 'Veniam ullamco illu', 'Assumenda omnis nihi');
+(1, 'Electrician', 'Electrical Works'),
+(2, 'Plumbing', 'Plumbing Works\r\n'),
+(3, 'Painting', 'Painting Works');
 
 -- --------------------------------------------------------
 
@@ -129,9 +139,11 @@ INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('fujyv@mailinator.com', 'Pa$$w0rd!', 2, 1),
 ('higijeka@mailinator.com', 'Pa$$w0rd!', 2, -1),
 ('jewo@mailinator.com', '147', 2, 1),
+('joelshibu100@gmail.com', '100', 1, 1),
 ('kafakagyn@mailinator.com', 'Pa$$w0rd!', 1, -1),
 ('nizozucasy@mailinator.com', 'Pa$$w0rd!', 2, -1),
 ('qysisere@mailinator.com', 'Pa$$w0rd!', 1, 1),
+('sivaji123@gmail.com', '123', 2, 1),
 ('synuje@mailinator.com', '123456', 1, 1),
 ('vyqovoqe@mailinator.com', 'Pa$$w0rd!', 1, 1),
 ('wizinib@mailinator.com', 'Pa$$w0rd!', 1, 1),
@@ -160,6 +172,7 @@ CREATE TABLE `user_register` (
 --
 
 INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
+('Heather Kemp', 'Davis Rosario', 'kerala', 'thiruvanathupuram', '1987-01-10', 'female', 'joelshibu100@gmail.com', '9544131746', '100'),
 ('Nomlanga Sharpe', 'Cameran Sykes', 'kerala', 'kasaragod', '2002-10-03', 'other', 'kafakagyn@mailinator.com', '9544131746', 'Pa$$w0rd!'),
 ('Jarrod', 'Whoopi', 'kerala', 'kottayam', '1999-11-17', 'female', 'qysisere@mailinator.com', '8583365478', 'Pa$$w0rd!'),
 ('Ivory', 'Georgia', 'kerala', 'thrissur', '2010-09-03', 'female', 'synuje@mailinator.com', '9544131746', '123456'),
@@ -169,6 +182,12 @@ INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gend
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `addservice`
+--
+ALTER TABLE `addservice`
+  ADD PRIMARY KEY (`serviceid`);
 
 --
 -- Indexes for table `complaints`
@@ -199,16 +218,22 @@ ALTER TABLE `user_register`
 --
 
 --
+-- AUTO_INCREMENT for table `addservice`
+--
+ALTER TABLE `addservice`
+  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

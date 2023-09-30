@@ -22,7 +22,7 @@ $description = $_POST['description'];
             icon: 'success',
             text: 'Item Added',
             didClose: () => {
-              window.location.replace('../index.php');
+              window.location.replace('../service.php');
             }
           });
           </script>

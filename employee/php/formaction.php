@@ -35,7 +35,7 @@ if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file))
     <script>
            Swal.fire({
           icon: 'success',
-          text: 'Registration Completed !!',
+          text: 'Service Added',
           didClose: () => {
         window.location.replace('../newform.php');
           }
@@ -50,7 +50,7 @@ else
     <script>
       Swal.fire({
         icon: 'error',
-        text: 'Registration Error',
+        text: 'Service Add Failure',
         didClose: () => {
           window.location.replace('../newform.php');
         }

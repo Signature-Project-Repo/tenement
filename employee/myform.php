@@ -7,11 +7,11 @@ $email_id = $_SESSION['email_id'];
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>My Form</h1>
+    <h1>My Services</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">My Form</li>
+        <li class="breadcrumb-item active">My Services</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->

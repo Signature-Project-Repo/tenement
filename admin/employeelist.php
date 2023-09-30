@@ -12,8 +12,8 @@ $email=$_SESSION ['email'];
       <h1>Employee List</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
-          <li class="breadcrumb-item active">employeelist</li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+          <li class="breadcrumb-item active">Employee List</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
