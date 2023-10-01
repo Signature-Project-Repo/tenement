@@ -1,20 +1,43 @@
-<?php
-require 'header.php';
 
-$email_id = $_SESSION['email_id'];
+<?php
+
+
+require 'header.php';
+session_start();
+
+$serviceid=$_GET['serviceid'];
+
+
+$sql0="SELECT * from addservice where serviceid='$serviceid' ";
+$data0=select_data($sql0);
+$row=mysqli_fetch_assoc($data0);
 ?>
 
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>My Services</h1>
+    <h1>Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">My Services</li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
+
+  
+<?php
+
+  $sql = "SELECT * FROM addservice a,items r where r.id=a.serviceid";
+
+$data = select_data($sql);
+$row1=mysqli_fetch_assoc($data);
+?>
+
+  
+
+
+
 
 
 
@@ -22,21 +45,15 @@ $email_id = $_SESSION['email_id'];
   <section class="section">
     <div class="row align-items-top">
 
-      <?php
+     
+    <div class="card mb-3">
+     <div class="row g-0">
 
-      $sql = "SELECT * FROM addservice";
-
-      $data = select_data($sql);
-
-
-
-      while ($row = mysqli_fetch_assoc($data)) {
-        $description = substr($row['description'], 0, 100);
-      ?>
         <div class="col-lg-4">
 
 
-          <div class="card">
+          
+        <div class="card">
             <img src="../upload/service/add_service_<?php echo $row['serviceid']; ?>.jpg" class="card-img-top" alt="...">
             <div class="card-body">
 
@@ -59,37 +76,35 @@ $email_id = $_SESSION['email_id'];
 
 
 
-
-              <div class="row mt-2">
-                <div class="col-6 btn-group">
-                 <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
-                  <a href="#" class="btn btn-danger btn-sm"><i class=" ri-delete-bin-5-fill"></i> Remove </a>
-                </div>
+              <div class="btn-group">
+                        <a href="book1.php" class="btn btn-success btn-sm">Book Now</a>
+                        
+                      </div>
 
 
-              </div>
+
 
             </div>
-          </div><!-- End Card with an image on top -->
-
+          </div>
         </div>
-      <?php
-      }
+        <!-- End Card with an image on top -->
 
-      ?>
+     
+
 
 
     </div>
-
 
   </section>
 
 
 
+
+
 </main><!-- End #main -->
+
+
 <?php
-
-
 
 require 'footer.html';
 

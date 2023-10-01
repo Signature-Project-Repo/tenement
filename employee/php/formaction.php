@@ -37,7 +37,7 @@ if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file))
           icon: 'success',
           text: 'Service Added',
           didClose: () => {
-        window.location.replace('../newform.php');
+        window.location.replace('../myform.php');
           }
         });
     </script>

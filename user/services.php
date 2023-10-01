@@ -1,17 +1,17 @@
 <?php
 require 'header.php';
 
-$email_id = $_SESSION['email_id'];
+$email = $_SESSION['email'];
 ?>
 
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>My Services</h1>
+    <h1>Services</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">My Services</li>
+        <li class="breadcrumb-item active">Services</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -62,8 +62,7 @@ $email_id = $_SESSION['email_id'];
 
               <div class="row mt-2">
                 <div class="col-6 btn-group">
-                 <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
-                  <a href="#" class="btn btn-danger btn-sm"><i class=" ri-delete-bin-5-fill"></i> Remove </a>
+                 <a href="serviceaction.php" class="btn btn-primary btn-sm"> Book Now</a>
                 </div>
 
 
