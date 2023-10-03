@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
 
-$email_id = $_SESSION['email_id'];
+$email_id = $_SESSION['email'];
 ?>
 
 <main id="main" class="main">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2023 at 09:22 PM
+-- Generation Time: Oct 03, 2023 at 08:45 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,10 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `addservice` (
   `serviceid` int(100) NOT NULL,
   `services` varchar(100) NOT NULL,
-  `description` varchar(200) NOT NULL,
+  `description` varchar(500) NOT NULL,
   `experience` varchar(100) NOT NULL,
   `rate` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `addservice`
+--
+
+INSERT INTO `addservice` (`serviceid`, `services`, `description`, `experience`, `rate`) VALUES
+(1, 'Electrician', 'Electricians install, maintain, and repair electrical power, communications, lighting, and control systems in homes, businesses, and factories.', '12', '1200'),
+(2, 'Plumbing', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '10', '2000');
 
 -- --------------------------------------------------------
 
@@ -221,7 +229,7 @@ ALTER TABLE `user_register`
 -- AUTO_INCREMENT for table `addservice`
 --
 ALTER TABLE `addservice`
-  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `complaints`
