@@ -62,7 +62,7 @@ $email_id = $_SESSION['email'];
 
               <div class="row mt-2">
                 <div class="col-6 btn-group">
-                 <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
+                 <a href="editform.php" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
                   <a href="#" class="btn btn-danger btn-sm"><i class=" ri-delete-bin-5-fill"></i> Remove </a>
                 </div>
 

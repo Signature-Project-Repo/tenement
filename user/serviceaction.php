@@ -1,32 +1,21 @@
-
 <?php
-
-
 require 'header.php';
 
+$email = $_SESSION['email'];
 $serviceid=$_GET['serviceid'];
-
-
-$sql0="SELECT * from addservice where serviceid='$serviceid' ";
-$data0=select_data($sql0);
-$row=mysqli_fetch_assoc($data0);
-
 ?>
+
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Dashboard</h1>
+    <h1>Services</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active">Book Services</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
-  
-
-
-
 
 
 
@@ -34,63 +23,73 @@ $row=mysqli_fetch_assoc($data0);
   <section class="section">
     <div class="row align-items-top">
 
-     
-    <div class="card mb-3">
-     <div class="row g-0">
+      <?php
 
+      $sql = "SELECT * FROM addservice WHERE serviceid='$serviceid'";
+
+      $data = select_data($sql);
+
+
+
+      $row = mysqli_fetch_assoc($data)
+      
+      ?>
         <div class="col-lg-4">
 
 
-          
+          <div class="card">
             <img src="../upload/service/add_service_<?php echo $row['serviceid']; ?>.jpg" class="card-img-top" alt="..." height="">
-</div>
-<div class="col-md-8">
             <div class="card-body">
 
-              <p class="card-title" style="font-size: 25px;padding-bottom:0px;margin-bottom:0px"><?php echo $row['services'] ?></p>
-              <p style="font-size: large;margin:0 0 5px;"> <span class="badge bg-success">4.5 <i class="bi bi-star-fill text-warning"></i></span></p>
-              <p class="card-text mb-2" style="text-align: justify;font-size:85%;color:#777;"><?php echo $row['description'];?></p>
-
-
-              <p class="card-text mb-2" style="text-transform: capitalize;color:#444;font-size:90%;"><i class="bi bi-person-square"></i><b> <?php echo $row1['fname'] ?> <?php echo $row1['lname'] ?></b> <br><i class="ri-star-fill"> <?php echo $row['experience'] ?> years</i></p>
-
-
-                <p class="card-text mb-2" style="text-transform: capitalize;color:#444;font-size:90%;"> <b>₹<?php echo $row['rate'] ?></b></p>
-              
-             
-              
+              <h5 class="card-title pb-1 mb-0"><?php echo $row['services'] ?></h5>
+              <p class="card-text mb-1" style="font-size:85%;color:#444;text-align:justify;"><?php echo $row['description']; ?>
 
 
 
-              <div class="btn-group">
-                        <a href="#" class="btn btn-success btn-sm"><i class="bi bi-lightning-fill"></i> Book Now</a>   
-                        
-                      </div>
+              <p style="margin-bottom:0px;">
+                <span class="badge bg-success bg-xs" style="color:#fff;">4.5 <i class="bi bi-star-fill text-warning"></i></span> <span class="badge bg-success bg-xs" style="color:#fff;"> <?php echo $row['services'] ?></span>
+              </p>
+
+              <!-- <p>
+                <?php echo "Year of Experience:" . " " . $row['experience'] ?>
+              </p>
+
+              <p>
+                <?php echo "Rate:" . " " . $row['rate'] . "Rs." ?>
+              </p> -->
 
 
 
+
+              <div class="row mt-2">
+                <div class="col-6 btn-group">
+                 <a href="#" class="btn btn-primary btn-sm"> Book Now</a>
+                </div>
+
+
+              </div>
 
             </div>
-          </div>
+          </div><!-- End Card with an image on top -->
+
         </div>
-        <!-- End Card with an image on top -->
+      <?php
+      
 
-     
-
+      ?>
 
 
     </div>
+
 
   </section>
 
 
 
-
-
 </main><!-- End #main -->
-
-
 <?php
+
+
 
 require 'footer.html';
 
