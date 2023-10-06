@@ -2,6 +2,7 @@
 require 'header.php';
 
 $email = $_SESSION['email'];
+
 ?>
 
 <main id="main" class="main">

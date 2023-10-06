@@ -288,13 +288,13 @@ $user=mysqli_fetch_assoc($data);
               <i class="bi bi-circle"></i><span>Book Service</span>
             </a>
           </li>
-<!--
+
           <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+            <a href="bookedservices.php">
+              <i class="bi bi-circle"></i><span>Booked Services</span>
             </a>
           </li>
--->
+
         </ul>
       </li><!-- End Tables Nav -->
       

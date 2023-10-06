@@ -4,7 +4,6 @@ session_start();
 include 'header.php';
 $email=$_SESSION['email'];
 
-
 ?>
       <?php
 

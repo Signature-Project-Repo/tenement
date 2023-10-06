@@ -24,7 +24,9 @@ $serviceid = $_GET['serviceid'];
 
 
 
-  $row = mysqli_fetch_assoc($data)
+  $row = mysqli_fetch_assoc($data);
+  $_SESSION['serviceid']=$row['serviceid'];
+
 
   ?>
 
