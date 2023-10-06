@@ -32,7 +32,7 @@ $email=$_SESSION['email'];
 
               <!-- Floating Labels Form -->
             
-              <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
+              <form class="row g-3" action="php/bookaction.php" method="POST" enctype="multipart/form-data">
               <div class="col-md-6">
                   <div class="form-floating">
                   <input type="text" class="form-control" name="name" placeholder="Name" ;>
@@ -42,8 +42,8 @@ $email=$_SESSION['email'];
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="phonenumber" placeholder="phonenumber" $pattern ='';>
-                    <label for="phonenumber">Phone</label>
+                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" $pattern ='';>
+                    <label for="phone">Phone</label>
                   </div>
                 </div>
 
@@ -66,6 +66,38 @@ $email=$_SESSION['email'];
                     <label for="address">Address</label>
                   </div>
                 </div>
+
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                  <select name="district" id="district" class="form-select" required>
+                      <option value="" disabled selected>District</option>
+                      <option value="kasaragod">Kasaragod</option>
+                      <option value="kannur">Kannur</option>
+                      <option value="kozhikode">Kozhikode</option>
+                      <option value="wayanad">Wayanad</option>
+                      <option value="malappuram">Malappuram</option>
+                      <option value="palakkad">Palakkad</option>
+                      <option value="thrissur">Thrissur</option>
+                      <option value="ernakulam">Ernakulam</option>
+                      <option value="idukki">Idukki</option>
+                      <option value="kottayam">Kottayam</option>
+                      <option value="alapuzha">Alappuzha</option>
+                      <option value="pathanamthitta">Pathanamthitta</option>
+                      <option value="kollam">Kollam</option>
+                      <option value="thiruvanathupuram">Thiruvananthupuram</option>
+ 
+
+                    </select>
+                  </div>
+                </div>
+                   
+                <div class="col-md-6">
+                  <div class="form-floating">
+                  <input type="text" class="form-control" name="city" placeholder="City">
+                    <label for="city">City</label>
+                  </div>
+                </div>
  
                 <div class="col-12">
                   <div class="form-floating">
@@ -74,9 +106,19 @@ $email=$_SESSION['email'];
                   </div>
                 </div>
 
+
+                 
+                <div class="col-md-6">
+                  <div class="form-floating">
+                  <input type="text" class="form-control" name="landmark" placeholder="Landmark">
+                    <label for="landmark">Landmark</label>
+                  </div>
+                </div>
+
+
              
  
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-floating">
                   <input type="url" class="form-control" name="url" placeholder="Loctation URL">
                     <label for="url">Location URL</label>

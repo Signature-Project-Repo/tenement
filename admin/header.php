@@ -290,12 +290,13 @@ $user=mysqli_fetch_assoc($data);
         <i class="bi bi-circle"></i><span>Add Services</span>
       </a>
     </li>
-    <!--
+    
     <li>
-      <a href="icons-remix.html">
-        <i class="bi bi-circle"></i><span>Remix Icons</span>
+      <a href="servicelist.php">
+        <i class="bi bi-circle"></i><span>Service Requests</span>
       </a>
     </li>
+    <!--
     <li>
       <a href="icons-boxicons.html">
         <i class="bi bi-circle"></i><span>Boxicons</span>
