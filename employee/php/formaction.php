@@ -9,7 +9,9 @@
 
 <body>
 <?php
+session_start();
 require '../../connect.php';
+$email=$_SESSION['email'];
 $service=$_POST['services'];
 $description=$_POST['description'];
 $experience=$_POST['experience'];
@@ -17,7 +19,7 @@ $rate=$_POST['rate'];
 
 $target_dir="../../upload/service/";
 
-$sql="INSERT INTO `addservice` (`services`,`description`,`experience`,`rate`) VALUES ('$service','$description','$experience','$rate') ";
+$sql="INSERT INTO `addservice` (`services`,`description`,`experience`,`rate`,`email`) VALUES ('$service','$description','$experience','$rate','$email') ";
 insert_data($sql);
 
 

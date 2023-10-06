@@ -2,7 +2,7 @@
 require 'header.php';
 
 $email = $_SESSION['email'];
-$serviceid=$_GET['serviceid'];
+$serviceid = $_GET['serviceid'];
 ?>
 
 <main id="main" class="main">
@@ -16,6 +16,29 @@ $serviceid=$_GET['serviceid'];
       </ol>
     </nav>
   </div><!-- End Page Title -->
+  <?php
+
+  $sql = "SELECT * FROM addservice WHERE serviceid='$serviceid'";
+
+  $data = select_data($sql);
+
+
+
+  $row = mysqli_fetch_assoc($data)
+
+  ?>
+
+<?php
+
+$sql1 = "SELECT * FROM addservice a,employee_register r WHERE r.email=a.email";
+
+$data1 = select_data($sql1);
+
+
+
+$row1 = mysqli_fetch_assoc($data1)
+
+?>
 
 
 
@@ -23,66 +46,81 @@ $serviceid=$_GET['serviceid'];
   <section class="section">
     <div class="row align-items-top">
 
-      <?php
 
-      $sql = "SELECT * FROM addservice WHERE serviceid='$serviceid'";
+      <div class="card mb-3">
+        <div class="row g-0">
 
-      $data = select_data($sql);
-
-
-
-      $row = mysqli_fetch_assoc($data)
-      
-      ?>
-        <div class="col-lg-4">
+          <div class="col-lg-4">
 
 
-          <div class="card">
+
             <img src="../upload/service/add_service_<?php echo $row['serviceid']; ?>.jpg" class="card-img-top" alt="..." height="">
+          </div>
+          <div class="col-md-8">
             <div class="card-body">
 
-              <h5 class="card-title pb-1 mb-0"><?php echo $row['services'] ?></h5>
-              <p class="card-text mb-1" style="font-size:85%;color:#444;text-align:justify;"><?php echo $row['description']; ?>
-
-
-
-              <p style="margin-bottom:0px;">
-                <span class="badge bg-success bg-xs" style="color:#fff;">4.5 <i class="bi bi-star-fill text-warning"></i></span> <span class="badge bg-success bg-xs" style="color:#fff;"> <?php echo $row['services'] ?></span>
-              </p>
-
-              <!-- <p>
-                <?php echo "Year of Experience:" . " " . $row['experience'] ?>
-              </p>
-
-              <p>
-                <?php echo "Rate:" . " " . $row['rate'] . "Rs." ?>
-              </p> -->
+              <p class="card-title" style="font-size: 25px;padding-bottom:0px;margin-bottom:0px"><?php echo $row['services'] ?></p>
+              <p style="font-size: large;margin:0 0 5px;"> <span class="badge bg-success">4.5 <i class="bi bi-star-fill text-warning"></i></span></p>
+              <p class="card-text mb-2" style="text-align: justify;font-size:85%;color:#777;"><?php echo $row['description']; ?></p>
 
 
 
 
-              <div class="row mt-2">
-                <div class="col-6 btn-group">
-                 <a href="#" class="btn btn-primary btn-sm"> Book Now</a>
-                </div>
+              <p class="card-text mb-2" style="text-transform: capitalize;color:#444;font-size:90%;"> <b>Service-charge: ₹<?php echo $row['rate'] ?></b></p>
 
+
+
+
+
+
+              <div class="btn-group">
+                <a href="#" class="btn btn-success btn-sm"></i>Add To Favourite</a>
+              </div>
+              <div class="btn-group">
+                <a href="bookingaction.php" class="btn btn-primary btn-sm"></i> Book Now</a>
 
               </div>
+               
+
+
+
+             
+
+
 
             </div>
-          </div><!-- End Card with an image on top -->
 
+
+          </div>
+         
+
+       
+          
         </div>
-      <?php
+        <!-- End Card with an image on top -->
+
+
+
+
+
+      </div>
       
+      <div class="col-md-6">
+            <div class="card-body">
 
-      ?>
+            <p class="card-title" style="padding-right:15%">Employee Details</p>
+            <p class="card-text mb-2" ><b><i class="bi bi-person"></i></b> <?php echo $row1['fname']?> <?php echo $row1['lname']?></p>
 
-
-    </div>
-
+            <p class="card-text mb-2" ><b><i class="bi bi-envelope"></i></b> <?php echo $row1['email']?></p>
+            <p class="card-text mb-2" ><b><i class="bi bi-telephone"></i></b> <?php echo $row1['phonenumber']?></p>
+            <p class="card-text mb-2" ><b><i class="bi bi-patch-check"></i></b> <?php echo $row['experience']?> Years Of Experience</p>
+            </div>
 
   </section>
+
+
+
+
 
 
 
