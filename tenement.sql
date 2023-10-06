@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2023 at 08:45 PM
+-- Generation Time: Oct 06, 2023 at 12:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -32,16 +32,49 @@ CREATE TABLE `addservice` (
   `services` varchar(100) NOT NULL,
   `description` varchar(500) NOT NULL,
   `experience` varchar(100) NOT NULL,
-  `rate` varchar(100) NOT NULL
+  `rate` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `addservice`
 --
 
-INSERT INTO `addservice` (`serviceid`, `services`, `description`, `experience`, `rate`) VALUES
-(1, 'Electrician', 'Electricians install, maintain, and repair electrical power, communications, lighting, and control systems in homes, businesses, and factories.', '12', '1200'),
-(2, 'Plumbing', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '10', '2000');
+INSERT INTO `addservice` (`serviceid`, `services`, `description`, `experience`, `rate`, `email`) VALUES
+(1, 'Electrician', 'Electricians are responsible for inspecting, testing, repairing, installing, and modifying electrical components and systems. Electricians general work at homes, businesses, and construction sites, and generally work as contractors.\r\n\r\n', '10', '500', 'sivaji123@gmail.com'),
+(2, 'Plumbing', 'plumbing, system of pipes and fixtures installed in a building for the distribution and use of potable (drinkable) water and the removal of waterborne wastes', '14', '900', 'sivaji123@gmail.com'),
+(3, 'Painting', 'painting, the expression of ideas and emotions, with the creation of certain aesthetic qualities, in a two-dimensional visual language. The elements of this language—its shapes, lines, colours, tones, and textures—are used in various ways to produce sensations of volume, space, movement, and light on a flat surface', '8', '1000', 'sivaji123@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `bookingid` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `time` varchar(50) NOT NULL DEFAULT current_timestamp(),
+  `address` varchar(200) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `instructions` varchar(300) NOT NULL,
+  `landmark` varchar(100) NOT NULL,
+  `url` varchar(100) NOT NULL,
+  `status` int(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `serviceid` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`) VALUES
+(1, 'Macy Torres', '78', '1974-09-07', '03:06', 'Rerum pariatur At d', 'thiruvanathupuram', 'Cumque non suscipit ', 'Omnis labore ut est ', 'Et a non molestiae e', 'https://www.cexaro.me.uk', 0, 'joelshibu100@gmail.com', 0),
+(2, 'Inez Malone', '27', '2013-10-23', '07:58', 'Aute molestiae non c', 'kollam', 'Aperiam nostrud qui ', 'Et optio reprehende', 'Tempore quaerat vol', 'https://www.sixo.biz', 0, 'joelshibu100@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -198,6 +231,12 @@ ALTER TABLE `addservice`
   ADD PRIMARY KEY (`serviceid`);
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`bookingid`);
+
+--
 -- Indexes for table `complaints`
 --
 ALTER TABLE `complaints`
@@ -229,7 +268,13 @@ ALTER TABLE `user_register`
 -- AUTO_INCREMENT for table `addservice`
 --
 ALTER TABLE `addservice`
-  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `complaints`
