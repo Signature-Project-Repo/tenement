@@ -48,7 +48,7 @@ $email = $_SESSION['email'];
                     <th scope="col">Landmark</th>-->
                       <th scope="col">Location URL</th>
                       <th scope="col">View Details</th>
-                      
+                      <th scope="col">Action</th>
 
 
                     </tr>
@@ -67,7 +67,7 @@ $email = $_SESSION['email'];
                     ?>
 
                     <?php
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where a.serviceid=b.serviceid and a.email='$email' and status='1'";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where a.serviceid=b.serviceid and a.email='$email' and status='0'";
 
                     $data1 = select_data($sql1);
                     
@@ -100,7 +100,12 @@ $email = $_SESSION['email'];
                           </div>
                         </td>
 
-                        
+                        <td>
+                          <div class="btn-group">
+                            <a href="php/serviceaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&status=1 " class="btn btn-success btn-sm">Accecpt</a>
+                            <a href="php/serviceaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&status=-1 " class="btn btn-danger btn-sm">Reject</a>
+                          </div>
+                        </td>
 
 
 

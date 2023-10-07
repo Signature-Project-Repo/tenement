@@ -38,8 +38,8 @@ insert_data($sql);
  let timerInterval
 Swal.fire({
   icon:'success',
-  title: 'Booking',
-  html: 'Booking Successfull',
+  title: 'Booking Successfull',
+  html: 'Booking ',
   timer: 2000,
   timerProgressBar: true,
   didOpen: () => {

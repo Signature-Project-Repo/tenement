@@ -42,7 +42,7 @@ $email=$_SESSION['email'];
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" $pattern ='';>
+                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" $pattern ='' >
                     <label for="phone">Phone</label>
                   </div>
                 </div>
