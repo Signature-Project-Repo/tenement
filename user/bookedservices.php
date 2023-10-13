@@ -48,26 +48,17 @@ $email = $_SESSION['email'];
                     <th scope="col">Landmark</th>-->
                       <th scope="col">Location URL</th>
                       <th scope="col">View Details</th>
+                      <th scope="col">Payment</th>
                       
 
 
                     </tr>
                   </thead>
                   <tbody>
-                    <?php
-
-                    $sql1 = "SELECT * FROM addservice a,booking r WHERE r.email=a.email";
-
-                    $data1 = select_data($sql1);
-
-
-
-                    $row1 = mysqli_fetch_assoc($data1)
-
-                    ?>
+                 
 
                     <?php
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where a.serviceid=b.serviceid and a.email='$email' and status='1'";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where a.serviceid=b.serviceid  and status='1'";
 
                     $data1 = select_data($sql1);
                     
@@ -99,6 +90,13 @@ $email = $_SESSION['email'];
 
                           </div>
                         </td>
+                        <td>
+                      <div class="btn-group">
+                        <a   href="#"class="btn btn-success btn-sm">Pay Now</a>
+              
+                        
+                      </div>
+                      </td>
 
                         
 
