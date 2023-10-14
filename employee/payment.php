@@ -48,7 +48,7 @@ $email = $_SESSION['email'];
                     <th scope="col">Landmark</th>-->
                       <th scope="col">Location URL</th>
                       <th scope="col">View Details</th>
-                      <th scope="col">Payment</th>
+                      <th scope="col">Status</th>
                       
 
 
@@ -71,7 +71,7 @@ $email = $_SESSION['email'];
                   
 
 
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status IN('1','2')";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status ='2'";
 
                     $data1 = select_data($sql1);
                     
@@ -103,43 +103,12 @@ $email = $_SESSION['email'];
 
                           </div>
                         </td>
-                        <td>
-                          <?php
-                          $status=$row['status'];
-                        
-if($status=='1')
-{
-  ?>
-
-                         
-                          
+                        <td>  
                       <div class="btn-group">
-                      <a   href="php/payaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&s=1"class="btn btn-success btn-sm">Pay ₹</a>
-              
-                        
-                      </div>
-<?php
-}elseif($status=='2')
-{
-?>
-  <div class="btn-group">
-                      <a   href="#"class="btn btn-secondary btn-sm">Details</a>
-              
-                        
-                      </div>
-                      <?php
-}
-?>
-                      </td>
-
-                        
-
-
-
-
-
-
-                      </tr>
+                      <a class="btn btn-success btn-sm" data-bs-toggle="modal" onclick="passid('<?php echo $row['name'];?>')" data-bs-target="#verticalycentered">Complete</a>
+                        </div>
+                    </td>
+                    </tr>
 
                     <?php
                     }
@@ -154,28 +123,32 @@ if($status=='1')
 
           </div>
         </div>
-      </section>
-      <div class="modal fade" id="verticalycentered2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Details</b></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         
-            </div>
-            <div class="modal-body">
-              <p>Service:</p>
-              <p>Instructions:</p>
-              
-              
+        <div class="modal fade" id="verticalycentered" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Complaints</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                    <form action="#" method="POST">
+                    
+                    <label>ID</label>
+                        <input type="textx" name="id" id="id">
+                        <br>  
+                        <label>Reply</label>
+                        <input type="text" class="form-control"  name="reply">
+                    </div>
+                    <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Send Reply</button>
+                    </div>
+                </form>
+                  </div>
+                </div>
+              </div><!-- End Vertically centered Modal-->
 
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Vertically centered Modal-->
       <!--
 
       <div class="modal fade" id="verticalycentered1" tabindex="-1">
@@ -225,11 +198,13 @@ echo $email;
 
 </main><!-- End #main -->
 <script>
-  function passdes(valuee) {
-    // alert(valuee)
-    document.getElementById("modal-body").innerHTML = valuee;
-  }
-</script>
+    function passid(id)
+    {
+      //alert(id);
+
+      document.getElementById('id').value=id;
+    }
+  </script>
 
 <?php
 

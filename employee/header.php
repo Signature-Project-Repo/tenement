@@ -363,6 +363,17 @@ $user=mysqli_fetch_assoc($data);
               <i class="bi bi-circle"></i><span>Rejected Services</span>
             </a>
           </li>
+          <li>
+            <a href="servicetime.php">
+              <i class="bi bi-circle"></i><span>#</span>
+            </a>
+          </li>
+          <li>
+            <a href="payment.php">
+              <i class="bi bi-circle"></i><span>Complete</span>
+            </a>
+          </li>
+
         </ul>
 
       </li><!-- End Charts Nav -->
