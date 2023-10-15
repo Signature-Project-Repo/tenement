@@ -28,8 +28,8 @@ if (update_data($sql) && ($status == 1)) {
       let timerInterval
       Swal.fire({
         icon: 'success',
-        title: 'Service Approved',
-        html: 'updating ',
+        title: 'Request Accepted',
+        html: ' ',
         timer: 1300,
         timerProgressBar: true,
         didOpen: () => {
@@ -54,8 +54,38 @@ if (update_data($sql) && ($status == 1)) {
   
   }
   
+  if (update_data($sql) && ($status == -1)) {
   
+  ?>
   
+    <script>
+      let timerInterval
+      Swal.fire({
+        icon: 'error',
+        title: 'Request Rejected',
+        html: ' ',
+        timer: 1300,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          window.location.replace('../servicelist.php');
+  
+        }
+      });
+    </script>
+  <?php
+  }
   ?>
   </body>
   

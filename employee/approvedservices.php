@@ -108,14 +108,17 @@ $email = $_SESSION['email'];
 
 
                       </tr>
-
-                    <?php
+                      <?php
                     }
                     ?>
+
+
+
 
                   </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
+                
 
               </div>
             </div>
@@ -131,8 +134,22 @@ $email = $_SESSION['email'];
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          
             </div>
+        
+
+
+            
             <div class="modal-body">
-              <p>Service: <?php echo $row['services'];?></p>
+            <p><b>Name: </b><?php echo $row['name'];?></p>
+              <p><b>Service: </b><?php echo $row['services'];?></p>
+              <p><b>Phone: </b><?php echo $row['phone'];?></p>
+              <p><b>Date: </b><?php echo $row['date'];?></p>
+              <p><b>Time: </b><?php echo $row['time'];?></p>
+              <p><b>Address: </b><?php echo $row['address'];?></p>
+              <p><b>District: </b><?php echo $row['district'];?></p>
+              <p><b>City: </b><?php echo $row['city'];?></p>
+              <p><b>Instructions: </b><?php echo $row['instructions'];?></p>
+              <p><b>Landmark: </b><?php echo $row['landmark'];?></p>
+              <p><b>Email: </b><?php echo $row['email'];?></p>
               
               
 
@@ -143,10 +160,11 @@ $email = $_SESSION['email'];
           </div>
         </div>
       </div><!-- End Vertically centered Modal-->
-
+     
       
 
 </main><!-- End #main -->
+
 
 
 <?php
