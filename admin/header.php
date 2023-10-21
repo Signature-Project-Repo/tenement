@@ -291,11 +291,7 @@ $user=mysqli_fetch_assoc($data);
       </a>
     </li>
     
-    <li>
-      <a href="servicelist.php">
-        <i class="bi bi-circle"></i><span>Service Requests</span>
-      </a>
-    </li>
+    
     <!--
     <li>
       <a href="icons-boxicons.html">
