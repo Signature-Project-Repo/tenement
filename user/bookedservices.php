@@ -49,36 +49,36 @@ $email = $_SESSION['email'];
                       <th scope="col">Location URL</th>
                       <th scope="col">View Details</th>
                       <th scope="col">Payment</th>
-                      
+
 
 
                     </tr>
                   </thead>
                   <tbody>
-                  
-                 
+
+
 
                     <?php
-                                            
-                                        
-                                                  date_default_timezone_set('Asia/Kolkata'); // Set your desired timezone here
-                                                  $time = date("H"); 
-          
-          
-                                                  date_default_timezone_set('Asia/Kolkata');
-                                                  $date = date("Y-m-d");
-          
-                  
+
+
+                    date_default_timezone_set('Asia/Kolkata'); // Set your desired timezone here
+                    $time = date("H");
+
+
+                    date_default_timezone_set('Asia/Kolkata');
+                    $date = date("Y-m-d");
+
+
 
 
                     $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status IN('1','2')";
 
                     $data1 = select_data($sql1);
-                    
 
 
-                  
-           
+
+
+
 
                     $n = 1;
 
@@ -92,47 +92,45 @@ $email = $_SESSION['email'];
                         <td><?php echo $row['date'] ?></td>
                         <td><?php echo $row['time'] ?></td>
                         <td> <?php echo $row['district']  ?></td>
-                        
+
 
 
                         <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
                         <td>
                           <div class="btn-group">
-                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<?php echo $row['instructions']; ?>')">View Details</a>
+                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<?php echo $row['name']; ?><br><?php echo $row['services']; ?>')">View Details</a>
 
 
                           </div>
                         </td>
                         <td>
                           <?php
-                          $status=$row['status'];
-                        
-if($status=='1')
-{
-  ?>
+                          $status = $row['status'];
 
-                         
-                          
-                      <div class="btn-group">
-                      <a   href="php/payaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&s=1"class="btn btn-success btn-sm">Pay ₹</a>
-              
-                        
-                      </div>
-<?php
-}elseif($status=='2')
-{
-?>
-  <div class="btn-group">
-                      <a   href="#"class="btn btn-secondary btn-sm">Details</a>
-              
-                        
-                      </div>
-                      <?php
-}
-?>
-                      </td>
+                          if ($status == '1') {
+                          ?>
 
-                        
+
+
+                            <div class="btn-group">
+                              <a href="php/payaction.php?email=<?php echo $row['email']; ?>&serviceid=<?php echo $row['serviceid']; ?>&bookingid=<?php echo $row['bookingid']; ?>&s=1" class="btn btn-success btn-sm">Pay ₹ <?php echo $row['email']; ?></a>
+
+
+                            </div>
+                          <?php
+                          } elseif ($status == '2') {
+                          ?>
+                            <div class="btn-group">
+                              <a href="#" class="btn btn-secondary btn-sm">Download Invoice</a>
+
+
+                            </div>
+                          <?php
+                          }
+                          ?>
+                        </td>
+
+
 
 
 
@@ -161,51 +159,25 @@ if($status=='1')
             <div class="modal-header">
               <h5 class="modal-title"><b>Details</b></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         
+
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="mod">
               <p>Service:</p>
               <p>Instructions:</p>
-              
-              
+
+
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
-          </div>
-        </div>
-      </div><!-- End Vertically centered Modal-->
-      <!--
-
-      <div class="modal fade" id="verticalycentered1" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Payment Details</b></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              <form action="php/payaction.php" method="POST">
-         
-            </div>
-            <div class="modal-body">
-              <p>Service Charge :</p>
-              <p>Instructions:</p>
-              
-              
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Pay ₹</button>
-            </div>
-                  </form>
           </div>
         </div>
       </div>
-                  -->
-                  <!-- End Vertically centered Modal-->
+      <!-- End Vertically centered Modal-->
 
-      
+
+
 
 </main><!-- End #main -->
 
@@ -227,7 +199,7 @@ echo $email;
 <script>
   function passdes(valuee) {
     // alert(valuee)
-    document.getElementById("modal-body").innerHTML = valuee;
+    document.getElementById("mod").innerHTML = valuee;
   }
 </script>
 

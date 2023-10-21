@@ -28,6 +28,7 @@ $email = $_SESSION['email'];
       $sql = "SELECT * FROM addservice";
 
       $data = select_data($sql);
+      $rate=$_SESSION['rate'];
 
 
 
