@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+$apikey="rzp_test_A7MhIwolurtBfu";
 
 
 $email = $_SESSION['email'];
@@ -113,7 +114,7 @@ $email = $_SESSION['email'];
 
 
                             <div class="btn-group">
-                              <a href="php/payaction.php?email=<?php echo $row['email']; ?>&serviceid=<?php echo $row['serviceid']; ?>&bookingid=<?php echo $row['bookingid']; ?>&s=1" class="btn btn-success btn-sm">Pay ₹ <?php echo $row['email']; ?></a>
+                              <a class="btn btn-success btn-sm" onclick="(pay(100,1,1))">Pay ₹100</a>
 
 
                             </div>
@@ -202,6 +203,38 @@ echo $email;
     document.getElementById("mod").innerHTML = valuee;
   }
 </script>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+
+    function pay(amt,id,bkid){
+      alert("hello");
+      var options = {
+      "key": "<?php echo $apikey?>", //Enter the Key ID generated from the Dashboard
+      "amount": amt*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "Tenement",
+      "description": "Payment",
+      "image": "../images/car.ico",
+      //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "success.php?id="+id+"&amt="+amt+"&bkid="+bkid,
+      "prefill": {
+        "name": "biby",
+        "email": "biby@gmail.com",
+        "contact": "7034813307"
+      },
+      "notes": {
+        "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+        "color": "#3399cc"
+      }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+  }
+  </script>
 
 <?php
 
