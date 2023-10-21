@@ -98,7 +98,7 @@ $email = $_SESSION['email'];
                         <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
                         <td>
                           <div class="btn-group">
-                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<?php echo $row['name']; ?><br><?php echo $row['services']; ?>')">View Details</a>
+                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<b>Name:</b><?php echo $row['name']; ?><br><?php echo $row['services']; ?><br><?php echo $row['date']; ?><br><?php echo $row['time']; ?><br><?php echo $row['district']; ?>')">View Details</a>
 
 
                           </div>
