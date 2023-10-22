@@ -45,7 +45,7 @@ $email = $_SESSION['email'];
                     <th scope="col">Phonenumber</th>
                     <th scope="col">Email</th>
                     <th scope="col">Aadhar No.</th>
-                    <th scope="col">Password</th>
+                    
                 <th scope="col">Action</th>
                       
                      
@@ -102,16 +102,10 @@ $email = $_SESSION['email'];
                           <?php echo $row['aadhar'] ?>
                         </td>
                         <td>
-                          <?php echo $row['password'] ?>
-                        </td>
-
-                        <td>
-                          <div class="btn-group">
-                            <a href="php/verifyuser.php?email=<?php echo $row['email'];?>&status=1" class="btn btn-success btn-sm">Accecpt</a>
-                            <a href="php/verifyuser.php?email=<?php echo $row['email'];?>&status=-1" class="btn btn-danger btn-sm">Reject</a>
+                        <div class="btn-group">
+                 <a href="php/verifyemployee.php?email=<?php echo $row['email'];?>&status=1" class="btn btn-success btn-sm">Reinstate</a>
                           </div>
                         </td>
-                       
 
                       </tr>
 

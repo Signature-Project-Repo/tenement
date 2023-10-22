@@ -294,6 +294,11 @@ $user=mysqli_fetch_assoc($data);
               <i class="bi bi-circle"></i><span>Booked Services</span>
             </a>
           </li>
+          <li>
+            <a href="favourites.php">
+              <i class="bi bi-circle"></i><span>Favourites</span>
+            </a>
+          </li>
 
         </ul>
       </li><!-- End Tables Nav -->

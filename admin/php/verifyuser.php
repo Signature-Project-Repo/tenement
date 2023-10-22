@@ -84,6 +84,37 @@ if (update_data($sql) && ($status == -1)) {
   </script>
 <?php
 }
+if (update_data($sql) && ($status == -2)) {
+?>
+ <script>
+    let timerInterval
+    Swal.fire({
+      icon: 'error',
+      title: 'User Suspended',
+      html: 'updating ',
+      timer: 1300,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft()
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        window.location.replace('../pendinguser.php');
+
+      }
+    });
+  </script>
+  
+<?php
+}
 ?>
 </body>
 

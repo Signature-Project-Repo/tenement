@@ -88,8 +88,12 @@ $email = $_SESSION['email'];
                         <td>
                           <?php echo $row['phonenumber'] ?>
                         </td>
+                       
                         <td>
-                          <?php echo $row['password'] ?>
+                        <div class="btn-group">
+                 <a href="php/verifyuser.php?email=<?php echo $row['email'];?>&status=1" class="btn btn-success btn-sm">Reinstate</a>
+                          </div>
+            
                         </td>
 
                       </tr>

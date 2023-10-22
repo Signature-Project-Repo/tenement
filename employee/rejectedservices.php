@@ -94,7 +94,7 @@ $email = $_SESSION['email'];
                         <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
                         <td>
                           <div class="btn-group">
-                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<?php echo $row['instructions']; ?>')">View Details</a>
+                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<b>Name: </b><?php echo $row['name']; ?><br><b>Phone: </b><?php echo $row['phone']; ?><br><b>Service: </b><?php echo $row['services']; ?><br><b>Date: </b><?php echo $row['date']; ?><br><b>Time: </b><?php echo $row['time']; ?><br><b>Address: </b><?php echo $row['address']; ?><br><b>District: </b><?php echo $row['district']; ?><br><b>City: </b><?php echo $row['city']; ?><br><b>Instructions: </b><?php echo $row['instructions']; ?><br><b>Landmark: </b><?php echo $row['landmark']; ?><br><b>Email: </b><?php echo $row['email']; ?>')">View Details</a>
 
 
                           </div>
@@ -131,8 +131,8 @@ $email = $_SESSION['email'];
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          
             </div>
-            <div class="modal-body">
-              <p>Service: <?php echo $row['services'];?></p>
+            <div class="modal-body" id="mod">
+         
               
               
 
@@ -166,7 +166,7 @@ echo $email;
 <script>
   function passdes(valuee) {
     // alert(valuee)
-    document.getElementById("modal-body").innerHTML = valuee;
+    document.getElementById("mod").innerHTML = valuee;
   }
 </script>
 

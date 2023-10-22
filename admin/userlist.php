@@ -45,6 +45,7 @@ $email=$_SESSION ['email'];
                     <th scope="col">Email</th>
                     <th scope="col">Phonenumber</th>
                     <th scope="col">Password</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -70,7 +71,13 @@ $email=$_SESSION ['email'];
                  <td> <?php echo $row['gender'] ?></td>
                  <td> <?php echo  $row['email'] ?> </td>
                  <td> <?php echo  $row['phonenumber'] ?> </td>
-                 <td> <?php echo  $row['password'] ?> </td>             
+                 <td> <?php echo  $row['password'] ?> </td>           
+                 <td>
+                 <div class="btn-group">
+                 <a href="php/verifyuser.php?email=<?php echo $row['email'];?>&status=-2" class="btn btn-warning btn-sm">Suspend</a>
+                          </div>
+            
+                 </td>  
 
                  </tr>
 

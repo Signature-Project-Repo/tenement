@@ -365,12 +365,12 @@ $user=mysqli_fetch_assoc($data);
           </li>
           <li>
             <a href="servicetime.php">
-              <i class="bi bi-circle"></i><span>#</span>
+              <i class="bi bi-circle"></i><span>Service Overdue</span>
             </a>
           </li>
           <li>
             <a href="payment.php">
-              <i class="bi bi-circle"></i><span>Complete</span>
+              <i class="bi bi-circle"></i><span>Completed Services</span>
             </a>
           </li>
 

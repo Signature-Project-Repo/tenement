@@ -37,14 +37,14 @@ $email=$_SESSION['email'];
             <form class="row g-3" action="php/add.php" method="POST">
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" name="services" placeholder="Your Name">
+                  <input type="text" class="form-control" name="services" placeholder="Your Name" maxlength="100">
                   <label for="services">Services</label>
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;"></textarea>
+                  <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="200"></textarea>
                   <label for="floatingTextarea">Description</label>
                 </div>
               </div>

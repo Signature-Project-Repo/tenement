@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 12:39 PM
+-- Generation Time: Oct 22, 2023 at 06:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -72,9 +72,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`) VALUES
-(1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 1, 'joelshibu100@gmail.com', 1),
+(1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 2, 'joelshibu100@gmail.com', 1),
 (2, 'Abhishek', '25', '1990-02-05', '03:49', 'Dolore dolor id vol', 'kottayam', 'Et dolor magna enim ', 'Corrupti dolore ali', 'Consequatur odio om', 'https://www.sov.co.uk', -1, 'joelshibu100@gmail.com', 2),
-(3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 2, 'joelshibu100@gmail.com', 2);
+(3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 1, 'joelshibu100@gmail.com', 2),
+(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,7 @@ CREATE TABLE `loginpage` (
 INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('admin@gmail.com', 'admin123', 0, 1),
 ('joelshibu100@gmail.com', '100', 1, 1),
-('rahul@gmail.com', '000', 1, 1),
+('rahul@gmail.com', '000', 1, -2),
 ('sivaji123@gmail.com', '123', 2, 1);
 
 -- --------------------------------------------------------
@@ -253,7 +254,7 @@ ALTER TABLE `addservice`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `complaints`

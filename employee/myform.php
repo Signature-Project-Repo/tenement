@@ -28,7 +28,7 @@ $email = $_SESSION['email'];
       $sql = "SELECT * FROM addservice";
 
       $data = select_data($sql);
-      $rate=$_SESSION['rate'];
+     
 
 
 
@@ -64,7 +64,7 @@ $email = $_SESSION['email'];
 
               <div class="row mt-2">
                 <div class="col-6 btn-group">
-                 <a href="editform.php" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
+                 <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit </a>
                   <a href="#" class="btn btn-danger btn-sm"><i class=" ri-delete-bin-5-fill"></i> Remove </a>
                 </div>
 
