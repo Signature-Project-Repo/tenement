@@ -48,7 +48,7 @@ $email = $_SESSION['email'];
                     <th scope="col">Landmark</th>-->
                       <th scope="col">Location URL</th>
                       <th scope="col">View Details</th>
-                      <th scope="col">Status</th>
+
                       
 
 
@@ -103,11 +103,7 @@ $email = $_SESSION['email'];
 
                           </div>
                         </td>
-                        <td>  
-                      <div class="btn-group">
-                      <a class="btn btn-success btn-sm" data-bs-toggle="modal" onclick="passid('<?php echo $row['name'];?>')" data-bs-target="#verticalycentered">Complete</a>
-                        </div>
-                    </td>
+                 
                     </tr>
 
                     <?php

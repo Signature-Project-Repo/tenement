@@ -7,6 +7,13 @@ $email = $_SESSION['email'];
 
 ?>
 
+<style>
+  .paybtn
+  {
+    width:135px;
+  }
+</style>
+
 <main id="main" class="main">
 
   <div class="pagetitle">
@@ -72,8 +79,8 @@ $email = $_SESSION['email'];
 
 
 
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and  status IN('1','2')";
-
+                    $sql1 = "SELECT b.*,a.services,a.rate from booking b,addservice a where  a.serviceid=b.serviceid  and  status IN('0','1','2') order by date desc";
+                    echo $sql1;
                     $data1 = select_data($sql1);
 
 
@@ -93,6 +100,7 @@ $email = $_SESSION['email'];
                         <td><?php echo $row['date'] ?></td>
                         <td><?php echo $row['time'] ?></td>
                         <td> <?php echo $row['district']  ?></td>
+                        <!-- <td> <?php echo $row['bookingid'];?></td> -->
 
 
 
@@ -114,12 +122,13 @@ $email = $_SESSION['email'];
 
 
                             <div class="btn-group">
-                              <a class="btn btn-primary btn-sm" onclick="(pay'<?php echo $row['bookingid']?>')">Pay ₹100</a>
+                              <a class="btn btn-primary btn-sm paybtn" onclick="(pay(' <?php echo $row['rate'];?>', <?php echo $row['bookingid'];?>))">Pay ₹<?php echo $row['rate'];?></a>
 
 
                             </div>
                           <?php
-                          } elseif ($status == '2') {
+                          } 
+                          elseif ($status == '2') {
                           ?>
                             <div class="btn-group">
                               <a href="#" class="btn btn-success btn-sm">Download Invoice</a>
@@ -128,6 +137,15 @@ $email = $_SESSION['email'];
                             </div>
                           <?php
                           }
+                          elseif ($status == '0') {
+                            ?>
+                              <div class="btn-group">
+                                <p href="#" class="btn btn-warning btn-sm paybtn mb-0">Pending</a>
+  
+  
+                              </div>
+                            <?php
+                            }
                           ?>
                         </td>
 
@@ -208,8 +226,8 @@ echo $email;
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
 
-    function pay(amt,id,bkid){
-      //alert("hello");
+    function pay(amt,bkid){
+      // alert(bkid);
       var options = {
       "key": "<?php echo $apikey?>", //Enter the Key ID generated from the Dashboard
       "amount": amt*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -218,7 +236,7 @@ echo $email;
       "description": "Payment",
       "image": "../images/car.ico",
       //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "php/success.php?id="+id+"&amt="+amt+"&bkid="+bkid,
+      "callback_url": "php/success.php?&amt="+amt+"&bkid="+bkid,
       "prefill": {
         "name": "biby",
         "email": "biby@gmail.com",

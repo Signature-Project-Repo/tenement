@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2023 at 06:51 PM
+-- Generation Time: Nov 05, 2023 at 11:13 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -75,7 +75,8 @@ INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, 
 (1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 2, 'joelshibu100@gmail.com', 1),
 (2, 'Abhishek', '25', '1990-02-05', '03:49', 'Dolore dolor id vol', 'kottayam', 'Et dolor magna enim ', 'Corrupti dolore ali', 'Consequatur odio om', 'https://www.sov.co.uk', -1, 'joelshibu100@gmail.com', 2),
 (3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 1, 'joelshibu100@gmail.com', 2),
-(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1);
+(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1),
+(5, 'Steven Velasquez', '7034813307', '2023-11-30', '14:52', 'dsfsdf', 'ernakulam', 'Muvattupuzja', 'sdfsdf', 'dfgdf', 'http://www.google.com', 0, 'joelshibu100@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -120,15 +121,16 @@ CREATE TABLE `employee_register` (
   `phonenumber` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `aadhar` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employee_register`
 --
 
-INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`) VALUES
-('Sivaji', 'Mohan', 'Ezekiel', 'Est', 'pathanamthitta', 'kerala', 96730, '1997-02-11', 'other', '9544131746', 'sivaji123@gmail.com', '8589920123', '123');
+INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`, `img`) VALUES
+('Sivaji', 'Mohan', 'Ezekiel', 'Est', 'pathanamthitta', 'kerala', 96730, '1997-02-11', 'other', '9544131746', 'sivaji123@gmail.com', '8589920123', '123', 'sivaji123gmailcom.jpg');
 
 -- --------------------------------------------------------
 
@@ -171,7 +173,8 @@ CREATE TABLE `loginpage` (
 INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('admin@gmail.com', 'admin123', 0, 1),
 ('joelshibu100@gmail.com', '100', 1, 1),
-('rahul@gmail.com', '000', 1, -2),
+('rahul@gmail.com', '000', 1, 1),
+('rahuldamu760@gmail.com', '760', 1, 1),
 ('sivaji123@gmail.com', '123', 2, 1);
 
 -- --------------------------------------------------------
@@ -189,16 +192,18 @@ CREATE TABLE `user_register` (
   `gender` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phonenumber` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_register`
 --
 
-INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`) VALUES
-('Joel', 'Shibu', 'kerala', 'kottayam', '1975-09-22', 'male', 'joelshibu100@gmail.com', '9544131746', '100'),
-('Rahul', 'Reji', 'kerala', 'ernakulam', '2010-04-03', 'male', 'rahul@gmail.com', '8583365478', '000');
+INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`, `img`) VALUES
+('Joel', 'Shibu', 'kerala', 'kottayam', '1975-09-22', 'male', 'joelshibu100@gmail.com', '9544131746', '100', 'joelshibu100gmailcom.jpg'),
+('Rahul', 'Reji', 'kerala', 'ernakulam', '2010-04-03', 'male', 'rahul@gmail.com', '8583365478', '000', 'default.png'),
+('Rahul Reji', 'Damodaran', 'kerala', 'thiruvanathupuram', '1992-01-18', 'other', 'rahuldamu760@gmail.com', '8589920123', '760', 'rahuldamu760gmailcom.jpg');
 
 --
 -- Indexes for dumped tables
@@ -254,7 +259,7 @@ ALTER TABLE `addservice`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `complaints`
