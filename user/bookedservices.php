@@ -72,7 +72,7 @@ $email = $_SESSION['email'];
 
 
 
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status IN('1','2')";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and  status IN('1','2')";
 
                     $data1 = select_data($sql1);
 
@@ -114,7 +114,7 @@ $email = $_SESSION['email'];
 
 
                             <div class="btn-group">
-                              <a class="btn btn-primary btn-sm" onclick="(pay(100,1,1))">Pay ₹100</a>
+                              <a class="btn btn-primary btn-sm" onclick="(pay'<?php echo $row['bookingid']?>')">Pay ₹100</a>
 
 
                             </div>
@@ -209,7 +209,7 @@ echo $email;
   <script>
 
     function pay(amt,id,bkid){
-      alert("hello");
+      //alert("hello");
       var options = {
       "key": "<?php echo $apikey?>", //Enter the Key ID generated from the Dashboard
       "amount": amt*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -218,7 +218,7 @@ echo $email;
       "description": "Payment",
       "image": "../images/car.ico",
       //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "success.php?id="+id+"&amt="+amt+"&bkid="+bkid,
+      "callback_url": "php/success.php?id="+id+"&amt="+amt+"&bkid="+bkid,
       "prefill": {
         "name": "biby",
         "email": "biby@gmail.com",

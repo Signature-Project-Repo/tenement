@@ -28,6 +28,15 @@ $user=mysqli_fetch_assoc($data);
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script type="text/javascript" src="php/swal/jquery.min.js"></script>
+  <script type="text/javascript" src="php/swal/bootstrap.min.js"></script>
+  <script type="text/javascript" src="php/swal/sweetalert2@11.js"></script>
+
+
+  
+  <!-- JQuery Ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -236,7 +245,7 @@ $user=mysqli_fetch_assoc($data);
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          <img src="../upload/profile/<?php echo $user['img'];?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $user['fname'];?> <?php echo $user['lname'];?></</span>
           </a><!-- End Profile Iamge Icon -->
 

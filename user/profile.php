@@ -27,7 +27,7 @@ include 'header.php';
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               
-                    <img src="../uploads/profile/<?php echo $user['img'];?>" alt="Profile" class="rounded-circle" style="min-width:250px;">
+                    <img src="../upload/profile/<?php echo $user['img'];?>" alt="Profile" class="rounded-circle" style="min-width:250px;">
 
                     <div style="margin-left: 450px;margin-top: -40px; z-index: 99;">
                     <label class="btn-bs-file btn btn-sm btn-primary">
@@ -472,6 +472,7 @@ function imgCheck() {
 
 
 }
+
 
 
 </script>
