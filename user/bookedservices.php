@@ -80,7 +80,7 @@ $email = $_SESSION['email'];
 
 
                     $sql1 = "SELECT b.*,a.services,a.rate from booking b,addservice a where  a.serviceid=b.serviceid  and  status IN('0','1','2') order by date desc";
-                    echo $sql1;
+                    //echo $sql1;
                     $data1 = select_data($sql1);
 
 
@@ -131,7 +131,7 @@ $email = $_SESSION['email'];
                           elseif ($status == '2') {
                           ?>
                             <div class="btn-group">
-                              <a href="#" class="btn btn-success btn-sm">Download Invoice</a>
+                              <a href="invoice.php?bookingid=<?php echo $row['bookingid'];?>" class="btn btn-success btn-sm">Download Invoice</a>
 
 
                             </div>
