@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$apikey="rzp_test_A7MhIwolurtBfu";
+$apikey = "rzp_test_A7MhIwolurtBfu";
 
 
 $email = $_SESSION['email'];
@@ -8,20 +8,19 @@ $email = $_SESSION['email'];
 ?>
 
 <style>
-  .paybtn
-  {
-    width:135px;
+  .paybtn {
+    width: 135px;
   }
 </style>
 
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Service Requests</h1>
+    <h1>Booked Services</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">Service Requests</li>
+        <li class="breadcrumb-item active">Booked Services</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -33,141 +32,201 @@ $email = $_SESSION['email'];
         <div class="row">
           <div class="col-lg-12">
 
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Service requests</h5>
 
 
 
-                <!-- Table with stripped rows -->
-                <table class="table datatable">
-                  <thead>
-                    <tr>
-                      <th scope="col">Sl No.</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Service</th>
-                      <!--<th scope="col">Phone</th>-->
-                      <th scope="col">Date</th>
-                      <th scope="col">Time</th>
-                      <!--<th scope="col">Address</th>-->
-                      <th scope="col">District</th>
-                      <!--<th scope="col">City</th>-->
-                      <!--<th scope="col">Instructions</th>
-                    <th scope="col">Landmark</th>-->
-                      <th scope="col">Location URL</th>
-                      <th scope="col">View Details</th>
-                      <th scope="col">Payment</th>
+
+            <?php
+
+
+            date_default_timezone_set('Asia/Kolkata'); // Set your desired timezone here
+            $time = date("H");
+
+
+            date_default_timezone_set('Asia/Kolkata');
+            $date = date("Y-m-d");
 
 
 
-                    </tr>
-                  </thead>
-                  <tbody>
+
+            $sql1 = "SELECT b.*,a.*,e.*  from booking b,addservice a,employee_register e where a.serviceid=b.serviceid and e.email=a.email and status IN('0','1','2') order by date desc;";
+            // echo $sql1;
+            $data1 = select_data($sql1);
+
+            $n = 1;
+
+            while ($row = mysqli_fetch_assoc($data1)) {
+              $formattedDate = date("d M Y", strtotime($row['date']));
+
+            ?>
 
 
 
+              <div class="card" style="padding:5px 0 !important;">
+                <div class="row g-0">
+
+
+
+                  <div class="col-md-5">
+                    <div class="card-body pb-0">
+                      <p class="card-text mt-1" style="font-size:80%;font-color:#444;">Order No <?php echo $row['bookingid']; ?> </p>
+                      <h5 class="card-title pb-0 pt-2 " style="text-transform:capitalize;font-size:150%;"> <?php echo $row['services'] ?></h5>
+                      <!-- <p class="card-text mb-1" style="font-size:80%;">Category: <?php echo $row['services'] ?> </p> -->
+                      <!-- <p class="card-text mb-1"><b class="text-success" style="font-size:120%;">₹<?php echo $row['rate']; ?></b> </p> -->
+                      <p class="card-text pb-0 mb-1" style="text-transform:capitalize;font-size:90%;font-weight:600;"><i class="bi bi-person-fill"></i> <?php echo $row['fname'] ?> <?php echo $row['lname'] ?> </p>
+                      <p class="card-text" style="text-transform:capitalize;font-size:80%;"><i class="bi bi-telephone-fill"></i> <?php echo $row['phonenumber'] ?><br><i class="bi bi-patch-check-fill"></i> <?php echo $row['experience']?> Years Of Experience</p>
+                      <p class="badge bg-success" style="font-weight: 600;font-size: 100%"><i class="bi bi-calendar-fill"></i>  <?php echo $formattedDate; ?> </p>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+
+                    <?php if ($row['status'] == 0) { ?>
+                      <p class="card-text pb-0 mb-1" style="text-transform:capitalize;font-size:90%;font-weight:600;"><i class="bi bi-person"></i> <?php echo $row['name'] ?></p>
+                      <p class="card-text" style="text-transform:capitalize;font-size:85%;"><i class="bi bi-house"></i> <?php echo $row['address'] ?><br><?php echo $row['city'] ?><br><?php echo $row['landmark'] ?><br><?php echo $row['district'] ?></p>
+
+                      <td>
+                      <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a>
+                      </td>
+                      <p class="card-text mt-5 pt-2"><b class="text-success" style="font-size:150%;">₹<?php echo $row['rate']; ?></b> <span class="text-danger" style="font-size:100%;"></span></p>
                     <?php
-
-
-                    date_default_timezone_set('Asia/Kolkata'); // Set your desired timezone here
-                    $time = date("H");
-
-
-                    date_default_timezone_set('Asia/Kolkata');
-                    $date = date("Y-m-d");
-
-
-
-
-                    $sql1 = "SELECT b.*,a.services,a.rate from booking b,addservice a where  a.serviceid=b.serviceid  and  status IN('0','1','2') order by date desc";
-                    //echo $sql1;
-                    $data1 = select_data($sql1);
-
-
-
-
-
-
-                    $n = 1;
-
-                    while ($row = mysqli_fetch_assoc($data1)) {
-
+                    } else if ($row['status'] == 1) {
                     ?>
-                      <tr>
-                        <th scope='row'><?php echo $n++; ?></th>
-                        <td><?php echo  $row['name'] ?></td>
-                        <td><?php echo  $row['services'] ?></td>
-                        <td><?php echo $row['date'] ?></td>
-                        <td><?php echo $row['time'] ?></td>
-                        <td> <?php echo $row['district']  ?></td>
-                        <!-- <td> <?php echo $row['bookingid'];?></td> -->
+                      <!--<p class="card-text mt-5 pt-2 pb-0 mb-1"><b class="" style="font-size:120%;">₹<?php $row['rate']; ?></b> <span class="text-danger" style="font-size:80%;"><s>₹<?php echo  $row['rate']; ?></s></span></p>-->
+                       <p class="card-text pb-0 mb-1" style="text-transform:capitalize;font-size:90%;font-weight:600;"><i class="bi bi-person"></i> <?php echo $row['name'] ?></p>
+                      <p class="card-text" style="text-transform:capitalize;font-size:85%;"><i class="bi bi-house"></i> <?php echo $row['address'] ?><br><?php echo $row['city'] ?><br><?php echo $row['landmark'] ?><br><?php echo $row['district'] ?></p>
+                     
+                      <td>
+                      <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a>
+                      </td>
 
 
-
-                        <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
-                        <td>
-                          <div class="btn-group">
-                            <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<b>Name: </b><?php echo $row['name']; ?><br><b>Phone: </b><?php echo $row['phone']; ?><br><b>Service: </b><?php echo $row['services']; ?><br><b>Date: </b><?php echo $row['date']; ?><br><b>Time: </b><?php echo $row['time']; ?><br><b>Address: </b><?php echo $row['address']; ?><br><b>District: </b><?php echo $row['district']; ?><br><b>City: </b><?php echo $row['city']; ?><br><b>Instructions: </b><?php echo $row['instructions']; ?><br><b>Landmark: </b><?php echo $row['landmark']; ?><br><b>Email: </b><?php echo $row['email']; ?>')">View Details</a>
-
-
-                          </div>
-                        </td>
-                        <td>
-                          <?php
-                          $status = $row['status'];
-
-                          if ($status == '1') {
-                          ?>
+                      <p class="card-text"><b class="text-success" style="font-size:150%;">₹<?php echo ($row['rate']); ?></b> </p>
+                    <?php
+                    }else if ($row['status'] == 2) {
+                    ?>
+                     <!--<p class="card-text mt-5 pt-2 pb-0 mb-1"><b class="" style="font-size:120%;">₹<?php $row['rate']; ?></b> <span class="text-danger" style="font-size:80%;"><s>₹<?php echo  $row['rate']; ?></s></span></p>-->
+                     <p class="card-text pb-0 mb-1" style="text-transform:capitalize;font-size:90%;font-weight:600;"><i class="bi bi-person"></i> <?php echo $row['name'] ?></p>
+                      <p class="card-text" style="text-transform:capitalize;font-size:85%;"><i class="bi bi-house"></i> <?php echo $row['address'] ?><br><?php echo $row['city'] ?><br><?php echo $row['landmark'] ?><br><?php echo $row['district'] ?></p>
+                      
+                      <td>
+                      <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a>
+                      </td>
 
 
-
-                            <div class="btn-group">
-                              <a class="btn btn-primary btn-sm paybtn" onclick="(pay(' <?php echo $row['rate'];?>', <?php echo $row['bookingid'];?>))">Pay ₹<?php echo $row['rate'];?></a>
-
-
-                            </div>
-                          <?php
-                          } 
-                          elseif ($status == '2') {
-                          ?>
-                            <div class="btn-group">
-                              <a href="invoice.php?bookingid=<?php echo $row['bookingid'];?>" class="btn btn-success btn-sm">Download Invoice</a>
-
-
-                            </div>
-                          <?php
-                          }
-                          elseif ($status == '0') {
-                            ?>
-                              <div class="btn-group">
-                                <p href="#" class="btn btn-warning btn-sm paybtn mb-0">Pending</a>
-  
-  
-                              </div>
-                            <?php
-                            }
-                          ?>
-                        </td>
-
-
-
-
-
-
-
-
-                      </tr>
-
+                      <p class="card-text"><b class="text-success" style="font-size:150%;">₹<?php echo ($row['rate']); ?></b> </p>
                     <?php
                     }
                     ?>
 
-                  </tbody>
-                </table>
-                <!-- End Table with stripped rows -->
 
+
+                  </div>
+
+                  <div class="col-md-3">
+
+
+                    <?php if ($row['status'] == 0) 
+                    { ?>
+                      <div class="mt-5 pt-3">
+                        
+                        <a href="php/cancelbook.php?booking_id=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
+                      </div>
+                      <p class="badge rounded-pill bg-primary mt-1" style="font-size: 80%;font-weight: 600;">Waiting for approval</p>
+                    <?php
+                    }
+                     else if ($row['status'] == 1) {
+                      $formattedDate = date("d M Y", strtotime($row['date']));
+                    ?>
+                      <div class="mt-5 pt-3">
+                        <a class="btn btn-primary btn-sm mb-0" onclick="payment(<?php echo ($row['rate']) ?>,<?php echo $bkid; ?>)">Pay Now</a>
+                        <a href="php/cancelbook.php?booking_id=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
+                      </div>
+                      <p class="badge rounded-pill bg-success mt-1" style="font-size: 80%;font-weight: 600;">Order Approved</p>
+                      <p class="badge bg-primary" style="font-weight: 600;font-size: 80%">Delivery Expected</i><?php echo $formattedDate; ?> </p>
+                    <?php
+                    } else if ($row['status'] == 2) {
+                    ?>
+                     <div class="mt-5 pt-3">
+                     
+                     <a href="invoice.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-success btn-sm">Download Invoice </a>
+                     </div>
+                     <?php
+                    }
+                    ?>
+
+                  </div>
+                </div>
               </div>
-            </div>
+
+              <!-- 
+              <tr>
+                <th scope='row'><?php echo $n++; ?></th>
+                <td><?php echo  $row['name'] ?></td>
+                <td><?php echo  $row['services'] ?></td>
+                <td><?php echo $row['date'] ?></td>
+                <td><?php echo $row['time'] ?></td>
+                <td> <?php echo $row['district']  ?></td>
+              
+
+
+
+                <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
+                <td>
+                  <div class="btn-group">
+                    <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<b>Name: </b><?php echo $row['name']; ?><br><b>Phone: </b><?php echo $row['phone']; ?><br><b>Service: </b><?php echo $row['services']; ?><br><b>Date: </b><?php echo $row['date']; ?><br><b>Time: </b><?php echo $row['time']; ?><br><b>Address: </b><?php echo $row['address']; ?><br><b>District: </b><?php echo $row['district']; ?><br><b>City: </b><?php echo $row['city']; ?><br><b>Instructions: </b><?php echo $row['instructions']; ?><br><b>Landmark: </b><?php echo $row['landmark']; ?><br><b>Email: </b><?php echo $row['email']; ?>')">View Details</a>
+
+
+                  </div>
+                </td>
+                <td>
+                  <?php
+                  $status = $row['status'];
+
+                  if ($status == '1') {
+                  ?>
+
+
+
+                    <div class="btn-group">
+                      <a class="btn btn-primary btn-sm paybtn" onclick="(pay(' <?php echo $row['rate']; ?>', <?php echo $row['bookingid']; ?>))">Pay ₹<?php echo $row['rate']; ?></a>
+
+
+                    </div>
+                  <?php
+                  } elseif ($status == '2') {
+                  ?>
+                    <div class="btn-group">
+                      <a href="invoice.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-success btn-sm">Download Invoice</a>
+
+
+                    </div>
+                  <?php
+                  } elseif ($status == '0') {
+                  ?>
+                    <div class="btn-group">
+                      <p href="#" class="btn btn-warning btn-sm paybtn mb-0">Pending</a>
+
+
+                    </div>
+                  <?php
+                  }
+                  ?>
+                </td>
+
+
+
+
+
+
+
+
+              </tr> -->
+
+            <?php
+            }
+            ?>
 
           </div>
         </div>
@@ -224,19 +283,18 @@ echo $email;
 
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
-
-    function pay(amt,bkid){
-      // alert(bkid);
-      var options = {
-      "key": "<?php echo $apikey?>", //Enter the Key ID generated from the Dashboard
-      "amount": amt*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+<script>
+  function pay(amt, bkid) {
+    // alert(bkid);
+    var options = {
+      "key": "<?php echo $apikey ?>", //Enter the Key ID generated from the Dashboard
+      "amount": amt * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       "currency": "INR",
       "name": "Tenement",
       "description": "Payment",
       "image": "../images/car.ico",
       //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "php/success.php?&amt="+amt+"&bkid="+bkid,
+      "callback_url": "php/success.php?&amt=" + amt + "&bkid=" + bkid,
       "prefill": {
         "name": "biby",
         "email": "biby@gmail.com",
@@ -252,7 +310,7 @@ echo $email;
     var rzp1 = new Razorpay(options);
     rzp1.open();
   }
-  </script>
+</script>
 
 <?php
 
