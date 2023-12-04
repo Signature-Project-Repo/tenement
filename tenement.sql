@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 11:13 AM
+-- Generation Time: Dec 04, 2023 at 07:26 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -64,19 +64,21 @@ CREATE TABLE `booking` (
   `url` varchar(100) NOT NULL,
   `status` int(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `serviceid` int(50) NOT NULL
+  `serviceid` int(50) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `feedback` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`) VALUES
-(1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 2, 'joelshibu100@gmail.com', 1),
-(2, 'Abhishek', '25', '1990-02-05', '03:49', 'Dolore dolor id vol', 'kottayam', 'Et dolor magna enim ', 'Corrupti dolore ali', 'Consequatur odio om', 'https://www.sov.co.uk', -1, 'joelshibu100@gmail.com', 2),
-(3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 1, 'joelshibu100@gmail.com', 2),
-(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1),
-(5, 'Steven Velasquez', '7034813307', '2023-11-30', '14:52', 'dsfsdf', 'ernakulam', 'Muvattupuzja', 'sdfsdf', 'dfgdf', 'http://www.google.com', 0, 'joelshibu100@gmail.com', 1);
+INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`, `rating`, `feedback`) VALUES
+(1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 2, 'joelshibu100@gmail.com', 1, 4, 'Good !!'),
+(2, 'Abhishek', '25', '1990-02-05', '03:49', 'Dolore dolor id vol', 'kottayam', 'Et dolor magna enim ', 'Corrupti dolore ali', 'Consequatur odio om', 'https://www.sov.co.uk', -1, 'joelshibu100@gmail.com', 2, 0, ''),
+(3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 1, 'joelshibu100@gmail.com', 2, 0, ''),
+(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1, 0, ''),
+(5, 'Steven Velasquez', '7034813307', '2023-11-30', '14:52', 'dsfsdf', 'ernakulam', 'Muvattupuzja', 'sdfsdf', 'dfgdf', 'http://www.google.com', 0, 'joelshibu100@gmail.com', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -131,6 +133,30 @@ CREATE TABLE `employee_register` (
 
 INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`, `img`) VALUES
 ('Sivaji', 'Mohan', 'Ezekiel', 'Est', 'pathanamthitta', 'kerala', 96730, '1997-02-11', 'other', '9544131746', 'sivaji123@gmail.com', '8589920123', '123', 'sivaji123gmailcom.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favourites`
+--
+
+CREATE TABLE `favourites` (
+  `favid` int(10) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `serviceid` varchar(10) NOT NULL,
+  `services` varchar(50) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `rate` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `favourites`
+--
+
+INSERT INTO `favourites` (`favid`, `email`, `name`, `serviceid`, `services`, `description`, `rate`, `status`) VALUES
+(0, 'joelshibu100@gmail.com', '', '1', 'Plumbing', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '37', '1');
 
 -- --------------------------------------------------------
 

@@ -11,6 +11,48 @@ $email = $_SESSION['email'];
   .paybtn {
     width: 135px;
   }
+
+
+  .rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+  }
+
+  .rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 50px;
+    color: #ccc;
+    
+  }
+
+  .rate:not(:checked)>label:before {
+    content: '★ ';
+  }
+
+  .rate>input:checked~label {
+    color: #ffc700;
+  }
+
+  .rate:not(:checked)>label:hover,
+  .rate:not(:checked)>label:hover~label {
+    color: #deb217;
+  }
+
+  .rate>input:checked+label:hover,
+  .rate>input:checked+label:hover~label,
+  .rate>input:checked~label:hover,
+  .rate>input:checked~label:hover~label,
+  .rate>label:hover~input:checked~label {
+    color: #c59b08;
+  }
+
+  /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+
 </style>
 
 <main id="main" class="main">
@@ -69,7 +111,7 @@ $email = $_SESSION['email'];
 
                   <div class="col-md-5">
                     <div class="card-body pb-0">
-                      <p class="card-text mt-1" style="font-size:80%;font-color:#444;">Order No <?php echo $row['bookingid']; ?> </p>
+                      <p class="card-text mt-1" style="font-size:80%;font-color:#444;">Booking No <?php echo $row['bookingid']; ?> </p>
                       <h5 class="card-title pb-0 pt-2 " style="text-transform:capitalize;font-size:150%;"> <?php echo $row['services'] ?></h5>
                       <!-- <p class="card-text mb-1" style="font-size:80%;">Category: <?php echo $row['services'] ?> </p> -->
                       <!-- <p class="card-text mb-1"><b class="text-success" style="font-size:120%;">₹<?php echo $row['rate']; ?></b> </p> -->
@@ -149,6 +191,9 @@ $email = $_SESSION['email'];
                     } else if ($row['status'] == 2) {
                     ?>
                      <div class="mt-5 pt-3">
+
+
+                     <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered" onclick="passid('<?php echo $row['bookingid'];?>')"><i class="bi bi-star me-1"></i>Add Review</a>   
                      
                      <a href="invoice.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-success btn-sm">Download Invoice </a>
                      </div>
@@ -231,27 +276,64 @@ $email = $_SESSION['email'];
           </div>
         </div>
       </section>
-      <div class="modal fade" id="verticalycentered2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Details</b></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal fade" id="verticalycentered" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Feedback & Rating</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="php/feedback.php" method="POST">
+        
+          <div class="modal-body">
+          
+             
+                
+                <input type="hidden"class="form-control" id="bookingid" name="bookingid" placeholder="BookingId">
+              
+              
+                <!-- <div class="form-floating "> -->
+                <div class="row mb-3">
+            
+            <div class="col-sm-12 rate" style="padding-right:110px;">
 
-            </div>
-            <div class="modal-body" id="mod">
-              <p>Service:</p>
-              <p>Instructions:</p>
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" title="text">1 star</label>
 
-
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
-        </div>
-      </div>
+                <div class="row mb-3">
+                  <!-- <div class="form-floating"> -->
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Feedback</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" placeholder="Feedback" name="feedback" style="height: 100px;"></textarea>
+                    
+                  </div>
+                </div>
+          
+          <div class="modal-footer">
+            
+            <button type="submit" class="btn btn-primary">Save </button>
+          </div>
+              
+              
+</form>
+
+                </div>
+               
+                
+                </div>
+                </div>
+                
+               
       <!-- End Vertically centered Modal-->
 
 
@@ -275,11 +357,10 @@ echo $email;
 
 </main><!-- End #main -->
 <script>
-  function passdes(valuee) {
-    // alert(valuee)
-    document.getElementById("mod").innerHTML = valuee;
-  }
-</script>
+function passid(valuee){
+document.getElementById('bookingid').value=valuee;
+                }
+                </script>
 
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

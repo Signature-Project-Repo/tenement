@@ -76,7 +76,8 @@ $row1 = mysqli_fetch_assoc($data1)
 
 
               <div class="btn-group">
-                <a href="#" class="btn btn-success btn-sm"></i>Add To Favourite</a>
+              <a href="php/fav.php?serviceid=<?php echo $row['serviceid']?>&services=<?php echo $row['services'] ?>&description=<?php echo $row['description'] ?>&rate=<?php echo $row['rate'] ?>"  class="btn btn-warning btn-sm">Add to favourites</a>
+                    
               </div>
               <div class="btn-group">
                 <a href="bookingaction.php" class="btn btn-primary btn-sm"></i> Book Now</a>
