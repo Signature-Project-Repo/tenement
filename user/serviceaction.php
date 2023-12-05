@@ -76,7 +76,7 @@ $row1 = mysqli_fetch_assoc($data1)
 
 
               <div class="btn-group">
-              <a href="php/fav.php?serviceid=<?php echo $row['serviceid']?>&services=<?php echo $row['services'] ?>&description=<?php echo $row['description'] ?>&rate=<?php echo $row['rate'] ?>"  class="btn btn-warning btn-sm">Add to favourites</a>
+              <a href="php/fav.php?serviceid=<?php echo $row['serviceid']?>&services=<?php echo $row['services'] ?>&fname=<?php echo $row1['fname'] ?>&lname=<?php echo $row1['lname'] ?>&description=<?php echo $row['description'] ?>&rate=<?php echo $row['rate'] ?>"  class="btn btn-success btn-sm">Add To Favourites</a>
                     
               </div>
               <div class="btn-group">
@@ -116,7 +116,7 @@ $row1 = mysqli_fetch_assoc($data1)
 
             <p class="card-text mb-2" ><b><i class="bi bi-envelope"></i></b> <?php echo $row1['email']?></p>
             <p class="card-text mb-2" ><b><i class="bi bi-telephone"></i></b> <?php echo $row1['phonenumber']?></p>
-            <p class="card-text mb-2" ><b><i class="bi bi-patch-check"></i></b> <?php echo $row['experience']?> Years Of Experience</p>
+            <p class="card-text mb-2" ><b><i class="bi bi-patch-check"></i></b> <?php echo $row1['experience']?> Years Of Experience</p>
             </div>
 
   </section>

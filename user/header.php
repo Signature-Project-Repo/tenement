@@ -328,6 +328,11 @@ $user=mysqli_fetch_assoc($data);
               <i class="bi bi-circle"></i><span>My Complaints</span>
             </a>
           </li>
+          <li>
+            <a href="medical.php">
+              <i class="bi bi-circle"></i><span>Medical</span>
+            </a>
+          </li>
     
         </ul>
       </li><!-- End Forms Nav -->

@@ -13,20 +13,16 @@ require '../../connect.php';
 session_start();
 $email= $_SESSION['email'];
 $serviceid = $_GET['serviceid'];
-$services=$_GET['services'];
-$fname=$_GET['fname'];
-$lname=$_GET['lname'];
-$description = $_GET['description'];
-$rate=$_GET['rate'];
+$favid = $_GET['favid'];
 
-$sql2 = "INSERT INTO favourites (email, serviceid,services,fname,lname,description,rate, status) VALUES ('$email', '$serviceid','$services','$fname','$lname','$description','$rate', '1')";
-insert_data($sql2);
+$sql2 = "UPDATE favourites SET status='0' WHERE  favid='$favid'";
+update_data($sql2);
 ?>
 
 <script type="text/javascript">
   Swal.fire({
     icon: 'success',
-    text: 'Added to favorites',
+    text: 'Removed From favorites',
   }).then(() => {
     window.location.replace('../favourites.php');
   });

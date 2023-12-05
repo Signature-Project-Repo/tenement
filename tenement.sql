@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 07:26 PM
+-- Generation Time: Dec 05, 2023 at 12:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -143,9 +143,10 @@ INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `distr
 CREATE TABLE `favourites` (
   `favid` int(10) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `name` varchar(50) NOT NULL,
   `serviceid` varchar(10) NOT NULL,
   `services` varchar(50) NOT NULL,
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
   `description` varchar(500) NOT NULL,
   `rate` varchar(50) NOT NULL,
   `status` varchar(10) NOT NULL
@@ -155,8 +156,8 @@ CREATE TABLE `favourites` (
 -- Dumping data for table `favourites`
 --
 
-INSERT INTO `favourites` (`favid`, `email`, `name`, `serviceid`, `services`, `description`, `rate`, `status`) VALUES
-(0, 'joelshibu100@gmail.com', '', '1', 'Plumbing', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '37', '1');
+INSERT INTO `favourites` (`favid`, `email`, `serviceid`, `services`, `fname`, `lname`, `description`, `rate`, `status`) VALUES
+(1, 'joelshibu100@gmail.com', '1', 'Plumbing', 'Sivaji', 'Mohan', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '37', '0');
 
 -- --------------------------------------------------------
 
@@ -254,6 +255,12 @@ ALTER TABLE `complaints`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `favourites`
+--
+ALTER TABLE `favourites`
+  ADD PRIMARY KEY (`favid`);
+
+--
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
@@ -294,10 +301,16 @@ ALTER TABLE `complaints`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `favourites`
+--
+ALTER TABLE `favourites`
+  MODIFY `favid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
