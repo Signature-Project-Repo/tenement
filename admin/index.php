@@ -1,6 +1,6 @@
 <?php
 require 'header.php';
-$email = $_SESSION['emailid'];
+$email = $_SESSION['email'];
 
 //count of total members
 $sql1 = "SELECT user_register.*
@@ -19,12 +19,12 @@ $data4 = select_data($sql4);
 $count4 = mysqli_num_rows($data4);
 
 //count of suspended users
-$sql5 = "SELECT * FROM loginpage where status='-1' and usertype='1'";
+$sql5 = "SELECT * FROM loginpage where status='-2' and usertype='1'";
 $data5 = select_data($sql5);
 $count5 = mysqli_num_rows($data5);
 
 //count of rejected users
-$sql6 = "SELECT * FROM loginpage where status='-2' and usertype='1'";
+$sql6 = "SELECT * FROM loginpage where status='-1' and usertype='1'";
 $data6 = select_data($sql6);
 $count6 = mysqli_num_rows($data6);
 
@@ -47,12 +47,12 @@ $data3 = select_data($sql3);
 $count3 = mysqli_num_rows($data3);
 
 //count of suspended users
-$sql7 = "SELECT * FROM loginpage where status='-1' and usertype='2'";
+$sql7 = "SELECT * FROM loginpage where status='-2' and usertype='2'";
 $data7 = select_data($sql7);
 $count7 = mysqli_num_rows($data7);
 
 //count of rejected users
-$sql8 = "SELECT * FROM loginpage where status='-2' and usertype='2'";
+$sql8 = "SELECT * FROM loginpage where status='-1' and usertype='2'";
 $data8 = select_data($sql8);
 $count8 = mysqli_num_rows($data8);
 
@@ -73,7 +73,7 @@ $count8 = mysqli_num_rows($data8);
     <h1>User List</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
@@ -256,70 +256,10 @@ $count8 = mysqli_num_rows($data8);
   </div>
   <script>
     let count = [];
-    let artform = [];
+    let services = [];
   </script>
 
 
-  <!-- Website Traffic2 -->
-
-  <?php
-
-  $sql10 = "SELECT * from addservice ";
-
-  $data10 = select_data($sql10);
-  while ($row11 = mysqli_fetch_assoc($data10)) {
-
-    $item_id = $row11['serviceid'];
-    $count11 = mysqli_num_rows($data10);
-
-    $name = $row11['services'];
-
-
-    $sql20 = "SELECT * from booking where serviceid='$item_id'";
-    $data20 = select_data($sql20);
-    $count12 = mysqli_num_rows($data20);
-   
-
-    ?>
-  <script>
-     count.push('<?php echo  $count12; ?>');
-     artform.push('<?php echo $name; ?>');
-  </script>
-
-<?php
-
-      }
-  ?>
-  <div class="col-lg-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Bar Chart</h5>
-
-        <!-- Bar Chart -->
-        <div id="barChart" style="min-height: 400px;" class="echart"></div>
-
-        <script>
-         
-          document.addEventListener("DOMContentLoaded", () => {
-            echarts.init(document.querySelector("#barChart")).setOption({
-              xAxis: {
-                type: 'category',
-                data: service
-              },
-              yAxis: {
-                type: 'value'
-              },
-              series: [{
-                data: count,
-                type: 'bar'
-              }]
-            });
-          });
-        </script>
-      </div>
-    </div>
-  </div>
-  <!-- End Bar Chart -->
 
 
 
