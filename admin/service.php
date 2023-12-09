@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 include 'header.php';
 $email=$_SESSION['email'];
@@ -48,6 +48,15 @@ $email=$_SESSION['email'];
                   <label for="floatingTextarea">Description</label>
                 </div>
               </div>
+              <div class="col-md-12">
+                  <div class="form-floating mb-3">
+                  <select name="status" id="" class="form-select">
+                      <option value="" disabled selected>Status</option>
+                      <option value="1">Medical Services</option>
+                      <option value="0">Services Except Medical</option> 
+                  </select>
+                  </div>
+                </div>
 
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Add</button>
@@ -76,6 +85,7 @@ $email=$_SESSION['email'];
               
                   <th scope="col">Service</th>
                   <th scope="col">Description</th>
+                  
 
                   
                 </tr>
@@ -92,6 +102,7 @@ $email=$_SESSION['email'];
                   <th scope="row"><?php echo $n++?></th>
                   <td><?php echo $user['services']?></td>
                   <td><?php echo $user['description']?></td>
+                  
                 
                 </tr>
           <?php
