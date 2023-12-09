@@ -57,6 +57,28 @@ $data8 = select_data($sql8);
 $count8 = mysqli_num_rows($data8);
 
 
+//user complaints
+$sql10 = "SELECT * FROM complaints where status='0' and reply='0'";
+$data10 = select_data($sql10);
+$count10 = mysqli_num_rows($data10);
+
+//user resolved complaints
+$sql11 = "SELECT * FROM complaints where status='0' and reply!='0'";
+$data11 = select_data($sql11);
+$count11 = mysqli_num_rows($data11);
+
+
+//Employee complaints
+$sql12 = "SELECT * FROM complaints where status='1' and reply='0'";
+$data12 = select_data($sql12);
+$count12 = mysqli_num_rows($data12);
+
+//Employee resolved complaints
+$sql13 = "SELECT * FROM complaints where status='1' and reply!='0'";
+$data13 = select_data($sql13);
+$count13 = mysqli_num_rows($data13);
+
+
 
 
 
@@ -70,7 +92,7 @@ $count8 = mysqli_num_rows($data8);
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>User List</h1>
+    <h1>Admin Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -78,10 +100,13 @@ $count8 = mysqli_num_rows($data8);
       </ol>
     </nav>
   </div><!-- End Page Title -->
-  <!-- Website Traffic -->
+  
 
-  <div class="row">
-    <div class="col-lg-6">
+
+
+
+<div class="row">
+    <div class="col-lg-4">
 
       <div class="card">
 
@@ -107,73 +132,70 @@ $count8 = mysqli_num_rows($data8);
           </div>
 
 
-          <div id="trafficChartUsers" style="min-height: 400px;" class="echart"></div>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              echarts.init(document.querySelector("#trafficChartUsers")).setOption({
-                tooltip: {
-                  trigger: 'item'
-                },
-                legend: {
-                  top: '0%',
-                  left: 'center',
-                },
-                series: [{
-                  name: '',
-                  type: 'pie',
-                  radius: ['40%', '70%'],
-                  avoidLabelOverlap: false,
-                  label: {
-                    show: false,
-                    position: 'center'
-                  },
-                  emphasis: {
-                    label: {
-                      show: true,
-                      fontSize: '18',
-                      fontWeight: 'bold'
-                    }
-                  },
-                  labelLine: {
-                    show: false
-                  },
-                  data: [{
-                      value: <?php echo $count4 ?>,
-                      name: 'Pending Users'
-                    },
-                    {
-                      value: <?php echo $count1 ?>,
-                      name: 'Active Users'
-                    },
-                    {
-                      value: <?php echo $count5 ?>,
-                      name: 'Suspended Users'
-                    },
-                    {
-                      value: <?php echo $count6 ?>,
-                      name: 'Rejected Users'
-                    }
-                  ]
-                }]
-              });
-            });
-          </script>
-
-        </div>
-      </div>
 
 
 
-      <!-- End Website Traffic -->
-    </div>
 
-    <div class="col-lg-6">
+          <div id="pieChart" style="min-height: 400px;" class="echart"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    echarts.init(document.querySelector("#pieChart")).setOption({
+
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'right'
+      },
+      series: [{
+        name: 'Access From',
+        type: 'pie',
+        radius: '50%',
+        data: [{
+            value: <?php echo $count4 ?>,
+            name: 'Pending Users'
+          },
+          {
+            value: <?php echo $count1 ?>,
+            name: 'Active Users'
+          },
+          {
+            value: <?php echo $count5 ?>,
+            name: 'Suspended Users'
+          },
+          {
+            value: <?php echo $count6 ?>,
+            name: 'Rejected Users'
+          }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }]
+    });
+  });
+</script>
+<!-- End Pie Chart -->
+
+</div>
+</div>
+</div>
+
+
+<!--Employees-->
+
+    <div class="col-lg-4">
 
       <div class="card">
 
-
         <div class="card-body pb-0">
+
           <div class="row">
             <div class="col-md-11">
               <h5 class="card-title">Employees</h5>
@@ -182,82 +204,154 @@ $count8 = mysqli_num_rows($data8);
               <div class="filter">
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
 
-                  <li><a class="dropdown-item" href="pendingartist.php">Pending Employees</a></li>
-                  <li><a class="dropdown-item" href="suspendedartist.php">Suspended Employees</a></li>
-                  <li><a class="dropdown-item" href="rejectedartist.php">Rejected Employees</a></li>
+
+                  <li><a class="dropdown-item" href="pendingemployee.php">Pending employees</a></li>
+                  <li><a class="dropdown-item" href="suspendedemployee.php">Suspended employees</a></li>
+                  <li><a class="dropdown-item" href="rejectedemployee.php">Rejected employees</a></li>
                 </ul>
               </div>
+
+            </div>
+          </div>
+
+          <div id="pieChart3" style="min-height: 400px;" class="echart"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    echarts.init(document.querySelector("#pieChart3")).setOption({
+
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'right'
+      },
+      series: [{
+        name: 'Access From',
+        type: 'pie',
+        radius: '50%',
+        data: [{
+            value: <?php echo $count3 ?>,
+            name: 'Pending Users'
+          },
+          {
+            value: <?php echo $count2 ?>,
+            name: 'Active Users'
+          },
+          {
+            value: <?php echo $count7 ?>,
+            name: 'Suspended Users'
+          },
+          {
+            value: <?php echo $count8 ?>,
+            name: 'Rejected Users'
+          }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }]
+    });
+  });
+</script>
+<!-- End Pie Chart -->
+
+</div>
+</div>
+</div>
+
+
+<!--Complaints-->
+
+    <div class="col-lg-4">
+
+      <div class="card">
+
+        <div class="card-body pb-0">
+
+          <div class="row">
+            <div class="col-md-11">
+              <h5 class="card-title">Complaints</h5>
+            </div>
+            <div class="col-md-1 pt-3">
+              <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+                  <li><a class="dropdown-item" href="mycomplaints.php">user complaints</a></li>
+                  <li><a class="dropdown-item" href="resolvedcomplaints.php">user resolved complaints</a></li>
+                  <li><a class="dropdown-item" href="employeecomplaints.php">employee complaints</a></li>
+                  <li><a class="dropdown-item" href="resolvedemployeecomplaints.php">employee resolved complaints</a></li>
+                </ul>
+              </div>
+
             </div>
           </div>
 
 
 
-          <div id="trafficChartEmployees" style="min-height: 400px;" class="echart"></div>
 
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              echarts.init(document.querySelector("#trafficChartEmployees")).setOption({
-                tooltip: {
-                  trigger: 'item'
-                },
-                legend: {
-                  top: '0%',
-                  left: 'center'
-                },
-                series: [{
-                  name: '',
-                  type: 'pie',
-                  radius: ['40%', '70%'],
-                  avoidLabelOverlap: false,
-                  label: {
-                    show: false,
-                    position: 'center'
-                  },
-                  emphasis: {
-                    label: {
-                      show: true,
-                      fontSize: '18',
-                      fontWeight: 'bold'
-                    }
-                  },
-                  labelLine: {
-                    show: false
-                  },
-                  data: [{
-                      value: <?php echo $count3 ?>,
-                      name: 'Pending Employees'
-                    },
-                    {
-                      value: <?php echo $count2 ?>,
-                      name: 'Active Employees'
-                    },
-                    {
-                      value: <?php echo $count7 ?>,
-                      name: 'Suspended Employees'
-                    },
-                    {
-                      value: <?php echo $count8 ?>,
-                      name: 'Rejected Employees'
-                    }
-                  ]
-                }]
-              });
-            });
-          </script>
 
+
+              <!-- Pie Chart -->
+              <div id="pieChart2" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#pieChart2")).setOption({
+              
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      orient: 'vertical',
+                      left: 'right'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: '50%',
+                      data: [{
+                          value: <?php echo $count10 ?>,
+                          name: 'User Complaints'
+                        },
+                        {
+                          value: <?php echo $count11 ?>,
+                          name: 'Resolved User Complaints'
+                        },
+                        {
+                          value: <?php echo $count12 ?>,
+                          name: 'Employee Complaints'
+                        },
+                        {
+                          value: <?php echo $count13 ?>,
+                          name: 'Resolved Employee Complaints'
+                        }
+                      ],
+                      emphasis: {
+                        itemStyle: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                      }
+                    }]
+                  });
+                });
+              </script>
+              <!-- End Pie Chart -->
+
+            </div>
+          </div>
         </div>
-      </div><!-- End Website Traffic2 -->
-    </div>
 
-  </div>
-  <script>
-    let count = [];
-    let services = [];
-  </script>
 
 
 
