@@ -171,22 +171,24 @@ $email = $_SESSION['email'];
 
                     <?php if ($row['status'] == 0) 
                     { ?>
-                      <div class="mt-5 pt-3">
-                        
-                        <a href="php/cancelbook.php?booking_id=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
-                      </div>
-                      <p class="badge rounded-pill bg-primary mt-1" style="font-size: 80%;font-weight: 600;">Waiting for approval</p>
+                    
+                      <div class=" mt-5 pt-3">
+                      <a href="php/cancelbook.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
+                        </div>
+                        <p class="badge rounded-pill bg-warning mt-5" style="font-size: 80%;font-weight: 600;"><i class="bi bi-hourglass-split"></i>  Waiting for approval</p>
+                   
                     <?php
                     }
                      else if ($row['status'] == 1) {
                       $formattedDate = date("d M Y", strtotime($row['date']));
                     ?>
+                   
                       <div class="mt-5 pt-3">
                         <a class="btn btn-primary btn-sm mb-0" onclick="payment(<?php echo ($row['rate']) ?>,<?php echo $bkid; ?>)">Pay Now</a>
-                        <a href="php/cancelbook.php?booking_id=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
+                        <a href="php/cancelbook.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
                       </div>
-                      <p class="badge rounded-pill bg-success mt-1" style="font-size: 80%;font-weight: 600;">Order Approved</p>
-                      <p class="badge bg-primary" style="font-weight: 600;font-size: 80%">Delivery Expected</i><?php echo $formattedDate; ?> </p>
+                      <p class="badge rounded-pill bg-success mt-5" style="font-size: 80%;font-weight: 400;"><i class="bi bi-patch-check"></i>   Order Approved</p>
+
                     <?php
                     } else if ($row['status'] == 2) {
                     ?>

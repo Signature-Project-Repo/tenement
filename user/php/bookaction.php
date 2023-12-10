@@ -24,7 +24,7 @@ $url=$_POST['url'];
 $district=$_POST['district'];
 $city=$_POST['city'];
 $landmark=$_POST['landmark'];
-
+$status1=$_GET['status'];
 $status=0;
 
 
@@ -34,7 +34,10 @@ insert_data($sql);
 ?>
 
 <script>
- 
+
+  <?php if($status1=='0')
+{
+  ?> 
  let timerInterval
 Swal.fire({
   icon:'success',
@@ -59,6 +62,42 @@ Swal.fire({
 
   }
 });
+
+<?php }
+elseif($status1=='1')
+{ ?>
+  let timerInterval
+  Swal.fire({
+    icon:'success',
+    title: 'Booking Successfull',
+    html: 'Booking ',
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading()
+      const b = Swal.getHtmlContainer().querySelector('b')
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft()
+      }, 100)
+    },
+    willClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      window.location.replace('../medical.php');
+  
+    }
+  });
+  <?php }
+  ?>
+  
+
+
+
+
 </script>
+
     </body>
 </html>

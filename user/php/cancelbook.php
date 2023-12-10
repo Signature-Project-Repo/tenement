@@ -12,19 +12,19 @@
 require '../../connect.php';
 session_start();
 $email= $_SESSION['email'];
-$serviceid = $_GET['serviceid'];
-$favid = $_GET['favid'];
+$bookingid = $_GET['bookingid'];
 
-$sql2 = "DELETE FROM favourites WHERE  favid='$favid'";
+
+$sql2 = "DELETE FROM booking WHERE  bookingid='$bookingid'";
 update_data($sql2);
 ?>
 
 <script type="text/javascript">
   Swal.fire({
     icon: 'success',
-    text: 'Removed From favorites',
+    text: 'Booking Cancelled',
   }).then(() => {
-    window.location.replace('../favourites.php');
+    window.location.replace('../bookedservices.php');
   });
 </script>
 </body>

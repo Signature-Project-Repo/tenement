@@ -13,18 +13,18 @@ require '../../connect.php';
 session_start();
 $email= $_SESSION['email'];
 $serviceid = $_GET['serviceid'];
-$favid = $_GET['favid'];
 
-$sql2 = "DELETE FROM favourites WHERE  favid='$favid'";
+
+$sql2 = "DELETE FROM addservice WHERE  serviceid='$serviceid'";
 update_data($sql2);
 ?>
 
 <script type="text/javascript">
   Swal.fire({
     icon: 'success',
-    text: 'Removed From favorites',
+    text: 'Service Removed',
   }).then(() => {
-    window.location.replace('../favourites.php');
+    window.location.replace('../myform.php');
   });
 </script>
 </body>

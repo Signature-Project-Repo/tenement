@@ -62,7 +62,7 @@ $email = $_SESSION['email'];
 
                   <div class="row mt-2">
               <div class="btn-group">
-                <a href="bookingaction.php" class="btn btn-primary btn-sm"></i> Book Now</a>
+              <a href="serviceaction.php?serviceid=<?php echo $row['serviceid'];?>" class="btn btn-primary btn-sm"> Book Now</a>
 
               </div>
 
