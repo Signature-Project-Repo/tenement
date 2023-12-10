@@ -16,10 +16,11 @@ $email=$_SESSION['email'];
 $description=$_POST['description'];
 $experience=$_POST['experience'];
 $rate=$_POST['rate'];
+$serviceid=$_GET['serviceid'];
 
 
 
-$sql="UPDATE `addservice` SET `description`='$description',`experience`='$experience',`rate`='$rate' WHERE email='$email' ";
+$sql="UPDATE `addservice` SET `description`='$description',`experience`='$experience',`rate`='$rate' WHERE email='$email' AND serviceid='$serviceid' ";
 update_data($sql);
 
 

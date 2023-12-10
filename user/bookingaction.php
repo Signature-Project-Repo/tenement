@@ -3,6 +3,7 @@
 
 include 'header.php';
 $email=$_SESSION['email'];
+$serviceid=$_GET['serviceid'];
 
 $sql="SELECT * FROM items a , addservice r WHERE a.id=r.serviceid";
 $data = select_data($sql);
@@ -35,7 +36,7 @@ $row = mysqli_fetch_assoc($data);
 
               <!-- Floating Labels Form -->
             
-              <form class="row g-3" action="php/bookaction.php?status=<?php echo $row['status'] ?>" method="POST" enctype="multipart/form-data">
+              <form class="row g-3" action="php/bookaction.php?status=<?php echo $row['status'] ?>&serviceid=<?php echo $serviceid ?>" method="POST" enctype="multipart/form-data">
               <div class="col-md-6">
                   <div class="form-floating">
                   <input type="text" class="form-control" name="name" placeholder="Name" ;>

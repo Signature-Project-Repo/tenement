@@ -46,7 +46,7 @@ $row3 = mysqli_fetch_assoc($data3);
 
               <!-- Floating Labels Form -->
             
-              <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
+              <form class="row g-3" action="php/editaction.php?serviceid=<?php echo $serviceid ?>" method="POST" enctype="multipart/form-data">
             
  
                 <div class="col-12">
