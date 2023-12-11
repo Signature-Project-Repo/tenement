@@ -4,8 +4,11 @@
 include 'header.php';
 $email=$_SESSION['email'];
 $serviceid=$_GET['serviceid'];
+$services=$_GET['services'];
 
-$sql="SELECT * FROM items a , addservice r WHERE a.id=r.serviceid";
+$sql="SELECT status
+FROM items
+WHERE services = $services";
 $data = select_data($sql);
 $row = mysqli_fetch_assoc($data);
 

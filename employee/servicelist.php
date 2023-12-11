@@ -102,7 +102,7 @@ $email = $_SESSION['email'];
 
                         <td>
                           <div class="btn-group">
-                            <a href="php/serviceaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&status=1 " class="btn btn-success btn-sm">Accecpt</a>
+                            <a href="php/serviceaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&status=1 " class="btn btn-success btn-sm">Accept</a>
                             <a href="php/serviceaction.php?email=<?php echo $row['email'];?>&serviceid=<?php echo $row['serviceid'];?>&bookingid=<?php echo $row['bookingid'];?>&status=-1 " class="btn btn-danger btn-sm">Reject</a>
                           </div>
                         </td>

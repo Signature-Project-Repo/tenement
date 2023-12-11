@@ -80,7 +80,7 @@ $row1 = mysqli_fetch_assoc($data1)
                     
               </div>
               <div class="btn-group">
-                <a href="bookingaction.php?serviceid=<?php echo $serviceid ?>" class="btn btn-primary btn-sm"></i> Book Now</a>
+                <a href="bookingaction.php?serviceid=<?php echo $serviceid ?>&services=<?php echo $row['services'] ?>" class="btn btn-primary btn-sm"></i> Book Now</a>
 
               </div>
                
