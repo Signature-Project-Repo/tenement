@@ -8,7 +8,7 @@ $services=$_GET['services'];
 
 $sql="SELECT status
 FROM items
-WHERE services = $services";
+WHERE services = '$services'";
 $data = select_data($sql);
 $row = mysqli_fetch_assoc($data);
 

@@ -21,7 +21,6 @@ Author URL: http://w3layouts.com
 
 </head>
 
-
 <body>
     <div class="signinform">
         <!-- container -->
@@ -29,15 +28,15 @@ Author URL: http://w3layouts.com
             <!-- main content -->
             <div class="w3l-form-info">
                 <div class="w3_info">
-                    <h2>Forget Your Password?</h2>
-                    <form action="sendotp.php" method="post">
+                    <h2>Enter your OTP</h2>
+                    <form action="verifyingotp.php" method="post">
                         <div class="input-group">
                             <span><i class="fas fa-user" aria-hidden="true"></i></span>
-                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="text" name="OTP" placeholder="OTP" required="">
                         </div>
                         
                         
-                        <button class="btn btn-primary btn-block" type="submit">Get OTP</button>
+                        <button class="btn btn-primary btn-block" type="submit">Verify OTP</button>
                     </form>
                     
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2023 at 12:04 PM
+-- Generation Time: Dec 13, 2023 at 03:55 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,8 +41,9 @@ CREATE TABLE `addservice` (
 --
 
 INSERT INTO `addservice` (`serviceid`, `services`, `description`, `experience`, `rate`, `email`) VALUES
-(1, 'Plumbing', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '35', '37', 'sivaji123@gmail.com'),
-(2, 'Electrician', 'Installs and repairs electrical wiring, systems, and fixtures in buildings. Installs conduits and pipes to house electrical wires and cables. Ensures piping complies with electrical codes. Installs circuit breakers and other electrical hardware and connects wiring to them', '97', '70', 'sivaji123@gmail.com');
+(1, 'Plumbing', 'System of pipes and fixtures installed in a building for the distribution of potable water and the removal of waterborne wastes. Plumbing is usually distinguished from water and sewage systems, which ', '14', '2000', 'sivaji123@gmail.com'),
+(2, 'Electrician', 'Ensures piping complies with electrical codes. Installs circuit breakers and other electrical hardware and connects wiring to them. Connects electrical systems to powerlines to provide electricity to ', '16', '4000', 'sivaji123@gmail.com'),
+(3, 'Medical', 'any maintenance care of, or preventive care for, the human body, or care, service, or treatment of an illness or dysfunction of, or injury to, the human body.\r\n', '10', '5000', 'sivaji123@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -74,11 +75,19 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`, `rating`, `feedback`) VALUES
-(1, 'Haifa', '88', '2008-04-20', '15:28', 'Ad corporis quis dol', 'palakkad', 'Qui itaque consequat', 'Qui asperiores dolor', 'Labore dignissimos i', 'https://www.tuqybeviwetemub.in', 2, 'joelshibu100@gmail.com', 1, 4, 'Good !!'),
-(2, 'Abhishek', '25', '1990-02-05', '03:49', 'Dolore dolor id vol', 'kottayam', 'Et dolor magna enim ', 'Corrupti dolore ali', 'Consequatur odio om', 'https://www.sov.co.uk', -1, 'joelshibu100@gmail.com', 2, 0, ''),
-(3, 'Vibil', '31', '2019-10-29', '14:40', 'Magni et velit dolor', 'alapuzha', 'Quas ea nihil quae q', 'Est tempora aut est ', 'Soluta pariatur Nis', 'https://www.vymynohob.biz', 1, 'joelshibu100@gmail.com', 2, 0, ''),
-(4, 'Xerxes Hardy', '96', '2020-07-16', '07:17', 'Fugiat ut molestiae', 'wayanad', 'Quibusdam sequi obca', 'Reprehenderit laboru', 'Velit laboriosam qu', 'https://www.vidizicikovi.us', 1, 'joelshibu100@gmail.com', 1, 0, ''),
-(5, 'Steven Velasquez', '7034813307', '2023-11-30', '14:52', 'dsfsdf', 'ernakulam', 'Muvattupuzja', 'sdfsdf', 'dfgdf', 'http://www.google.com', 0, 'joelshibu100@gmail.com', 1, 0, '');
+(1, 'Aline Mathews', '62', '1972-12-30', '22:55', 'Voluptatem doloremqu', 'thiruvanathupuram', 'Ut officia itaque il', 'Asperiores ipsa qui', 'Aut tenetur omnis qu', 'https://www.qaxoduwo.ws', 0, 'joelshibu100@gmail.com', 1, 0, ''),
+(2, 'Quyn Pratt', '33', '1997-03-28', '00:00', 'Reprehenderit dolore', 'alapuzha', 'Nostrud voluptas sit', 'Repellendus Sequi q', 'Assumenda ut reicien', 'https://www.xomac.us', 0, 'joelshibu100@gmail.com', 2, 0, ''),
+(3, 'Cade Fields', '93', '1999-01-07', '19:54', 'Ad quo accusantium e', 'kottayam', 'Nulla enim laborum m', 'Voluptates at dicta ', 'Dolore quis exercita', 'https://www.bysupewoga.org.au', 0, 'joelshibu100@gmail.com', 3, 0, ''),
+(4, 'Lucius Frost', '25', '1972-06-05', '09:10', 'Consequat Sint sed ', 'thrissur', 'Ex numquam quae recu', 'Reprehenderit sapien', 'Eum quo voluptatum l', 'https://www.rageped.org.au', 0, 'joelshibu100@gmail.com', 1, 0, ''),
+(5, 'Robin Floyd', '64', '1994-05-22', '03:49', 'Duis cillum tempor t', 'idukki', 'Dolorem quo tempore', 'Nobis harum architec', 'Rerum doloribus vel ', 'https://www.jahezuhuguweduz.com', 0, 'joelshibu100@gmail.com', 3, 0, ''),
+(6, 'Hasad Franklin', '36', '1989-11-10', '12:04', 'Do dolorem consectet', 'kottayam', 'Sed suscipit distinc', 'Voluptatem Temporib', 'Exercitation consequ', 'https://www.fywihyde.in', 0, 'joelshibu100@gmail.com', 1, 0, ''),
+(7, 'Yen Stafford', '43', '1989-06-08', '11:30', 'Consectetur aliquid ', 'wayanad', 'Aliquip laborum aut ', 'Mollitia maiores har', 'Ea eveniet aut vero', 'https://www.dodikinogiz.org', 0, 'joelshibu100@gmail.com', 2, 0, ''),
+(8, 'Elaine Duran', '61', '2002-04-01', '03:09', 'Labore voluptatem O', 'kottayam', 'Provident sint erro', 'Explicabo Ut nihil ', 'Ab veniam obcaecati', 'https://www.jotu.com', 0, 'joelshibu100@gmail.com', 2, 0, ''),
+(9, 'Dean Beard', '10', '1980-10-20', '02:25', 'Sint aliquid maxime ', 'wayanad', 'Qui autem ad eos est', 'Do laudantium et es', 'Corrupti repellendu', 'https://www.wowisagihuny.org.au', 0, 'joelshibu100@gmail.com', 1, 0, ''),
+(10, 'Rigel Cleveland', '11', '2004-03-25', '15:15', 'Ullam qui amet magn', 'kozhikode', 'Recusandae Ab autem', 'Adipisicing enim dis', 'Culpa odio et ad ve', 'https://www.bakam.ws', 0, 'joelshibu100@gmail.com', 3, 0, ''),
+(11, 'Anne Clayton', '80', '1990-07-07', '22:09', 'Mollitia ea aut dolo', 'thrissur', 'Quaerat laudantium ', 'Laborum dolores sed ', 'Ea ut atque modi nat', 'https://www.kefovojyxeduz.me.uk', 0, 'joelshibu100@gmail.com', 3, 0, ''),
+(12, 'Ian Navarro', '9', '1994-10-04', '06:41', 'Eos iure laborum I', 'kottayam', 'Corrupti in labore ', 'Sit quibusdam proide', 'Illum voluptas nisi', 'https://www.tady.cc', 0, 'joelshibu100@gmail.com', 3, 0, ''),
+(13, 'Edan Golden', '32', '1978-01-25', '06:50', 'Porro eos perspiciat', 'kollam', 'Anim fugiat consequ', 'Itaque ipsum adipis', 'Nisi aliquam sit ame', 'https://www.zydodefawohumyx.in', 0, 'joelshibu100@gmail.com', 3, 0, '');
 
 -- --------------------------------------------------------
 
@@ -102,7 +111,11 @@ CREATE TABLE `complaints` (
 --
 
 INSERT INTO `complaints` (`id`, `title`, `description`, `priority`, `date`, `email`, `reply`, `status`) VALUES
-(1, 'Exercitationem aut d', 'Sapiente aut sint au', 'low', '2023-10-14', 'sivaji123@gmail.com', '0', 1);
+(1, 'Exercitationem aut d', 'Sapiente aut sint au', 'low', '2023-10-14', 'sivaji123@gmail.com', '0', 1),
+(2, 'Quibusdam ullam itaque ullam ad aut in sed', 'Nesciunt quia cupiditate dolores rerum voluptas magnam fugiat id rerum', 'medium', '2023-12-09', 'joelshibu100@gmail.com', 'ok', 0),
+(3, 'Nam porro quaerat doloribus corrupti rerum tempor', 'Officiis duis quidem quos ut occaecat eveniet aspernatur velit enim et saepe ducimus ratione tempore quis qui aspernatur', 'medium', '2023-12-09', 'joelshibu100@gmail.com', '0', 0),
+(4, 'Aut minim similique magna modi sed et eum et accus', 'Est id ut ut irure est hic', 'low', '2023-12-09', 'sivaji123@gmail.com', 'bye', 1),
+(5, 'Qui rerum facilis voluptas corporis', 'Nostrum et accusantium tempora eiusmod ex sapiente occaecat fuga Molestiae vero modi labore veniam aliquid esse qui aut', 'high', '2023-12-09', 'sivaji123@gmail.com', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -132,7 +145,8 @@ CREATE TABLE `employee_register` (
 --
 
 INSERT INTO `employee_register` (`fname`, `lname`, `housename`, `street`, `district`, `state`, `zip`, `dob`, `gender`, `phonenumber`, `email`, `aadhar`, `password`, `img`) VALUES
-('Sivaji', 'Mohan', 'Ezekiel', 'Est', 'pathanamthitta', 'kerala', 96730, '1997-02-11', 'other', '9544131746', 'sivaji123@gmail.com', '8589920123', '123', 'sivaji123gmailcom.jpg');
+('Sivaji', 'Mohan', 'Ezekiel', 'Est', 'pathanamthitta', 'kerala', 96730, '1997-02-11', 'other', '9544131746', 'sivaji123@gmail.com', '8589920123', '123', 'sivaji123gmailcom.jpg'),
+('Kaitlin Mayo', 'Bruno Mcbride', 'Cora Buckner', 'Molestiae', 'wayanad', 'kerala', 99409, '1989-10-14', 'male', '4561230789', 'buqurogo@mailinator.com', '2134574777', 'Pa$$w0rd!', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -152,13 +166,6 @@ CREATE TABLE `favourites` (
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `favourites`
---
-
-INSERT INTO `favourites` (`favid`, `email`, `serviceid`, `services`, `fname`, `lname`, `description`, `rate`, `status`) VALUES
-(1, 'joelshibu100@gmail.com', '1', 'Plumbing', 'Sivaji', 'Mohan', 'Plumbing uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications.', '37', '0');
-
 -- --------------------------------------------------------
 
 --
@@ -168,17 +175,19 @@ INSERT INTO `favourites` (`favid`, `email`, `serviceid`, `services`, `fname`, `l
 CREATE TABLE `items` (
   `id` int(50) NOT NULL,
   `services` varchar(100) NOT NULL,
-  `description` varchar(200) NOT NULL
+  `description` varchar(200) NOT NULL,
+  `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`id`, `services`, `description`) VALUES
-(1, 'Electrician', 'Facilis ipsa qui ip'),
-(2, 'Plumbing', 'Magna fugiat id vel'),
-(3, 'Painting', 'Quis quasi id magna');
+INSERT INTO `items` (`id`, `services`, `description`, `status`) VALUES
+(1, 'Medical', 'mmm', 1),
+(2, 'Plumbing', 'mmmm', 0),
+(3, 'Electrician', 'aaa', 0),
+(4, 'Painting', 'ssss', 0);
 
 -- --------------------------------------------------------
 
@@ -199,10 +208,49 @@ CREATE TABLE `loginpage` (
 
 INSERT INTO `loginpage` (`email`, `password`, `usertype`, `status`) VALUES
 ('admin@gmail.com', 'admin123', 0, 1),
+('buqurogo@mailinator.com', 'Pa$$w0rd!', 2, 0),
 ('joelshibu100@gmail.com', '100', 1, 1),
-('rahul@gmail.com', '000', 1, 1),
+('pyje@mailinator.com', 'Pa$$w0rd!', 1, -1),
+('rahul@gmail.com', '000', 1, -2),
 ('rahuldamu760@gmail.com', '760', 1, 1),
 ('sivaji123@gmail.com', '123', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medical`
+--
+
+CREATE TABLE `medical` (
+  `medid` int(11) NOT NULL,
+  `bookingid` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `age` varchar(50) NOT NULL,
+  `dob` date NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `height` varchar(50) NOT NULL,
+  `weight` varchar(50) NOT NULL,
+  `hypertension` varchar(50) NOT NULL,
+  `diabetesmellitus` varchar(50) NOT NULL,
+  `disease` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `otp`
+--
+
+CREATE TABLE `otp` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `otp` varchar(10) NOT NULL,
+  `expiry` datetime NOT NULL,
+  `sendtime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -229,6 +277,7 @@ CREATE TABLE `user_register` (
 
 INSERT INTO `user_register` (`fname`, `lname`, `state`, `district`, `dob`, `gender`, `email`, `phonenumber`, `password`, `img`) VALUES
 ('Joel', 'Shibu', 'kerala', 'kottayam', '1975-09-22', 'male', 'joelshibu100@gmail.com', '9544131746', '100', 'joelshibu100gmailcom.jpg'),
+('Laith Contreras', 'Mary Warner', 'kerala', 'idukki', '2008-07-16', 'female', 'pyje@mailinator.com', '7894561230', 'Pa$$w0rd!', 'default.png'),
 ('Rahul', 'Reji', 'kerala', 'ernakulam', '2010-04-03', 'male', 'rahul@gmail.com', '8583365478', '000', 'default.png'),
 ('Rahul Reji', 'Damodaran', 'kerala', 'thiruvanathupuram', '1992-01-18', 'other', 'rahuldamu760@gmail.com', '8589920123', '760', 'rahuldamu760gmailcom.jpg');
 
@@ -273,6 +322,12 @@ ALTER TABLE `loginpage`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indexes for table `medical`
+--
+ALTER TABLE `medical`
+  ADD PRIMARY KEY (`medid`);
+
+--
 -- Indexes for table `user_register`
 --
 ALTER TABLE `user_register`
@@ -286,31 +341,37 @@ ALTER TABLE `user_register`
 -- AUTO_INCREMENT for table `addservice`
 --
 ALTER TABLE `addservice`
-  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `serviceid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `bookingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `favourites`
 --
 ALTER TABLE `favourites`
-  MODIFY `favid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `favid` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `medical`
+--
+ALTER TABLE `medical`
+  MODIFY `medid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -6,6 +6,11 @@ $email=$_SESSION['email'];
 
 
 ?>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 
 
 
@@ -32,7 +37,7 @@ $email=$_SESSION['email'];
 
               <!-- Floating Labels Form -->
             
-              <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
+              <form class="row g-3" action="php/medaction.php" method="POST" enctype="multipart/form-data">
               <div class="col-md-6">
                   <div class="form-floating">
                   <input type="text" class="form-control" name="name" placeholder="Name" ;>
@@ -49,15 +54,15 @@ $email=$_SESSION['email'];
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="date" class="form-control" name="date" placeholder="Date" ;>
-                    <label for="date">Date Of Birth</label>  
+                  <input type="number" class="form-control" name="age" placeholder="Age" ;>
+                    <label for="age">Age</label>  
                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="age" placeholder="Age" ;>
-                    <label for="time">Age</label>
+                    <input type="date" class="form-control" name="dob" placeholder="Date Of Birth" ;>
+                    <label for="dob">Date Of Birth</label>
                   </div>
                 </div>
                 <div class="col-12">
@@ -125,6 +130,38 @@ $email=$_SESSION['email'];
                   </div>
                 </div>
 
+                
+                <div class="col-md-6">
+                  <div class="form-floating">
+                  <input type="text" class="form-control" name="hypertension" placeholder="Hypertension">
+                    <label for="hypertension">Hypertension</label>
+                  </div>
+                </div>
+
+                
+                <div class="col-md-6">
+                  <div class="form-floating">
+                  <input type="text" class="form-control" name="diabetes" placeholder="Diabetes Mellitus">
+                    <label for="diabetes">Diabetes Mellitus</label>
+                  </div>
+                </div>
+
+                
+                <label>
+                  Herditary Diseases If Any ?
+      
+   
+        <input type="radio" name="yes-no" value="yes" onclick="toggleForm()"> Yes
+        <input type="radio" name="yes-no" value="no" onclick="toggleForm()"> No
+    </label>
+
+    <div id="additional-form" class="hidden">
+        <!-- Additional form fields go here -->
+        <textarea class="form-control" placeholder="Disease" name="disease" style="height: 100px;"></textarea>
+                    <label for="disease"></label>
+    </div>
+                 
+
               
             
             
@@ -164,6 +201,25 @@ $email=$_SESSION['email'];
 
 
 </main><!-- End #main -->
+
+<script>
+    function toggleForm() {
+        var additionalForm = document.getElementById("additional-form");
+        var yesRadio = document.querySelector('input[value="yes"]');
+
+        if (yesRadio.checked) {
+            additionalForm.classList.remove("hidden");
+        } else {
+            additionalForm.classList.add("hidden");
+        }
+    }
+
+    function validateForm() {
+        // Add your form validation logic here
+        return true; // Return false to prevent form submission
+    }
+</script>
+
 
 
 <?php
