@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 03:55 PM
+-- Generation Time: Dec 16, 2023 at 09:49 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -75,10 +75,9 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `name`, `phone`, `date`, `time`, `address`, `district`, `city`, `instructions`, `landmark`, `url`, `status`, `email`, `serviceid`, `rating`, `feedback`) VALUES
-(1, 'Aline Mathews', '62', '1972-12-30', '22:55', 'Voluptatem doloremqu', 'thiruvanathupuram', 'Ut officia itaque il', 'Asperiores ipsa qui', 'Aut tenetur omnis qu', 'https://www.qaxoduwo.ws', 0, 'joelshibu100@gmail.com', 1, 0, ''),
-(2, 'Quyn Pratt', '33', '1997-03-28', '00:00', 'Reprehenderit dolore', 'alapuzha', 'Nostrud voluptas sit', 'Repellendus Sequi q', 'Assumenda ut reicien', 'https://www.xomac.us', 0, 'joelshibu100@gmail.com', 2, 0, ''),
-(3, 'Cade Fields', '93', '1999-01-07', '19:54', 'Ad quo accusantium e', 'kottayam', 'Nulla enim laborum m', 'Voluptates at dicta ', 'Dolore quis exercita', 'https://www.bysupewoga.org.au', 0, 'joelshibu100@gmail.com', 3, 0, ''),
-(4, 'Lucius Frost', '25', '1972-06-05', '09:10', 'Consequat Sint sed ', 'thrissur', 'Ex numquam quae recu', 'Reprehenderit sapien', 'Eum quo voluptatum l', 'https://www.rageped.org.au', 0, 'joelshibu100@gmail.com', 1, 0, ''),
+(1, 'Aline Mathews', '62', '1972-12-30', '22:55', 'Voluptatem doloremqu', 'thiruvanathupuram', 'Ut officia itaque il', 'Asperiores ipsa qui', 'Aut tenetur omnis qu', 'https://www.qaxoduwo.ws', 2, 'joelshibu100@gmail.com', 1, 0, ''),
+(2, 'Quyn Pratt', '33', '1997-03-28', '00:00', 'Reprehenderit dolore', 'alapuzha', 'Nostrud voluptas sit', 'Repellendus Sequi q', 'Assumenda ut reicien', 'https://www.xomac.us', 2, 'joelshibu100@gmail.com', 2, 0, ''),
+(3, 'Cade Fields', '93', '1999-01-07', '19:54', 'Ad quo accusantium e', 'kottayam', 'Nulla enim laborum m', 'Voluptates at dicta ', 'Dolore quis exercita', 'https://www.bysupewoga.org.au', 2, 'joelshibu100@gmail.com', 3, 0, ''),
 (5, 'Robin Floyd', '64', '1994-05-22', '03:49', 'Duis cillum tempor t', 'idukki', 'Dolorem quo tempore', 'Nobis harum architec', 'Rerum doloribus vel ', 'https://www.jahezuhuguweduz.com', 0, 'joelshibu100@gmail.com', 3, 0, ''),
 (6, 'Hasad Franklin', '36', '1989-11-10', '12:04', 'Do dolorem consectet', 'kottayam', 'Sed suscipit distinc', 'Voluptatem Temporib', 'Exercitation consequ', 'https://www.fywihyde.in', 0, 'joelshibu100@gmail.com', 1, 0, ''),
 (7, 'Yen Stafford', '43', '1989-06-08', '11:30', 'Consectetur aliquid ', 'wayanad', 'Aliquip laborum aut ', 'Mollitia maiores har', 'Ea eveniet aut vero', 'https://www.dodikinogiz.org', 0, 'joelshibu100@gmail.com', 2, 0, ''),
@@ -165,6 +164,13 @@ CREATE TABLE `favourites` (
   `rate` varchar(50) NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `favourites`
+--
+
+INSERT INTO `favourites` (`favid`, `email`, `serviceid`, `services`, `fname`, `lname`, `description`, `rate`, `status`) VALUES
+(1, 'joelshibu100@gmail.com', '1', 'Plumbing', 'Sivaji', 'Mohan', 'System of pipes and fixtures installed in a building for the distribution of potable water and the removal of waterborne wastes. Plumbing is usually distinguished from water and sewage systems, which ', '2000', '1');
 
 -- --------------------------------------------------------
 
@@ -359,7 +365,7 @@ ALTER TABLE `complaints`
 -- AUTO_INCREMENT for table `favourites`
 --
 ALTER TABLE `favourites`
-  MODIFY `favid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `favid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `items`

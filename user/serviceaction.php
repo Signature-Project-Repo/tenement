@@ -73,7 +73,7 @@ $row1 = mysqli_fetch_assoc($data1)
 
 
 
-
+            
 
               <div class="btn-group">
               <a href="php/fav.php?serviceid=<?php echo $row['serviceid']?>&services=<?php echo $row['services'] ?>&fname=<?php echo $row1['fname'] ?>&lname=<?php echo $row1['lname'] ?>&description=<?php echo $row['description'] ?>&rate=<?php echo $row['rate'] ?>"  class="btn btn-success btn-sm">Add To Favourites</a>

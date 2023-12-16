@@ -2,24 +2,6 @@
 Author: W3layouts
 Author URL: http://w3layouts.com
 -->
-<?php
-
-if(isset($_POST['submit'])){
-    $email=$_POST['email'];
-    $header="From : TENEMENT";
-
-    if(mail($email, $header)) {
-
-        echo "Email Sent";
-    } else {
-        echo "Error";
-    }
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -48,7 +30,7 @@ if(isset($_POST['submit'])){
             <div class="w3l-form-info">
                 <div class="w3_info">
                     <h2>Forget Your Password?</h2>
-                    <form>
+                    <form action="sendotp.php" method="post">
                         <div class="input-group">
                             <span><i class="fas fa-user" aria-hidden="true"></i></span>
                             <input type="email" name="email" placeholder="Email" required="">

@@ -184,7 +184,7 @@ $email = $_SESSION['email'];
                     ?>
                    
                       <div class="mt-5 pt-3">
-                        <a class="btn btn-primary btn-sm mb-0" onclick="payment(<?php echo ($row['rate']) ?>,<?php echo $bkid; ?>)">Pay Now</a>
+                        <a class="btn btn-primary btn-sm mb-0" onclick="pay(<?php echo ($row['rate']) ?>,<?php echo $row['bookingid']; ?>)">Pay Now</a>
                         <a href="php/cancelbook.php?bookingid=<?php echo $row['bookingid']; ?>" class="btn btn-danger btn-sm">Cancel </a>
                       </div>
                       <p class="badge rounded-pill bg-success mt-5" style="font-size: 80%;font-weight: 400;"><i class="bi bi-patch-check"></i>   Order Approved</p>

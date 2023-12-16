@@ -18,11 +18,11 @@ $expiry = date("Y-m-d H:i:s", strtotime("+15 minutes"));
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'tenementbook@gmail.com';//sender email
+    $mail->Username = 'joelshibu100@gmail.com';//sender email
     $mail->Password = 'lhyn rlyx igby gdsl';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 587;
-    $mail->setFrom('tenementbook@gmail.com');
+    $mail->setFrom('joelshibu100@gmail.com');
 
     $mail->addAddress($email);
     $mail->isHTML(true);

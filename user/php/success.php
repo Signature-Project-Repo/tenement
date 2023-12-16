@@ -13,7 +13,7 @@
 require '../../connect.php';
 session_start();
 $email=$_SESSION['email'];
-$id=$_GET['id']; 
+
 $amt=$_GET['amt'];
 $bkid=$_GET['bkid'];
 
@@ -21,7 +21,7 @@ $bkid=$_GET['bkid'];
 
 
 $sql="UPDATE booking SET status='2' WHERE email='$email' AND bookingid=$bkid";
-echo $sql;
+//echo $sql;
 update_data($sql);
 ?>
 
@@ -46,7 +46,7 @@ Swal.fire({
 }).then((result) => {
   /* Read more about handling dismissals below */
   if (result.dismiss === Swal.DismissReason.timer) {
-    //window.location.replace('../bookedservices.php');
+    window.location.replace('../bookedservices.php');
 
   }
 });
