@@ -19,9 +19,9 @@ $expiry = date("Y-m-d H:i:s", strtotime("+15 minutes"));
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'tenementbook@gmail.com';//sender email
-    $mail->Password = 'cruj neco vzqn nvwz';
+    $mail->Password = 'lhyn rlyx igby gdsl';
     $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+    $mail->Port = 587;
     $mail->setFrom('tenementbook@gmail.com');
 
     $mail->addAddress($email);
