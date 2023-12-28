@@ -10,25 +10,62 @@ include 'header.php';
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Most Used Services</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+         
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
 
-    <section>
-      <div class="container">
+    <section class="section">
+    <div class="row align-items-top">
         
       <?php
-      echo $email;
+    
+    $sql = "SELECT * FROM items LIMIT 3";
+
+    $data = select_data($sql);
+    while($row = mysqli_fetch_assoc($data)) 
+    {
       ?>
-      
-      </div>
-    </section>
+     <div class="col-lg-4">
+
+
+<div class="card">
+  
+  <div class="card-body">
+
+    <h5 class="card-title pb-1 mb-0"><?php echo $row['services'] ?></h5>
+    <br>
+        <p>
+     <?php echo "" . " " . $row['description'] ?>
+    <br>
+    <br>
+    <div class="row mt-2">
+                
+                <div class=" btn-group">
+                <a class="btn btn-primary btn-sm">Book Now</a>
+                </div>
+    </div>
+
+    
+  </div>
+</div>
+<!-- End Card with an image on top -->
+
+</div>
+<?php
+}
+
+?>
+
+
+</div>
+
+
+</section>
    
   </main><!-- End #main -->
 

@@ -9,11 +9,11 @@ $email = $_SESSION['email'];
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Service Requests</h1>
+    <h1>Completed Services</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">Service Requests</li>
+        <li class="breadcrumb-item active">Completed Services</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -27,7 +27,7 @@ $email = $_SESSION['email'];
 
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Service requests</h5>
+                <h5 class="card-title">Completed Services</h5>
 
 
 

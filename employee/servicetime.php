@@ -9,11 +9,11 @@ $email = $_SESSION['email'];
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Completed</h1>
+    <h1>Service Overdue</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item active">Service Requests</li>
+        <li class="breadcrumb-item active">Service overdue</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -71,7 +71,7 @@ $email = $_SESSION['email'];
                   
 
 
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where b.date>='$date' AND b.time>='$time' AND a.serviceid=b.serviceid  and status='1'";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where b.date<='$date' AND b.time<='$time' AND a.serviceid=b.serviceid  AND status='1'";
 
                     $data1 = select_data($sql1);
                     
@@ -98,7 +98,7 @@ $email = $_SESSION['email'];
                         <td> <a class="btn btn-secondary btn-sm" target="_blank" href="<?php echo $row['url']  ?>"><i class="  ri-map-pin-2-fill"></i> View in Map</a></td>
                         <td>
                           <div class="btn-group">
-                            <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<?php echo $row['instructions']; ?>')">View Details</a>
+                          <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered2" onclick="passdes('<b>Name: </b><?php echo $row['name']; ?><br><b>Phone: </b><?php echo $row['phone']; ?><br><b>Service: </b><?php echo $row['services']; ?><br><b>Date: </b><?php echo $row['date']; ?><br><b>Time: </b><?php echo $row['time']; ?><br><b>Address: </b><?php echo $row['address']; ?><br><b>District: </b><?php echo $row['district']; ?><br><b>City: </b><?php echo $row['city']; ?><br><b>Instructions: </b><?php echo $row['instructions']; ?><br><b>Landmark: </b><?php echo $row['landmark']; ?><br><b>Email: </b><?php echo $row['email']; ?>')">View Details</a>
 
 
                           </div>
@@ -136,9 +136,12 @@ $email = $_SESSION['email'];
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          
             </div>
-            <div class="modal-body">
-              <p>Service:</p>
-              <p>Instructions:</p>
+        
+
+
+            
+            <div class="modal-body" id="mod">
+        
               
               
 
@@ -149,30 +152,6 @@ $email = $_SESSION['email'];
           </div>
         </div>
       </div><!-- End Vertically centered Modal-->
-
-      <div class="modal fade" id="verticalycentered1" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><b>Payment Details</b></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         
-            </div>
-            <div class="modal-body">
-              <p>Service Charge :</p>
-              <p>Instructions:</p>
-              
-              
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Pay ₹</button>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Vertically centered Modal-->
-
       
 
 </main><!-- End #main -->
@@ -195,7 +174,7 @@ echo $email;
 <script>
   function passdes(valuee) {
     // alert(valuee)
-    document.getElementById("modal-body").innerHTML = valuee;
+    document.getElementById("mod").innerHTML = valuee;
   }
 </script>
 
