@@ -6,7 +6,7 @@ include 'header.php';
 ?>
 <head>
   <style>
-    #hero {
+    #section {
   width: 100%;
   height: 0vh;
   background: transparent;
@@ -14,7 +14,7 @@ include 'header.php';
   position: relative;
 }
 
-#hero:before {
+#section:before {
   content: "";
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -24,13 +24,14 @@ include 'header.php';
   right: 0;
 }
 
-#hero .container {
+#section .container {
   position: relative;
-  padding-top: 250px;
+  padding-top: 0px;
+  padding-bottom: 100px;
   text-align: auto;
 }
 
-#hero h1 {
+#section h1 {
   margin: 0;
   font-size: 56px;
   font-weight: 700;
@@ -39,17 +40,17 @@ include 'header.php';
   font-family: "Poppins", sans-serif;
 }
 
-#hero h1 span {
+#section h1 span {
   color: #ffc451;
 }
 
-#hero h2 {
+#section h2 {
   color: rgba(255, 255, 255, 0.9);
   margin: 10px 0 0 0;
   font-size: 24px;
 }
 
-#hero .icon-box {
+#section .icon-box {
   padding: 20px 20px;
   transition: ease-in-out 0.3s;
   border: 1px solid rgba(0, 0, 0, 0.6);
@@ -57,13 +58,13 @@ include 'header.php';
   text-align: center;
 }
 
-#hero .icon-box i {
+#section .icon-box i {
   font-size: 32px;
   line-height: 1;
   color: blue;
 }
 
-#hero .icon-box h3 {
+#section .icon-box h3 {
   font-weight: 700;
   margin: 10px 0 0 0;
   padding: 0;
@@ -72,36 +73,36 @@ include 'header.php';
   line-height: 26px;
 }
 
-#hero .icon-box h3 a {
+#section .icon-box h3 a {
   color: black;
   transition: ease-in-out 0.3s;
 }
 
-#hero .icon-box h3 a:hover {
+#section .icon-box h3 a:hover {
   color: blue;
 }
 
-#hero .icon-box:hover {
+#section .icon-box:hover {
   border-color: blue;
 }
 
 @media (min-width: 1024px) {
-  #hero {
+  #section {
     background-attachment: fixed;
   }
 }
 
 @media (max-width: 768px) {
-  #hero {
+  #section {
     height: auto;
   }
 
-  #hero h1 {
+  #section h1 {
     font-size: 28px;
     line-height: 36px;
   }
 
-  #hero h2 {
+  #section h2 {
     font-size: 20px;
     line-height: 24px;
   }
@@ -122,7 +123,7 @@ include 'header.php';
     </div><!-- End Page Title -->
 
 
-    <section class="section">
+    <section class="section" id="section">
     <div class="row align-items-top">
         
       <?php
@@ -150,7 +151,7 @@ include 'header.php';
     <div class="row mt-2">
                 
                 <div class=" btn-group">
-                <a href="serviceaction.php" class="btn btn-primary btn-sm"> Book Now</a>
+                <a href="services.php" class="btn btn-primary btn-sm"> Book Now</a>
                 </div>
     </div>
 
@@ -169,56 +170,56 @@ include 'header.php';
 </div>
 
 
-</section>
-<section id="hero" class="d-flex align-items-center justify-content-center">
+
+
     <div class="container" data-aos="fade-up">
     <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi bi-screwdriver"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Appliance Repair</a></h3>
+            <h3><a href="services.php">Appliance Repair</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi bi-trash"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Cleaning And Pest Control</a></h3>
+            <h3><a href="services.php">Cleaning And Pest Control</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi bi-tools"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Electrician , Plumber & Carpenter</a></h3>
+            <h3><a href="services.php">Electrician , Plumber & Carpenter</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="ri-paint-brush-line"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Painting , Wallpapers & Wall Panels</a></h3>
+            <h3><a href="services.php">Painting , Wallpapers & Wall Panels</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bx bx-shield"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">HVAC Service</a></h3>
+            <h3><a href="services.php">HVAC Service</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi-flower3"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Gardening</a></h3>
+            <h3><a href="services.php">Gardening</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi-house"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">Renovation and Remodeling</a></h3>
+            <h3><a href="services.php">Renovation and Remodeling</a></h3>
           </div>
         </div>
         <div class="col-xl-3 col-md-4">
           <div class="icon-box">
             <i class="bi-arrow-right-square"></i>
-            <h3><a href="loginpage/Login_v16/loginpage.html">More</a></h3>
+            <h3><a href="services.php">More</a></h3>
           </div>
         </div>
        
