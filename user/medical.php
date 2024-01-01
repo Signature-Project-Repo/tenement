@@ -141,8 +141,8 @@ $email=$_SESSION['email'];
                 
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="diabetes" placeholder="Diabetes Mellitus">
-                    <label for="diabetes">Diabetes Mellitus</label>
+                  <input type="text" class="form-control" name="diabetesmellitus" placeholder="Diabetes Mellitus">
+                    <label for="diabetesmellitus">Diabetes Mellitus</label>
                   </div>
                 </div>
 

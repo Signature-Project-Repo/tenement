@@ -14,7 +14,7 @@ require '../../connect.php';
 session_start();
 $email=$_SESSION['email'];
 $serviceid=$_SESSION['serviceid']; 
-$bookingid=$_POST['bookingid'];
+
 $name=$_POST['name'];
 $phone=$_POST['phone'];
 $age=$_POST['age'];
@@ -27,9 +27,12 @@ $weight=$_POST['weight'];
 $hypertension=$_POST['hypertension'];
 $diabetesmellitus=$_POST['diabetesmellitus'];
 $disease=$_POST['disease'];
+$sql1="SELECT bookingid FROM booking where email='$email' AND serviceid='$serviceid' AND phone='$phone'";
+$data1 = select_data($sql1);
+$row = mysqli_fetch_assoc($data1);
+$bookingid=$row['bookingid'];
 
-
-$sql="INSERT INTO `medical` (`bookingid`,`name`,`phone`,`age`,`dob`,`address`,`city`,`district`,`height`,`weight`,`hypertension`,`diabetesmellitus`,`disease`)VALUES('$bookingid','$age','$name','$phone','$dob','$diabetesmellitus','$address','$hypertension','$height','$weight','$district','$city','$disease')";
+$sql="INSERT INTO `medical` (`bookingid`,`name`,`phone`,`age`,`dob`,`address`,`city`,`district`,`height`,`weight`,`hypertension`,`diabetesmellitus`,`disease`)VALUES('$bookingid','$name','$phone','$age','$dob','$address','$city','$district','$height','$weight','$hypertension','$diabetesmellitus','$disease')";
 //echo $sql;
 insert_data($sql);
 ?>
@@ -38,7 +41,7 @@ insert_data($sql);
  let timerInterval
 Swal.fire({
   icon:'success',
-  title: 'Medical Record Successfull',
+  title: 'Medical Record Successfully Added',
   html: 'Booking ',
   timer: 2000,
   timerProgressBar: true,
