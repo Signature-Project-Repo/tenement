@@ -10,7 +10,7 @@ $bookingid = $_GET['bookingid'];
 ?>
 <?php
 
-$sql1 = "SELECT b.*,a.services,a.rate from booking b,addservice a WHERE status='2' AND bookingid=$bookingid";
+$sql1 = "SELECT * from booking  WHERE status='2' AND bookingid=$bookingid";
 //echo $sql1;
 $data1 = select_data($sql1);
 $row = mysqli_fetch_assoc($data1);

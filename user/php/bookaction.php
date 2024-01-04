@@ -25,10 +25,12 @@ $district=$_POST['district'];
 $city=$_POST['city'];
 $landmark=$_POST['landmark'];
 $status1=$_GET['status'];
+$rate=$_GET['rate'];
+$services=$_GET['services']; 
 $status=0;
 
 
-$sql="INSERT INTO `booking` (`email`,`serviceid`,`name`,`phone`,`date`,`time`,`address`,`instructions`,`url`,`status`,`district`,`city`,`landmark`)VALUES('$email','$serviceid','$name','$phone','$date','$time','$address','$instructions','$url','$status','$district','$city','$landmark')";
+$sql="INSERT INTO `booking` (`email`,`serviceid`,`name`,`phone`,`date`,`time`,`address`,`instructions`,`url`,`status`,`district`,`city`,`landmark`,`rate`,`services`)VALUES('$email','$serviceid','$name','$phone','$date','$time','$address','$instructions','$url','$status','$district','$city','$landmark','$rate','$services')";
 //echo $sql;
 insert_data($sql);
 ?>
