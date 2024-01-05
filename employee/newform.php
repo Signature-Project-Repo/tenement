@@ -55,21 +55,21 @@ $email=$_SESSION['email'];
  
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="500"></textarea>
+                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="500" required></textarea>
                     <label for="description">Description</label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="experience" placeholder="Experience" $pattern ='/^\d+$/' >
+                    <input type="number" class="form-control" name="experience" placeholder="Experience" $pattern ='/^\d+$/' required>
                     <label for="experience">Year Of Experience</label>
                   </div>
                 </div>
  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="number" class="form-control" name="rate" placeholder="Rate">
+                  <input type="number" class="form-control" name="rate" placeholder="Rate" pattern="^\d+(\.\d{1,2})?$"  required>
                     <label for="rate">Rate</label>
                   </div>
                 </div>

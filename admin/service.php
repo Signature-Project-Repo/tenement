@@ -53,7 +53,7 @@ $email=$_SESSION['email'];
                   <select name="status" id="" class="form-select">
                       <option value="" disabled selected>Status</option>
                       <option value="1">Medical Services</option>
-                      <option value="0">Services Except Medical</option> 
+                      <option value="0">Other Services</option> 
                   </select>
                   </div>
                 </div>

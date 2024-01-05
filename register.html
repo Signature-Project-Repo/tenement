@@ -169,7 +169,7 @@
               <div class="row">
                 <div class="col-md-6 form-group">
                   <div class="form-group mt-3">
-                    <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" max="2010-09-28" required>
+                    <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" max="2010-12-31" required>
                   </div>
                 </div>
 
@@ -198,7 +198,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                   <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="phonenumber" id="phonenumber" pattern="[1-9][0-9]{9}" maxlength="10" minlength="10"
+                    <input type="text" class="form-control" name="phonenumber" id="phonenumber" pattern="[1-9][0-9]{9}" maxlength="12" minlength="10"
                       placeholder="Phone Number" required>
                   </div>
                 </div>
@@ -212,14 +212,14 @@
                 <div class="col-md-6 form-group">
                   <div class="form-group mt-3">
                     <input type="password" class="form-control" name="password" id="password"
-                      placeholder="Password" required>
+                      placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" maxlength="12" required>
                     
                  
                   </div>
                 </div>
                 <div class="col-md-6 form-group">
                   <div class="form-group mt-3">
-                    <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
+                    <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" maxlength="12" required>
                   </div>
                 </div>
               </div>

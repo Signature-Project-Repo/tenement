@@ -43,34 +43,34 @@ $row = mysqli_fetch_assoc($data);
               <form class="row g-3" action="php/bookaction.php?status=<?php echo $row['status'] ?>&serviceid=<?php echo $serviceid ?>&rate=<?php echo $rate?>&services=<?php echo $services ?>" method="POST" enctype="multipart/form-data">
               <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="name" placeholder="Name" ;>
+                  <input type="text" class="form-control" name="name" placeholder="Name"  pattern="[A-Z][a-z]+( [A-Z][a-z]+)*" required>
                     <label for="name">Name</label>  
                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" $pattern ='' >
+                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" pattern="[1-9][0-9]{9}" maxlength="12" minlength="10"  required>
                     <label for="phone">Phone</label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="date" class="form-control" name="date" placeholder="Date" ;>
+                  <input type="date" class="form-control" name="date" id="date" placeholder="Date" min="<?php echo date('Y-m-d'); ?>" required>
                     <label for="date">Date</label>  
                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="time" class="form-control" name="time" placeholder="Time" ;>
+                    <input type="time" class="form-control" name="time" id="time" placeholder="Time" ;>
                     <label for="time">Time</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" name="address" style="height: 100px;"></textarea>
+                    <textarea class="form-control" placeholder="Address" name="address" maxlength="200" style="height: 100px;" required></textarea>
                     <label for="address">Address</label>
                   </div>
                 </div>
@@ -102,14 +102,14 @@ $row = mysqli_fetch_assoc($data);
                    
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="city" placeholder="City">
+                  <input type="text" class="form-control" name="city" placeholder="City" required>
                     <label for="city">City</label>
                   </div>
                 </div>
  
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="instructions" name="instructions" style="height: 100px;"></textarea>
+                    <textarea class="form-control" placeholder="instructions" name="instructions" maxlength="300" style="height: 100px;" required></textarea>
                     <label for="instructions">Instructions</label>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ $row = mysqli_fetch_assoc($data);
                  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="landmark" placeholder="Landmark">
+                  <input type="text" class="form-control" name="landmark" placeholder="Landmark" maxlength="100" required>
                     <label for="landmark">Landmark</label>
                   </div>
                 </div>
@@ -166,6 +166,24 @@ $row = mysqli_fetch_assoc($data);
                   
                 </div>
               </form><!-- End floating Labels Form -->
+              <script>
+    // Get the date input and time input elements
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+
+    // Add an event listener to the date input
+    dateInput.addEventListener('input', function () {
+      // Get the selected date value
+      const selectedDate = this.value;
+
+      // Get the current time in the format "HH:mm"
+      const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false });
+
+      // If the selected date is today, set the min attribute to the current time
+      // Otherwise, allow any time on future dates
+      timeInput.min = (selectedDate === new Date().toISOString().slice(0, 10)) ? currentTime : null;
+    });
+  </script>
 
             </div>
           </div>

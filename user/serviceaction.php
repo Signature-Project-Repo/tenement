@@ -38,7 +38,14 @@ $data1 = select_data($sql1);
 
 
 
-$row1 = mysqli_fetch_assoc($data1)
+$row1 = mysqli_fetch_assoc($data1);
+
+
+
+$sql2="SELECT AVG(rating) AS average_rating FROM booking where serviceid='$serviceid'";
+//echo $sql1;
+$data2=select_data($sql2);
+$avg=mysqli_fetch_assoc($data2);
 
 ?>
 
@@ -62,7 +69,7 @@ $row1 = mysqli_fetch_assoc($data1)
             <div class="card-body">
 
               <p class="card-title" style="font-size: 25px;padding-bottom:0px;margin-bottom:0px"><?php echo $row['services'] ?></p>
-              <p style="font-size: large;margin:0 0 5px;"> <span class="badge bg-success">4.5 <i class="bi bi-star-fill text-warning"></i></span></p>
+              <p style="font-size: large;margin:0 0 5px;"> <span class="badge bg-success"><?php echo number_format($avg['average_rating'] , 1)?> <i class="bi bi-star-fill text-warning"></i></span></p>
               <p class="card-text mb-2" style="text-align: justify;font-size:85%;color:#777;"><?php echo $row['description']; ?></p>
 
 

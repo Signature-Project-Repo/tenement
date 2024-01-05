@@ -34,20 +34,20 @@ $email=$_SESSION['email'];
               <form class="row g-3" action="php/newcomplaintaction.php" method="POST">
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" name="title" placeholder="Title" maxlength="50">
+                    <input type="text" class="form-control" name="title" placeholder="Title" maxlength="50" required>
                     <label for="title">Title</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="200"></textarea>
+                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="200" required></textarea>
                     <label for="description">Description</label>
                   </div>
                 </div>
      
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
-                    <select class="form-select" name="priority" aria-label="priority">
+                    <select class="form-select" name="priority" aria-label="priority" required>
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
                       <option value="high">High</option>

@@ -32,6 +32,16 @@ $email = $_SESSION['email'];
 
       while ($row = mysqli_fetch_assoc($data)) {
         $description = substr($row['description'], 0, 100);
+        $serviceid=$row['serviceid'];
+
+
+
+
+
+        $sql1="SELECT AVG(rating) AS average_rating FROM booking where serviceid='$serviceid'";
+        //echo $sql1;
+        $data1=select_data($sql1);
+        $avg=mysqli_fetch_assoc($data1);
       ?>
         <div class="col-lg-4">
 
@@ -46,7 +56,7 @@ $email = $_SESSION['email'];
 
 
               <p style="margin-bottom:0px;">
-                <span class="badge bg-success bg-xs" style="color:#fff;">4.5 <i class="bi bi-star-fill text-warning"></i></span> <span class="badge bg-success bg-xs" style="color:#fff;"> <?php echo $row['services'] ?></span>
+                <span class="badge bg-success bg-xs" style="color:#fff;"><?php echo number_format($avg['average_rating'] , 1)?> <i class="bi bi-star-fill text-warning"></i></span> <span class="badge bg-success bg-xs" style="color:#fff;"> <?php echo $row['services'] ?></span>
               </p>
 
               <!-- <p>

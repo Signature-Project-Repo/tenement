@@ -43,7 +43,7 @@
 Swal.fire({
   icon:'success',
   title: 'Updating!',
-  html: 'updating the profile',
+  html: 'updating Password',
   timer: 2000,
   timerProgressBar: true,
   didOpen: () => {

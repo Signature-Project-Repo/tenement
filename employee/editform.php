@@ -51,21 +51,21 @@ $row3 = mysqli_fetch_assoc($data3);
  
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="500"><?php echo $row1['description']?></textarea>
+                    <textarea class="form-control" placeholder="Address" name="description" style="height: 100px;" maxlength="500" required><?php echo $row1['description']?></textarea>
                     <label for="description">Description</label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="experience" value="<?php echo $row1['experience'];?>" placeholder="Experience" $pattern ='/^\d+$/' >
+                    <input type="number" class="form-control" name="experience" value="<?php echo $row1['experience'];?>" placeholder="Experience" $pattern ='/^\d+$/' required>
                     <label for="experience">Year Of Experience</label>
                   </div>
                 </div>
  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="number" class="form-control" name="rate" value="<?php echo $row1['rate'];?>" placeholder="Rate">
+                  <input type="number" class="form-control" name="rate" value="<?php echo $row1['rate'];?>" pattern="^\d+(\.\d{1,2})?$" placeholder="Rate" required>
                     <label for="rate">Rate</label>
                   </div>
                 </div>
