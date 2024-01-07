@@ -112,7 +112,7 @@
         <div class="row">
           <div class="col-md-6 offset-3">
 
-            <form action="employeeaction.php" method="POST">
+            <form action="employeeaction.php" method="POST"onsubmit="return validateDOB()" >
               <center class="pb-3">
                 <h3>Employee Registration</h3>
               </center>
@@ -195,7 +195,7 @@
 
                 <div class="col-md-6 form-group">
                   <div class="form-group mt-3">
-                    <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" max="2008-12-31" required>
+                    <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB"  required>
                   </div>
 
                 </div>
@@ -298,6 +298,30 @@
     </section>
 
   </main><!-- End #main -->
+  <!-- ... (your existing head content) ... -->
+
+<script>
+  function validateDOB() {
+    // Get the user's entered date of birth from the form
+    var dobInput = document.getElementById("dob").value;
+
+    // Calculate the date 20 years ago from today
+    var minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 20);
+
+    // Convert the minimum date to the format "YYYY-MM-DD"
+    var minDateString = minDate.toISOString().split("T")[0];
+
+    // Check if the entered date of birth is on or before the minimum allowed date
+    if (dobInput <= minDateString) {
+      return true; // Allow form submission
+    } else {
+      alert("You must be at least 20 years old to register.");
+      return false; // Prevent form submission
+    }
+  }
+</script>
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
