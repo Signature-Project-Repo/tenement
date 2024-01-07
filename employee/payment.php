@@ -71,7 +71,7 @@ $email = $_SESSION['email'];
                   
 
 
-                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status ='2'";
+                    $sql1 = "SELECT b.*,a.services from booking b,addservice a where  a.serviceid=b.serviceid  and status ='3'";
 
                     $data1 = select_data($sql1);
                     

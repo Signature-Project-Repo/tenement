@@ -110,7 +110,7 @@ if (update_data($sql) && ($status == -2)) {
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          window.location.replace('../pendinguser.php');
+          window.location.replace('../pendingemployee.php');
   
         }
       });
