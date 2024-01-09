@@ -44,7 +44,7 @@ $email = $_SESSION['email'];
                       <th scope="col">Gender</th>
                       <th scope="col">Email</th>
                       <th scope="col">Phonenumber</th>
-                      <th scope="col">Action</th>
+                     
                     </tr>
                   </thead>
                   <tbody>
@@ -88,9 +88,7 @@ $email = $_SESSION['email'];
                         <td>
                           <?php echo $row['phonenumber'] ?>
                         </td>
-                        <td>
-                          <?php echo $row['password'] ?>
-                        </td>
+                     
 
                       </tr>
 

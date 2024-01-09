@@ -369,7 +369,7 @@ $user=mysqli_fetch_assoc($data);
           
           <li>
             <a href="rejectedservices.php">
-              <i class="bi bi-circle"></i><span>Rejected Services</span>
+              <i class="bi bi-circle"></i><span>Rejected Bookings</span>
             </a>
           </li>
           <li>
@@ -379,7 +379,7 @@ $user=mysqli_fetch_assoc($data);
           </li>
           <li>
             <a href="payment.php">
-              <i class="bi bi-circle"></i><span>Completed Services</span>
+              <i class="bi bi-circle"></i><span>Completed Bookings</span>
             </a>
           </li>
 

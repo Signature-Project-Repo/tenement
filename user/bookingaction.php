@@ -50,7 +50,7 @@ $row = mysqli_fetch_assoc($data);
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" pattern="[1-9][0-9]{9}" maxlength="12" minlength="10"  required>
+                    <input type="text" class="form-control" name="phone" placeholder="phonenumber" pattern="[1-9][0-9]{9}" maxlength="12" minlength="10"  required>
                     <label for="phone">Phone</label>
                   </div>
                 </div>

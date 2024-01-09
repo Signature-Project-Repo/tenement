@@ -40,12 +40,13 @@ $email=$_SESSION ['email'];
                     <th scope="col">Description</th>
                     <th scope="col">Priority</th>
                     <th scope="col">Date</th>
+                    <th scope="col">Reply</th>
                   </tr>
                 </thead>
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM `complaints` WHERE reply='0' AND  status='0'";
+               $sql = "SELECT * FROM `complaints` WHERE reply !='0' AND  status='0'";
              // echo $sql;
 
                 $data=select_data($sql);
@@ -61,6 +62,7 @@ $email=$_SESSION ['email'];
                  <td> <?php echo $row['description'] ?></td>
                  <td><?php echo $row['priority'] ?></td>
                  <td><?php echo $row['date']?></td>
+                 <td><?php echo $row['reply']?></td>
                      
 
                  </tr>

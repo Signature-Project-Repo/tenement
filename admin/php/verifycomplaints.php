@@ -40,7 +40,7 @@ $result = update_data($sql);
     }).then((result) => {
       /* Read more about handling dismissals below */
       if (result.dismiss === Swal.DismissReason.timer) {
-        window.location.replace('../mycomplaints.php');
+        window.location.replace('../index.php');
 
       }
     });

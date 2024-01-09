@@ -40,34 +40,34 @@ $email=$_SESSION['email'];
               <form class="row g-3" action="php/medaction.php" method="POST" enctype="multipart/form-data">
               <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="name" placeholder="Name" ;>
+                  <input type="text" class="form-control" name="name" placeholder="Name" pattern="[A-Z][a-z]+( [A-Z][a-z]+)*" maxlength="50" required>
                     <label for="name">Name</label>  
                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="number" class="form-control" name="phone" placeholder="phonenumber" $pattern ='' >
+                    <input type="text" class="form-control" name="phone" placeholder="phonenumber" pattern="[7-9][0-9]{9}" maxlength="12" minlength="10" required>
                     <label for="phone">Phone</label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="number" class="form-control" name="age" placeholder="Age" ;>
+                  <input type="text" class="form-control" name="age" placeholder="Age" pattern="[0-9]{1,2}" maxlength="2" required>
                     <label for="age">Age</label>  
                  </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="date" class="form-control" name="dob" placeholder="Date Of Birth" ;>
+                    <input type="date" class="form-control" name="dob" placeholder="Date Of Birth" required>
                     <label for="dob">Date Of Birth</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" name="address" style="height: 100px;"></textarea>
+                    <textarea class="form-control" placeholder="Address" name="address" style="height: 100px;" required></textarea>
                     <label for="address">Address</label>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ $email=$_SESSION['email'];
                    
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="city" placeholder="City">
+                  <input type="text" class="form-control" name="city" placeholder="City" required>
                     <label for="city">City</label>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ $email=$_SESSION['email'];
                  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="height" placeholder="Height">
+                  <input type="text" class="form-control" name="height" pattern="[0-9]{2,3}" placeholder="Height" maxlength="3">
                     <label for="Height">Height</label>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ $email=$_SESSION['email'];
  
                 <div class="col-md-6">
                   <div class="form-floating">
-                  <input type="text" class="form-control" name="weight" placeholder="Loctation Weight">
+                  <input type="text" class="form-control" name="weight" pattern="[0-9]{2,3}" placeholder="Loctation Weight" maxlength="3">
                     <label for="Weight"> Weight</label>
                   </div>
                 </div>
